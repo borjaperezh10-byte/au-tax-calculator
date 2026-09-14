@@ -47,6 +47,13 @@ const NAV_LINKS = [
   { href: '/about',              label: 'About' },
 ];
 
+const TRUST_SIGNALS = [
+  'Updated for FY 2026–27',
+  'Rates sourced from the ATO',
+  '100% free, no signup',
+  'No income data stored',
+];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-AU">
@@ -68,23 +75,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
 
         {/* Site header / navigation */}
-        <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-          <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
+        <header className="sticky top-0 z-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+          <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
             <a
               href="/"
-              className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="flex items-center gap-2.5 group flex-shrink-0"
               aria-label="AU Income Tax Calculator — home"
             >
-              <span className="text-lg" aria-hidden="true">🇦🇺</span>
-              <span className="text-sm font-bold tracking-tight">auincometax.com</span>
+              {/* Logo mark: rounded badge, gradient fill, subtle check accent — no fake certification claim, purely a wordmark device */}
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true" className="flex-shrink-0">
+                <defs>
+                  <linearGradient id="logoGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#2563EB" />
+                    <stop offset="1" stopColor="#1D4ED8" />
+                  </linearGradient>
+                </defs>
+                <rect width="34" height="34" rx="9" fill="url(#logoGrad)" />
+                <path d="M10 22.5V17M17 22.5V11.5M24 22.5V14.5" stroke="white" strokeWidth="2.4" strokeLinecap="round" />
+                <circle cx="24" cy="10.5" r="3" fill="#22C55E" stroke="white" strokeWidth="1.2" />
+              </svg>
+              <span className="flex flex-col leading-none whitespace-nowrap">
+                <span className="text-sm font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  AU Income Tax
+                </span>
+                <span className="hidden sm:block text-[10px] font-medium text-slate-400 tracking-wide mt-0.5">
+                  Free 2026–27 calculator
+                </span>
+              </span>
             </a>
-            <nav aria-label="Main navigation">
-              <ul className="flex items-center gap-1" role="list">
+            <nav aria-label="Main navigation" className="min-w-0 overflow-x-auto">
+              <ul className="flex items-center gap-1 flex-nowrap" role="list">
                 {NAV_LINKS.map(({ href, label }) => (
-                  <li key={href}>
+                  <li key={href} className="flex-shrink-0">
                     <a
                       href={href}
-                      className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-2.5 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                      className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-2.5 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors whitespace-nowrap"
                     >
                       {label}
                     </a>
@@ -92,6 +117,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ))}
               </ul>
             </nav>
+          </div>
+
+          {/* Trust bar — verifiable claims only, each backed by a page on the site (Methodology / Privacy Policy) */}
+          <div className="border-t border-slate-100 dark:border-slate-700/60 bg-slate-50/80 dark:bg-slate-900/40">
+            <div className="max-w-5xl mx-auto px-4 py-2 flex items-center gap-x-5 gap-y-1 overflow-x-auto flex-nowrap">
+              {TRUST_SIGNALS.map(signal => (
+                <span key={signal} className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="flex-shrink-0 text-emerald-500">
+                    <circle cx="6" cy="6" r="6" fill="currentColor" />
+                    <path d="M3.5 6.2L5.2 7.8L8.5 4.2" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {signal}
+                </span>
+              ))}
+            </div>
           </div>
         </header>
 

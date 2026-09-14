@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+html {
+  /* Compensate for the sticky header (nav + trust bar) so in-page anchors
+     (e.g. glossary term deep links) don't land hidden underneath it. */
+  scroll-padding-top: 6.5rem;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
