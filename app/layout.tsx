@@ -58,6 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-AU">
       <head>
+        {/* Google AdSense site verification/loader script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8059094828506918"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
