@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Manual dark mode: `dark:` classes apply when the <html> element carries
+   the `dark` class (set by the inline boot script + ThemeToggle), instead
+   of following prefers-color-scheme automatically. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   /* Compensate for the sticky header (nav + trust bar) so in-page anchors
      (e.g. glossary term deep links) don't land hidden underneath it. */

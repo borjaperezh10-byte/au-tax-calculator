@@ -1,5 +1,18 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import ThemeToggle from '@/components/ThemeToggle';
+
+// Runs before paint to set the initial theme class from localStorage (falling
+// back to system preference) so there's no flash of the wrong theme.
+const THEME_BOOT_SCRIPT = `
+(function () {
+  try {
+    var stored = localStorage.getItem('theme');
+    var isDark = stored === 'dark' || ((stored === 'system' || !stored) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', isDark);
+  } catch (e) {}
+})();
+`;
 
 export const metadata: Metadata = {
   title: {
@@ -56,8 +69,10 @@ const TRUST_SIGNALS = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU">
+    <html lang="en-AU" suppressHydrationWarning>
       <head>
+        {/* Set initial theme class before paint — avoids a flash of the wrong theme */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
         {/* Google AdSense site verification/loader script */}
         <script
           async
@@ -88,26 +103,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               className="flex items-center gap-2.5 group flex-shrink-0"
               aria-label="AU Income Tax Calculator — home"
             >
-              {/* Logo mark: rounded badge, gradient fill, subtle check accent — no fake certification claim, purely a wordmark device */}
-              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true" className="flex-shrink-0">
-                <defs>
-                  <linearGradient id="logoGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#2563EB" />
-                    <stop offset="1" stopColor="#1D4ED8" />
-                  </linearGradient>
-                </defs>
-                <rect width="34" height="34" rx="9" fill="url(#logoGrad)" />
-                <path d="M10 22.5V17M17 22.5V11.5M24 22.5V14.5" stroke="white" strokeWidth="2.4" strokeLinecap="round" />
-                <circle cx="24" cy="10.5" r="3" fill="#22C55E" stroke="white" strokeWidth="1.2" />
-              </svg>
-              <span className="flex flex-col leading-none whitespace-nowrap">
-                <span className="text-sm font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  AU Income Tax
-                </span>
-                <span className="hidden sm:block text-[10px] font-medium text-slate-400 tracking-wide mt-0.5">
-                  Free 2026–27 calculator
-                </span>
-              </span>
+              {/* Full logo lockup (icon + wordmark + tagline), supplied brand asset.
+                  Two color variants swapped by theme for contrast — the artwork's
+                  navy text is unreadable on a dark header, so a light-text version
+                  renders in dark mode instead of recoloring via CSS filters. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-header.png"
+                alt="AU Income Tax — Calculate with confidence"
+                height={38}
+                className="h-[38px] w-auto flex-shrink-0 dark:hidden"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-header-dark.png"
+                alt="AU Income Tax — Calculate with confidence"
+                height={38}
+                className="h-[38px] w-auto flex-shrink-0 hidden dark:block"
+              />
             </a>
             <nav aria-label="Main navigation" className="min-w-0 overflow-x-auto">
               <ul className="flex items-center gap-1 flex-nowrap" role="list">
@@ -123,6 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ))}
               </ul>
             </nav>
+            <ThemeToggle />
           </div>
 
           {/* Trust bar — verifiable claims only, each backed by a page on the site (Methodology / Privacy Policy) */}
