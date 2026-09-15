@@ -80,6 +80,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8059094828506918"
           crossOrigin="anonymous"
         />
+        {/* Cloudflare Web Analytics — manual install (DNS-only domain, not proxied) */}
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "e37a6c8e41624b568583a441031261ea"}'
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
