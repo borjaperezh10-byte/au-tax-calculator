@@ -15,7 +15,41 @@ const THEME_BOOT_SCRIPT = `
 })();
 `;
 
+const SITE_URL = 'https://www.auincometax.com';
+
+// Site-wide structured data. The Person node is the E-E-A-T signal Google's
+// documentation asks for on YMYL/financial content ("who created this?") —
+// it is referenced as both author and publisher of the site.
+const STRUCTURED_DATA = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#author`,
+      name: 'Borja Pérez',
+      url: `${SITE_URL}/about`,
+      email: 'mailto:borja@auincometax.com',
+      description:
+        'Creator and maintainer of auincometax.com. Builds and maintains the calculator and keeps its tax rates aligned with ATO published tables.',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'AU Income Tax Calculator',
+      description:
+        'Free Australian income tax and take-home pay calculator for FY 2026-27, using ATO legislated rates.',
+      inLanguage: 'en-AU',
+      author: { '@id': `${SITE_URL}/#author` },
+      publisher: { '@id': `${SITE_URL}/#author` },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
+  // Resolves every relative URL used in metadata (canonical, openGraph.url,
+  // images). Required so per-page canonicals can be written as '/salary/80000'.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Australia Income Tax Calculator 2026-27 | Take-Home Pay',
     template: '%s | AU Income Tax Calculator',
@@ -33,11 +67,17 @@ export const metadata: Metadata = {
     'payg calculator australia',
     'net pay calculator australia',
   ],
+  // Named author — inherited by every page unless overridden.
+  authors: [{ name: 'Borja Pérez', url: `${SITE_URL}/about` }],
+  creator: 'Borja Pérez',
+  publisher: 'Borja Pérez',
   openGraph: {
     type: 'website',
     locale: 'en_AU',
     siteName: 'AU Income Tax Calculator',
-    url: 'https://www.auincometax.com',
+    // NOTE: `url` deliberately omitted here. When it was set to the homepage in
+    // this root layout, every child page inherited it and emitted og:url
+    // pointing at '/'. Each page now sets its own relative openGraph.url.
   },
   twitter: {
     card: 'summary_large_image',
@@ -49,9 +89,11 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
   },
-  alternates: {
-    canonical: 'https://www.auincometax.com',
-  },
+  // NOTE: `alternates.canonical` deliberately omitted here. Next.js merges
+  // metadata, so a canonical set in the root layout is inherited by every page
+  // that does not override it — which silently canonicalised pages like
+  // /glossary and /changelog to the homepage and would drop them from the
+  // index. Each page must now declare its own: alternates: { canonical: '/…' }.
 };
 
 const NAV_LINKS = [
@@ -74,6 +116,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Set initial theme class before paint — avoids a flash of the wrong theme */}
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
+        {/* Site-wide structured data: named author/publisher (E-E-A-T) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
+        />
         {/* Google AdSense site verification/loader script */}
         <script
           async
@@ -211,6 +258,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </div>
             <div className="border-t border-slate-200 dark:border-slate-700 pt-6 text-center space-y-2">
+              {/* Named byline — the "who created this" signal Google asks for on
+                  financial (YMYL) content. Appears on every page of the site. */}
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Built and maintained by{' '}
+                <a href="/about" className="font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400">
+                  Borja Pérez
+                </a>
+                . Calculations are documented in full on our{' '}
+                <a href="/methodology" className="text-blue-500 hover:underline">methodology page</a>.
+              </p>
               <p className="text-xs text-slate-400">
                 Rates based on{' '}
                 <a href="https://www.ato.gov.au" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">ATO</a>
