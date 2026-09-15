@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LAST_REVIEWED } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — AU Income Tax Calculator',
@@ -14,7 +15,7 @@ export default function PrivacyPolicyPage() {
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-3xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Privacy Policy</h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-2">Last updated: July 2026</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-2">Last updated: {LAST_REVIEWED}</p>
         </div>
       </div>
 
@@ -124,7 +125,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <div className="text-xs text-slate-400 text-center">
-          This policy was last reviewed in July 2026.
+          This policy was last reviewed in {LAST_REVIEWED}.
         </div>
       </div>
     </main>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LAST_REVIEWED } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Terms of Use — AU Income Tax Calculator',
@@ -14,7 +15,7 @@ export default function TermsOfUsePage() {
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-3xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Terms of Use</h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-2">Last updated: July 2026</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-2">Last updated: {LAST_REVIEWED}</p>
         </div>
       </div>
 
@@ -122,7 +123,7 @@ export default function TermsOfUsePage() {
         </section>
 
         <div className="text-xs text-slate-400 text-center">
-          These terms were last reviewed in July 2026.
+          These terms were last reviewed in {LAST_REVIEWED}.
         </div>
       </div>
     </main>

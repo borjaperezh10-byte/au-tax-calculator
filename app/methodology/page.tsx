@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LAST_REVIEWED } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Methodology — How We Calculate Australian Income Tax',
@@ -236,7 +237,7 @@ export default function MethodologyPage() {
         </section>
 
         <div className="text-xs text-slate-400 text-center">
-          Methodology last reviewed: July 2026
+          Methodology last reviewed: {LAST_REVIEWED}
         </div>
       </div>
     </main>

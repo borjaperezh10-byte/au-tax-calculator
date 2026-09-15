@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import TaxCalculator from '@/components/TaxCalculator';
 import { calculate, fmtAUD } from '@/lib/tax';
+import { LAST_REVIEWED } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Australia Income Tax Calculator 2026-27 | Take-Home Pay',
@@ -109,7 +110,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg px-3 py-2 whitespace-nowrap">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/><path d="M8 7v4M8 5h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                Last updated July 2026
+                Last updated {LAST_REVIEWED}
               </div>
             </div>
           </div>

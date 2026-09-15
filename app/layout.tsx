@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
+import { LAST_REVIEWED } from '@/lib/site';
 
 // Runs before paint to set the initial theme class from localStorage (falling
 // back to system preference) so there's no flash of the wrong theme.
@@ -122,7 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 className="h-[38px] w-auto flex-shrink-0 hidden dark:block"
               />
             </a>
-            <nav aria-label="Main navigation" className="min-w-0 overflow-x-auto">
+            <nav aria-label="Main navigation" className="min-w-0 overflow-x-auto overflow-y-hidden">
               <ul className="flex items-center gap-1 flex-nowrap" role="list">
                 {NAV_LINKS.map(({ href, label }) => (
                   <li key={href} className="flex-shrink-0">
@@ -141,7 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* Trust bar — verifiable claims only, each backed by a page on the site (Methodology / Privacy Policy) */}
           <div className="border-t border-slate-100 dark:border-slate-700/60 bg-slate-50/80 dark:bg-slate-900/40">
-            <div className="max-w-5xl mx-auto px-4 py-2 flex items-center gap-x-5 gap-y-1 overflow-x-auto flex-nowrap">
+            <div className="max-w-5xl mx-auto px-4 py-2 flex items-center gap-x-5 gap-y-1 overflow-x-auto overflow-y-hidden flex-nowrap">
               {TRUST_SIGNALS.map(signal => (
                 <span key={signal} className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap flex-shrink-0">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="flex-shrink-0 text-emerald-500">
@@ -207,7 +208,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="text-xs text-slate-400">
                 Rates based on{' '}
                 <a href="https://www.ato.gov.au" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">ATO</a>
-                {' '}legislated 2026–27 tables. Last reviewed July 2026.
+                {' '}legislated 2026–27 tables. Last reviewed {LAST_REVIEWED}.
               </p>
               <p className="text-xs text-slate-400">
                 For indicative purposes only — not financial or tax advice.{' '}

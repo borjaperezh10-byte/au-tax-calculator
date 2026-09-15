@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LAST_REVIEWED } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Tax Disclaimer — AU Income Tax Calculator',
@@ -140,7 +141,7 @@ export default function TaxDisclaimerPage() {
         </section>
 
         <div className="text-xs text-slate-400 text-center">
-          Disclaimer last reviewed: July 2026
+          Disclaimer last reviewed: {LAST_REVIEWED}
         </div>
       </div>
     </main>
