@@ -33,10 +33,14 @@ const RESIDENT_BANDS = [
   { from: 190_001, to: Infinity, rate: 45 },
 ];
 
-// Medicare Levy Surcharge, single threshold (tier 1), FY 2026-27.
-// VERIFY this against the figure used in lib/tax.ts and stated on
-// /methodology before publishing — it is indexed annually.
-const MLS_SINGLE_THRESHOLD = 101_000;
+// Medicare Levy Surcharge — top of the singles base (nil) tier, FY 2026-27.
+// The surcharge applies from $105,001; $105,000 itself is still base tier.
+// Source: ATO, "Medicare levy surcharge income thresholds and rates"
+// (2026-27 singles: base ≤$105,000 · tier 1 $105,001–$123,000 at 1% ·
+//  tier 2 $123,001–$164,000 at 1.25% · tier 3 $164,001+ at 1.5%).
+// This was $101,000 in 2025-26 — it is indexed, so re-check it every year
+// and keep it in step with lib/tax.ts.
+const MLS_SINGLE_THRESHOLD = 105_000;
 
 // Typical full-time earnings, used only for the "for reference" sentence.
 // VERIFY and cite: take the current figure from the ABS Average Weekly
@@ -110,7 +114,8 @@ export default async function SalaryPage({ params }: Props) {
   const gapToNextBand = upcoming ? upcoming.from - salary : null;
   const breakdown = bandBreakdown(salary);
 
-  const aboveMLSThreshold = salary >= MLS_SINGLE_THRESHOLD;
+  // Strictly greater: $105,000 exactly is still in the nil tier.
+  const aboveMLSThreshold = salary > MLS_SINGLE_THRESHOLD;
   const vsMedian = salary - MEDIAN_FULLTIME_SALARY;
 
   // Quick stats for the static header
@@ -219,7 +224,10 @@ export default async function SalaryPage({ params }: Props) {
                 threshold, which means that without an appropriate level of private hospital cover you
                 would pay the surcharge <em>on top of</em> the {fmtAUD(r.medicareLevy)} Medicare levy
                 already shown above. The figures on this page assume you hold private hospital cover —
-                switch it off in the calculator to see the difference.
+                switch it off in the calculator to see the difference. Note that the ATO tests this
+                against your <em>income for MLS purposes</em>, which adds things like reportable fringe
+                benefits, reportable super contributions and net investment losses to your taxable
+                income, so the threshold can bite at a lower salary than you would expect.
               </p>
             )}
 
