@@ -100,6 +100,7 @@ const NAV_LINKS = [
   { href: '/',                   label: 'Calculator' },
   { href: '/tax-brackets',       label: 'Tax Brackets' },
   { href: '/working-holiday-maker', label: 'Working Holiday' },
+  { href: '/hecs-help-repayment', label: 'HECS-HELP' },
   { href: '/about',              label: 'About' },
 ];
 
@@ -222,6 +223,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-2" role="list">
                   <li><a href="/" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Income Tax</a></li>
                   <li><a href="/working-holiday-maker" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Working Holiday</a></li>
+                  <li><a href="/hecs-help-repayment" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">HECS-HELP Repayment</a></li>
                 </ul>
               </div>
               <div>
