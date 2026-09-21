@@ -115,39 +115,30 @@ export function calcMLS(
 }
 
 // ─── HECS/HELP REPAYMENT ──────────────────────────────────────────────────────
-// Source: ATO HELP repayment rates 2026-27 (estimated, pending ATO confirmation)
-// Repayment is a % of *total* repayment income — not marginal.
-// Thresholds estimated from 2024-25 bands indexed by CPI (~5%/year)
-// ⚠ PENDING VALIDATION: confirm final thresholds with ATO once published
-const HECS_BANDS: [number, number][] = [
-  [0,        0.000],
-  [58_518,   0.010],
-  [67_564,   0.020],
-  [71_620,   0.025],
-  [75_914,   0.030],
-  [80_470,   0.035],
-  [85_297,   0.040],
-  [89_064,   0.045],
-  [94_043,   0.050],
-  [103_022,  0.055],
-  [110_263,  0.060],
-  [117_506,  0.065],
-  [120_521,  0.070],
-  [124_990,  0.075],
-  [129_778,  0.080],
-  [134_968,  0.085],
-  [140_458,  0.090],
-  [146_416,  0.095],
-  [152_573,  0.100],
-];
+// Source: ATO — Study and training support loans: rates and repayment
+// thresholds, 2026-27 (Table 1). Verified September 2026.
+// ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds
+//
+// From 1 July 2025 the compulsory repayment is MARGINAL: it is charged only on
+// the repayment income ABOVE the first threshold ($69,528 for 2026-27), not on
+// the whole income as under the old flat-rate system. The exception is the top
+// band, which the ATO defines as a flat 10% of TOTAL repayment income.
+//
+//   $0       – $69,528  : Nil
+//   $69,529  – $129,717 : 15c for each $1 over $69,528
+//   $129,718 – $186,050 : $9,028 + 17c for each $1 over $129,717
+//   $186,051 and over   : 10% of total repayment income
+//
+// The $9,028 base is 15% of the first band's span, so the schedule is
+// continuous. `repaymentIncome` must be repayment income, not gross salary —
+// see the note where calcHECS is called in calculate().
+const HECS_FIRST_THRESHOLD = 69_528;
 
-export function calcHECS(income: number): number {
-  let rate = 0;
-  for (const [threshold, r] of HECS_BANDS) {
-    if (income >= threshold) rate = r;
-    else break;
-  }
-  return Math.round(income * rate);
+export function calcHECS(repaymentIncome: number): number {
+  if (repaymentIncome <= HECS_FIRST_THRESHOLD) return 0;
+  if (repaymentIncome <= 129_717) return Math.round((repaymentIncome - HECS_FIRST_THRESHOLD) * 0.15);
+  if (repaymentIncome <= 186_050) return Math.round(9_028 + (repaymentIncome - 129_717) * 0.17);
+  return Math.round(repaymentIncome * 0.10);
 }
 
 // ─── MARGINAL RATE ─────────────────────────────────────────────────────────────
@@ -200,7 +191,16 @@ export function calculate(
   const netIncomeTax   = Math.max(0, incomeTax - lito);
   const medicareLevy   = calcMedicareLevy(salary, res);
   const mls            = calcMLS(salary, res, privateHealth);
-  const hecsRepayment  = hecs ? calcHECS(salary) : 0;
+
+  // HECS is assessed on *repayment income*, not gross salary. Repayment income
+  // adds reportable super contributions (salary sacrifice) back onto taxable
+  // income — so sacrificing salary into super does NOT reduce the HECS
+  // repayment, even though it lowers income tax. (Reportable fringe benefits,
+  // net investment losses and exempt foreign income are also part of repayment
+  // income but are not modelled here.)
+  const repaymentIncome = taxableIncome + salarySacrifice;
+  const hecsRepayment  = hecs ? calcHECS(repaymentIncome) : 0;
+
   const superEmployer  = salary * 0.12;
   const superSacrifice = salarySacrifice; // already pre-tax, goes into super
   const totalDeductions = netIncomeTax + medicareLevy + mls + hecsRepayment;
