@@ -187,15 +187,27 @@ export default function MethodologyPage() {
               <div className="bg-slate-50 dark:bg-slate-800 px-5 py-3 border-b border-slate-200 dark:border-slate-700">
                 <h3 className="font-semibold text-slate-800 dark:text-slate-200">Step 5 — HECS/HELP repayment</h3>
               </div>
-              <div className="px-5 py-4 text-sm text-slate-600 dark:text-slate-400 space-y-2">
+              <div className="px-5 py-4 text-sm text-slate-600 dark:text-slate-400 space-y-3">
                 <p>
-                  HECS/HELP repayment is calculated as a percentage of your total repayment income (not marginal). The applicable rate is determined by which threshold band your income falls into. The repayment amount is:
+                  From 1 July 2025, HECS/HELP compulsory repayments use a <strong className="text-slate-700 dark:text-slate-300">marginal</strong> system. You repay a percentage only of the income <strong className="text-slate-700 dark:text-slate-300">above</strong> the first threshold — not a flat percentage of your whole income as under the old system. The top band is the exception: it is a flat 10% of total repayment income. For 2026-27:
                 </p>
+                <div className="font-mono text-xs bg-slate-50 dark:bg-slate-900 rounded-lg p-3 space-y-1">
+                  <div>$0 – $69,528: <span className="text-emerald-600 dark:text-emerald-400">Nil</span></div>
+                  <div>$69,529 – $129,717: <span className="text-blue-600 dark:text-blue-400">15%</span> × (income − $69,528)</div>
+                  <div>$129,718 – $186,050: <span className="text-blue-600 dark:text-blue-400">$9,028 + 17%</span> × (income − $129,717)</div>
+                  <div>$186,051+: <span className="text-blue-600 dark:text-blue-400">10%</span> × total repayment income</div>
+                </div>
                 <p>
-                  <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono text-xs">HECS repayment = repayment income × applicable rate</code>
+                  The repayment is assessed on your <strong className="text-slate-700 dark:text-slate-300">repayment income</strong>, which is your taxable income plus reportable super contributions (such as salary sacrifice), reportable fringe benefits, net investment losses and exempt foreign income. Because reportable super is added back, salary sacrificing into super does not reduce your HECS repayment.
                 </p>
-                <p className="text-xs text-amber-600 dark:text-amber-400">
-                  ⚠ The 2026-27 HECS repayment thresholds are estimates indexed from 2024-25 ATO published figures by CPI. We will update these when the ATO confirms final 2026-27 figures.
+                <p className="text-xs text-slate-400">
+                  Source: ATO —{' '}
+                  <a href="https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline break-all">
+                    Study and training support loans: rates and repayment thresholds (2026-27)
+                  </a>
+                  . See our dedicated{' '}
+                  <a href="/hecs-help-repayment" className="text-blue-500 hover:underline">HECS-HELP repayment calculator</a>{' '}
+                  for a full breakdown.
                 </p>
               </div>
             </div>
