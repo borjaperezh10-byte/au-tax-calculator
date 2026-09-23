@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/take-home-pay-reference`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/methodology`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
