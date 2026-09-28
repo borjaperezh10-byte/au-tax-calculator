@@ -233,6 +233,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><a href="/salary-table" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Salary &amp; Tax Table</a></li>
                   <li><a href="/take-home-pay-reference" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Take-Home Pay Reference</a></li>
                   <li><a href="/guides/how-australian-income-tax-works" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">How Income Tax Works</a></li>
+                  <li><a href="/guides/salary-sacrifice-explained" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Salary Sacrifice Explained</a></li>
                   <li><a href="/methodology" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Methodology</a></li>
                   <li><a href="/glossary" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Glossary</a></li>
                   <li><a href="/changelog" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Changelog</a></li>
