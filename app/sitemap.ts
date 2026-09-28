@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/guides/how-australian-income-tax-works`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/methodology`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
