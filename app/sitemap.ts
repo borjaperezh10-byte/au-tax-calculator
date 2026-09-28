@@ -55,6 +55,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/guides/medicare-levy-and-surcharge`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/guides/tax-deductions-for-employees`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/methodology`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
