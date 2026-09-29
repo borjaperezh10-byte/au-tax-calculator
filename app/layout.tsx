@@ -236,6 +236,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><a href="/guides/salary-sacrifice-explained" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Salary Sacrifice Explained</a></li>
                   <li><a href="/guides/medicare-levy-and-surcharge" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Medicare Levy &amp; Surcharge</a></li>
                   <li><a href="/guides/tax-deductions-for-employees" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Deductions for Employees</a></li>
+                  <li><a href="/guides/working-holiday-maker-tax" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Working Holiday Maker Tax</a></li>
+                  <li><a href="/guides/how-to-read-your-payslip" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">How to Read Your Payslip</a></li>
                   <li><a href="/methodology" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Methodology</a></li>
                   <li><a href="/glossary" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Glossary</a></li>
                   <li><a href="/changelog" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Changelog</a></li>
