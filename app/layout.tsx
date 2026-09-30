@@ -238,6 +238,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><a href="/guides/tax-deductions-for-employees" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Deductions for Employees</a></li>
                   <li><a href="/guides/working-holiday-maker-tax" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Working Holiday Maker Tax</a></li>
                   <li><a href="/guides/how-to-read-your-payslip" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">How to Read Your Payslip</a></li>
+                  <li><a href="/guides/marginal-vs-effective-tax-rate" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Marginal vs Effective Tax Rate</a></li>
+                  <li><a href="/guides/tax-on-a-second-job" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax on a Second Job</a></li>
+                  <li><a href="/guides/tax-return-deadline-and-refunds" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Return Deadline &amp; Refunds</a></li>
                   <li><a href="/methodology" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Methodology</a></li>
                   <li><a href="/glossary" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Glossary</a></li>
                   <li><a href="/changelog" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Changelog</a></li>
