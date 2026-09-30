@@ -84,7 +84,7 @@ const datasetLd = {
   isAccessibleForFree: true,
   license: 'https://www.auincometax.com/terms-of-use',
   temporalCoverage: '2026-07-01/2027-06-30',
-  spatialCoverage: { '@type': 'Country', name: 'Australia' },
+  spatialCoverage: 'Australia',
 };
 
 export default function TakeHomeReferencePage() {
