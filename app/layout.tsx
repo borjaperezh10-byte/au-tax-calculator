@@ -214,6 +214,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </div>
 
+        {/* Vercel Web Analytics: cookieless, no personal data */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };",
+          }}
+        />
+        <script defer src="/_vercel/insights/script.js" />
+
         {/* Site-wide footer */}
         <footer className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 mt-8">
           <div className="max-w-4xl mx-auto px-4 py-8">
