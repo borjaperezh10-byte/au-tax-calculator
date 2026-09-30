@@ -63,6 +63,12 @@ export default function PrivacyPolicyPage() {
                 </a>.
               </p>
             </div>
+      <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4">
+        <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Vercel Web Analytics</h3>
+        <p>
+          We use Vercel Web Analytics to count page views and understand which pages are useful. It does not use cookies, does not track you across other websites, and does not collect personal information or anything you enter into the calculator. The data it records, such as pages visited, referring site, country and device type, is aggregated.
+        </p>
+      </div>
             <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4">
               <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Google AdSense</h3>
               <p>
