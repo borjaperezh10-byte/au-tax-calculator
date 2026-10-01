@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Australian Tax Guides (2026-27) | AU Income Tax Calculator',
+    title: 'Australian Tax Guides (2026-27)',
   description:
     'Plain-English guides to Australian income tax for 2026-27: how tax works, marginal vs effective rates, Medicare levy, payslips, salary sacrifice, second jobs, deductions, working holiday makers and tax return deadlines.',
   alternates: { canonical: '/guides' },
