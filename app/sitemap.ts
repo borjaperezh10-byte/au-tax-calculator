@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/guides`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/guides/marginal-vs-effective-tax-rate`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
