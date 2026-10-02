@@ -135,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "e37a6c8e41624b568583a441031261ea"}'
         />
+        <meta name="p:domain_verify" content="3d0f7514aea3861be4c217a656e83e54" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
