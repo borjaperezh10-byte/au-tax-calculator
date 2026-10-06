@@ -81,7 +81,7 @@ export default function AboutPage() {
               <a href="/methodology" className="text-blue-600 dark:text-blue-400 hover:underline">Methodology page</a>.
             </p>
             <p>
-              The 2026-27 HECS/HELP repayment thresholds are estimated from 2024-25 ATO published bands, indexed by CPI, as the ATO typically does not confirm the following year&apos;s thresholds until after 1 July. These estimates are clearly marked throughout the site.
+              The 2026-27 HECS/HELP repayment thresholds come from the table the ATO published for 2026-27 (nil up to $69,528, then marginal rates). Any figure that is still an estimate, such as the Medicare levy shade-in range, is marked as one on the page where it appears.
             </p>
             <p>
               Results are estimates only. They do not account for all individual circumstances, salary sacrifice arrangements not entered by the user, tax agent deductions, fringe benefits, investment income, or other complex situations. Always confirm your tax position with a registered tax agent or the ATO&apos;s own tools.
