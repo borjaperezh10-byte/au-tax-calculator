@@ -88,6 +88,11 @@ export default function MethodologyPage() {
                 url: 'https://treasury.gov.au/tax/personal-income-tax-cuts',
                 text: 'Treasury — Personal income tax cuts',
               },
+      {
+        label: 'Average full-time earnings (salary page comparison)',
+        url: 'https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia/latest-release',
+        text: 'ABS — Average Weekly Earnings, Australia, May 2026 (full-time adult ordinary time earnings: $2,083.70 a week, about $108,352 a year; a mean, not a median)',
+      },
             ].map(({ label, url, text }) => (
               <div key={label} className="flex gap-3">
                 <span className="text-blue-400 flex-shrink-0 font-mono text-xs mt-0.5">→</span>
