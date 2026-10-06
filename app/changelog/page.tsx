@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const ENTRIES = [
   {
+    date: 'October 2026',
+    version: '2.1',
+    label: 'Fix',
+    labelColor: 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300',
+    changes: [
+      'Salary pages: the comparison with typical earnings used an unsourced figure of $90,000. It now uses the ABS average full-time adult ordinary time earnings for May 2026 ($2,083.70 a week, about $108,352 a year) and says "average", because the ABS figure is a mean, not a median.',
+      'Methodology: added the ABS Average Weekly Earnings release to the list of primary sources.',
+    ],
+  },
+  {
     date: 'July 2026',
     version: '2.0',
     label: 'Major update',
