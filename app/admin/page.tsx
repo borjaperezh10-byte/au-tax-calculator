@@ -77,24 +77,44 @@ function PositionChart({ rows, start, end }: { rows: Row[]; start: string; end: 
     .sort((a, b) => a.idx - b.idx);
   if (!pts.length) return <p className="text-sm text-slate-500 dark:text-slate-400">No positions recorded in this period yet.</p>;
 
+  // 7-day moving average of the position, weighted by impressions, so a day with
+  // 1 impression counts for much less than a day with 50.
+  const WINDOW = 7;
+  const avg: { idx: number; pos: number }[] = [];
+  for (let i = 0; i <= span; i++) {
+    let w = 0;
+    let sum = 0;
+    for (const p of pts) {
+      if (p.idx > i - WINDOW && p.idx <= i) {
+        w += p.impr;
+        sum += p.pos * p.impr;
+      }
+    }
+    if (w > 0) avg.push({ idx: i, pos: sum / w });
+  }
+
   const W = 560;
   const H = 170;
   const L = 30;
   const R = 8;
   const T = 10;
   const B = 22;
-  const lo = Math.max(1, Math.floor(Math.min(...pts.map((p) => p.pos))) - 2);
-  const hi = Math.ceil(Math.max(...pts.map((p) => p.pos))) + 2;
+  const all = [...pts.map((p) => p.pos), ...avg.map((a) => a.pos)];
+  const lo = Math.max(1, Math.floor(Math.min(...all)) - 2);
+  const hi = Math.ceil(Math.max(...all)) + 2;
   const x = (i: number) => L + (i / span) * (W - L - R);
   const y = (v: number) => T + ((v - lo) / Math.max(1, hi - lo)) * (H - T - B);
   const ticks = [lo, Math.round((lo + hi) / 2), hi];
-  const path = pts.map((p, i) => (i === 0 ? 'M' : 'L') + x(p.idx).toFixed(1) + ' ' + y(p.pos).toFixed(1)).join(' ');
-  const best = Math.min(...pts.map((p) => p.pos));
-  const last = pts[pts.length - 1];
+  const path = avg
+    .map((a, i) => (i === 0 || a.idx - avg[i - 1].idx > 1 ? 'M' : 'L') + x(a.idx).toFixed(1) + ' ' + y(a.pos).toFixed(1))
+    .join(' ');
+  const best = avg.length ? Math.min(...avg.map((a) => a.pos)) : 0;
+  const lastAvg = avg[avg.length - 1];
+  const lastDate = new Date(t0 + (lastAvg ? lastAvg.idx : 0) * day).toISOString().slice(0, 10);
 
   return (
     <div>
-      <svg viewBox={'0 0 ' + W + ' ' + H} className="w-full" role="img" aria-label="Average Google Search position per day, lower is better">
+      <svg viewBox={'0 0 ' + W + ' ' + H} className="w-full" role="img" aria-label="Average Google Search position, 7-day moving average, lower is better">
         {ticks.map((v) => (
           <g key={v}>
             <line x1={L} x2={W - R} y1={y(v)} y2={y(v)} className="stroke-slate-200 dark:stroke-slate-700" strokeWidth={1} />
@@ -103,12 +123,13 @@ function PositionChart({ rows, start, end }: { rows: Row[]; start: string; end: 
             </text>
           </g>
         ))}
-        <path d={path} fill="none" className="stroke-blue-500" strokeWidth={1.5} />
         {pts.map((p) => (
-          <circle key={p.date} cx={x(p.idx)} cy={y(p.pos)} r={2 + Math.min(4, Math.sqrt(p.impr) / 2)} className="fill-blue-500">
+          <circle key={p.date} cx={x(p.idx)} cy={y(p.pos)} r={1.5 + Math.min(3, Math.sqrt(p.impr) / 3)} fillOpacity={0.35} className="fill-blue-500">
             <title>{p.date + ': position ' + p.pos.toFixed(1) + ', ' + Math.round(p.impr) + ' impressions'}</title>
           </circle>
         ))}
+        <path d={path} fill="none" className="stroke-blue-600 dark:stroke-blue-400" strokeWidth={2.5} strokeLinejoin="round" strokeLinecap="round" />
+        {lastAvg && <circle cx={x(lastAvg.idx)} cy={y(lastAvg.pos)} r={4} className="fill-blue-600 dark:fill-blue-400" />}
         <text x={L} y={H - 6} className="fill-slate-500 dark:fill-slate-400" fontSize="10">
           {start}
         </text>
@@ -117,8 +138,9 @@ function PositionChart({ rows, start, end }: { rows: Row[]; start: string; end: 
         </text>
       </svg>
       <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
-        Lower is better: position 1 is the top of Google and 10 is the bottom of page 1. Best day {best.toFixed(1)}, latest day with data{' '}
-        {last.pos.toFixed(1)} ({last.date}). Dot size shows that day&apos;s impressions; days with no impressions have no dot.
+        The line is the 7-day average position, weighted by impressions; the faint dots are the daily positions (bigger dot, more impressions). Lower is
+        better: 1 is the top of Google and 10 is the bottom of page 1.
+        {lastAvg ? ' Latest 7-day average ' + lastAvg.pos.toFixed(1) + ' (' + lastDate + '), best ' + best.toFixed(1) + '.' : ''}
       </p>
     </div>
   );
