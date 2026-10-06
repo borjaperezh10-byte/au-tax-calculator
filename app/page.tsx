@@ -43,7 +43,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How does HECS/HELP repayment work in 2026-27?',
-    a: 'If you have a HECS-HELP student debt, your employer automatically withholds repayments once your income exceeds approximately $58,518 (2026-27 estimated threshold). The repayment is a percentage of your total income — starting at 1% and rising up to 10% for incomes above $152,573. Unlike income tax, HECS repayment is calculated on your whole income, not just the amount above the threshold.',
+    a: 'If you have a HECS-HELP student debt, your employer withholds repayments once your repayment income is above the first threshold, which is $69,528 for 2026-27 (ATO table). Since 1 July 2025 the repayment is marginal: nil up to $69,528, then 15c for each $1 between $69,528 and $129,717, then $9,028 plus 17c for each $1 between $129,717 and $186,050. Above $186,050 the ATO charges a flat 10% of your total repayment income. Repayment income is your taxable income plus items such as reportable super contributions and reportable fringe benefits.',
   },
   {
     q: 'What is the Low Income Tax Offset (LITO) in 2026-27?',
@@ -160,7 +160,7 @@ export default function HomePage() {
             items={[
               { label: 'Tax-free threshold', value: '$18,200' },
               { label: 'LITO max offset', value: '$700' },
-              { label: 'HECS repayment from', value: '~$58,518' },
+              { label: 'HECS repayment from', value: '$69,528' },
               { label: 'Super Guarantee', value: '12%' },
             ]}
           />

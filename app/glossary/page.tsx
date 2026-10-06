@@ -46,7 +46,7 @@ const TERMS = [
   {
     term: 'HECS/HELP debt',
     definition:
-      'A Higher Education Loan Program (HELP) debt, formerly known as HECS, is a deferred student loan for higher education fees. Repayment is mandatory once your income exceeds the minimum threshold (approximately $58,518 in 2026-27). Unlike most loans, HECS/HELP debt is not interest-bearing — it is indexed annually to CPI.',
+      'A Higher Education Loan Program (HELP) debt, formerly known as HECS, is a deferred student loan for higher education fees. Repayment is mandatory once your income exceeds the minimum threshold ($69,528 in 2026-27, marginal rates above it). Unlike most loans, HECS/HELP debt is not interest-bearing — it is indexed annually to CPI.',
   },
   {
     term: 'HECS/HELP repayment rate',
