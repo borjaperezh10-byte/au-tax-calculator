@@ -10,6 +10,17 @@ export const metadata: Metadata = {
 const ENTRIES = [
   {
     date: 'October 2026',
+    version: '2.2',
+    label: 'Fix',
+    labelColor: 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300',
+    changes: [
+      'HECS/HELP: the homepage FAQ, the homepage quick-facts panel, the glossary and the About page still described the old system (first threshold about $58,518, rates from 1% to 10% on the whole income). They now show the ATO 2026-27 table: nil up to $69,528, 15c for each $1 above that up to $129,717, then $9,028 plus 17c for each $1 up to $186,050, and a flat 10% of total repayment income above $186,050.',
+      'The calculator and the HECS-HELP page already used these figures. The 2026-27 thresholds are no longer estimates: they were checked against the ATO table (page updated 30 June 2026).',
+      'The HECS notes in v2.0 and v1.3 below are superseded by this entry: the repayment has been marginal since 1 July 2025, except for the flat 10% top band.',
+    ],
+  },
+  {
+    date: 'October 2026',
     version: '2.1',
     label: 'Fix',
     labelColor: 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300',
