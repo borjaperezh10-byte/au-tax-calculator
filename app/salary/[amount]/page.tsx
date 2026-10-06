@@ -42,11 +42,14 @@ const RESIDENT_BANDS = [
 // and keep it in step with lib/tax.ts.
 const MLS_SINGLE_THRESHOLD = 105_000;
 
-// Typical full-time earnings, used only for the "for reference" sentence.
-// VERIFY and cite: take the current figure from the ABS Average Weekly
-// Earnings release and link it on /methodology. Do not ship a made-up number
-// on a page that claims its rates are ATO-sourced.
-const MEDIAN_FULLTIME_SALARY = 90_000;
+// Average full-time earnings, used only for the "for reference" sentence.
+// Source: ABS, Average Weekly Earnings, Australia, May 2026 (released 13 Aug 2026):
+// full-time adult average weekly ordinary time earnings, persons, $2,083.70 a week
+// (original and seasonally adjusted). Annualised: 2,083.70 x 52 = $108,352.
+// This is a MEAN of ordinary time earnings, not a median, so the page copy says
+// "average". Update it each time the ABS publishes (May and November releases)
+// and keep the figure cited on /methodology in step.
+const AVERAGE_FULLTIME_SALARY = 108_352;
 
 function bandFor(salary: number) {
   return RESIDENT_BANDS.find(b => salary >= b.from && salary <= b.to)!;
@@ -116,7 +119,7 @@ export default async function SalaryPage({ params }: Props) {
 
   // Strictly greater: $105,000 exactly is still in the nil tier.
   const aboveMLSThreshold = salary > MLS_SINGLE_THRESHOLD;
-  const vsMedian = salary - MEDIAN_FULLTIME_SALARY;
+  const vsAverage = salary - AVERAGE_FULLTIME_SALARY;
 
   // Quick stats for the static header
   const stats = [
@@ -242,14 +245,14 @@ export default async function SalaryPage({ params }: Props) {
 
             <p>
               For reference, ${(salary).toLocaleString('en-AU')} is{' '}
-              {vsMedian === 0 ? (
-                'close to typical full-time earnings in Australia'
-              ) : vsMedian > 0 ? (
-                <>about {fmtAUD(vsMedian)} above typical full-time earnings</>
+              {vsAverage === 0 ? (
+                'close to average full-time earnings in Australia'
+              ) : vsAverage > 0 ? (
+                <>about {fmtAUD(vsAverage)} above average full-time earnings</>
               ) : (
-                <>about {fmtAUD(Math.abs(vsMedian))} below typical full-time earnings</>
+                <>about {fmtAUD(Math.abs(vsAverage))} below average full-time earnings</>
               )}
-              . On top of your salary, your employer must also pay the 12% superannuation guarantee —
+              {' '}(ABS, May 2026; see our <a href="/methodology" className="text-blue-500 hover:underline">methodology page</a>). On top of your salary, your employer must also pay the 12% superannuation guarantee —
               roughly {fmtAUD(salary * 0.12)} a year — which does not appear in your take-home pay but
               is part of what the role is worth.
             </p>
