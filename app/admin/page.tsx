@@ -62,6 +62,68 @@ function Bars({ rows }: { rows: Row[] }) {
   );
 }
 
+function PositionChart({ rows, start, end }: { rows: Row[]; start: string; end: string }) {
+  const day = 86_400_000;
+  const t0 = Date.parse(start + 'T00:00:00Z');
+  const span = Math.max(1, Math.round((Date.parse(end + 'T00:00:00Z') - t0) / day));
+  const pts = rows
+    .map((r) => ({
+      date: r.keys?.[0] ?? '',
+      pos: r.position,
+      impr: r.impressions,
+      idx: Math.round((Date.parse((r.keys?.[0] ?? start) + 'T00:00:00Z') - t0) / day),
+    }))
+    .filter((p) => p.pos > 0 && p.idx >= 0 && p.idx <= span)
+    .sort((a, b) => a.idx - b.idx);
+  if (!pts.length) return <p className="text-sm text-slate-500 dark:text-slate-400">No positions recorded in this period yet.</p>;
+
+  const W = 560;
+  const H = 170;
+  const L = 30;
+  const R = 8;
+  const T = 10;
+  const B = 22;
+  const lo = Math.max(1, Math.floor(Math.min(...pts.map((p) => p.pos))) - 2);
+  const hi = Math.ceil(Math.max(...pts.map((p) => p.pos))) + 2;
+  const x = (i: number) => L + (i / span) * (W - L - R);
+  const y = (v: number) => T + ((v - lo) / Math.max(1, hi - lo)) * (H - T - B);
+  const ticks = [lo, Math.round((lo + hi) / 2), hi];
+  const path = pts.map((p, i) => (i === 0 ? 'M' : 'L') + x(p.idx).toFixed(1) + ' ' + y(p.pos).toFixed(1)).join(' ');
+  const best = Math.min(...pts.map((p) => p.pos));
+  const last = pts[pts.length - 1];
+
+  return (
+    <div>
+      <svg viewBox={'0 0 ' + W + ' ' + H} className="w-full" role="img" aria-label="Average Google Search position per day, lower is better">
+        {ticks.map((v) => (
+          <g key={v}>
+            <line x1={L} x2={W - R} y1={y(v)} y2={y(v)} className="stroke-slate-200 dark:stroke-slate-700" strokeWidth={1} />
+            <text x={L - 4} y={y(v) + 3} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
+              {v}
+            </text>
+          </g>
+        ))}
+        <path d={path} fill="none" className="stroke-blue-500" strokeWidth={1.5} />
+        {pts.map((p) => (
+          <circle key={p.date} cx={x(p.idx)} cy={y(p.pos)} r={2 + Math.min(4, Math.sqrt(p.impr) / 2)} className="fill-blue-500">
+            <title>{p.date + ': position ' + p.pos.toFixed(1) + ', ' + Math.round(p.impr) + ' impressions'}</title>
+          </circle>
+        ))}
+        <text x={L} y={H - 6} className="fill-slate-500 dark:fill-slate-400" fontSize="10">
+          {start}
+        </text>
+        <text x={W - R} y={H - 6} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
+          {end}
+        </text>
+      </svg>
+      <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+        Lower is better: position 1 is the top of Google and 10 is the bottom of page 1. Best day {best.toFixed(1)}, latest day with data{' '}
+        {last.pos.toFixed(1)} ({last.date}). Dot size shows that day&apos;s impressions; days with no impressions have no dot.
+      </p>
+    </div>
+  );
+}
+
 function Table({ title, rows, keyLabel }: { title: string; rows: Row[]; keyLabel: string }) {
   return (
     <section className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
@@ -168,6 +230,11 @@ export default async function AdminPage() {
         <section className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
           <h2 className="font-semibold text-slate-900 dark:text-white mb-3">Daily clicks</h2>
           {daily.length ? <Bars rows={daily} /> : <p className="text-sm text-slate-500 dark:text-slate-400">No clicks recorded in this period yet.</p>}
+        </section>
+
+        <section className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
+          <h2 className="font-semibold text-slate-900 dark:text-white mb-3">Average position over time</h2>
+          <PositionChart rows={daily} start={isoDaysAgo(30)} end={isoDaysAgo(3)} />
         </section>
 
         <div className="grid lg:grid-cols-2 gap-4">
