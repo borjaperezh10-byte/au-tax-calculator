@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import TaxCalculator from '@/components/TaxCalculator';
+import SalaryScenarios from '@/components/SalaryScenarios';
 import { calculate, fmtAUD, SALARY_PAGES } from '@/lib/tax';
 
 interface Props {
@@ -294,7 +295,9 @@ export default async function SalaryPage({ params }: Props) {
           </p>
         </section>
 
-        {/* Nearby salaries — balanced window, not the eight lowest */}
+        <SalaryScenarios salary={salary} />
+
+{/* Nearby salaries — balanced window, not the eight lowest */}
         <section className="mt-10">
           <h2 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-4">Compare nearby salaries</h2>
           <div className="flex flex-wrap gap-2">
