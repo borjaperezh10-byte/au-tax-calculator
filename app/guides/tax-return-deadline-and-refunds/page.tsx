@@ -79,8 +79,7 @@ export default function TaxReturnGuidePage() {
             bill is worked out. For the return covering 1 July 2025 to 30 June 2026.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026
           </p>
         </div>
       </div>
@@ -165,7 +164,25 @@ export default function TaxReturnGuidePage() {
           </div>
         </section>
 
-        {/* 4. Timing */}
+        {/* Checklist */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">A short checklist before you lodge</h2>
+<div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
+<p>
+With 31 October close, a few minutes of preparation usually saves a second attempt.
+</p>
+<ul className="list-disc pl-6 space-y-2">
+<li>Check your income statement shows as &ldquo;tax ready&rdquo; in myGov before you lodge.</li>
+<li>Compare the pre-filled figures with your payslips and bank interest, and fix anything that looks wrong.</li>
+<li>Gather records for any deduction you plan to claim; you need them if the ATO asks.</li>
+<li>Confirm the bank account details where your refund will be paid.</li>
+<li>31 October 2026 is a Saturday, so aim to lodge the week before.</li>
+<li>If you want a registered tax agent and don&rsquo;t have one, contact them before 31 October.</li>
+</ul>
+</div>
+</section>
+
+{/* 4. Timing */}
         <section>
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">How long a refund takes</h2>
           <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
