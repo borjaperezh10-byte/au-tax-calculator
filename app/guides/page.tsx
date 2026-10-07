@@ -115,6 +115,11 @@ const GROUPS: Group[] = [
         title: 'UK Citizens and the 88 Days',
         blurb: 'Why UK passport holders applying from 1 July 2024 don’t need specified work for a 417.',
       },
+      {
+        href: '/guides/working-holiday-6-month-employer-limit',
+        title: 'The 6-Month Rule with One Employer',
+        blurb: 'When your 6 months end, which sectors are exempt, locations, labour hire and permission.',
+      },
     ],
   },
 ];

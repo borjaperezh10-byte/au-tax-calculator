@@ -227,7 +227,8 @@ export default function WorkingHolidayMakerPage() {
             check{' '}
             <a href="/guides/specified-work-postcodes" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">whether your postcode counts</a>{' '}
             and see{' '}
-            <a href="/guides/how-88-days-are-counted" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">how the days are counted</a>.
+            <a href="/guides/how-88-days-are-counted" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">how the days are counted</a>. Staying with one employer for a while? Check{' '}
+            <a href="/guides/working-holiday-6-month-employer-limit" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">when your 6 months end</a>.
           </p>
         </section>
 
