@@ -85,6 +85,36 @@ const GROUPS: Group[] = [
         title: 'Working Holiday Maker Tax',
         blurb: 'How working holiday makers are taxed in Australia, how it differs from resident tax and what to do at tax time.',
       },
+      {
+        href: '/guides/how-88-days-are-counted',
+        title: 'How the 88 Days Are Counted',
+        blurb: 'Calendar days, weekends, part-time work, rain days, rosters and piece rates — with worked examples.',
+      },
+      {
+        href: '/guides/specified-work-postcodes',
+        title: 'Does My Postcode Count? (Checker)',
+        blurb: 'Check whether a postcode counts for farm, construction, hospitality or recovery work on a 417 or 462.',
+      },
+      {
+        href: '/guides/specified-work-evidence',
+        title: 'Evidence for Your 88 Days',
+        blurb: 'The payslips, bank statements and references Home Affairs asks for, and how to keep them organised.',
+      },
+      {
+        href: '/guides/417-vs-462-specified-work',
+        title: '417 vs 462: Specified Work',
+        blurb: 'Which industries count where on each visa — mining, fishing, tree work and the UK exemption.',
+      },
+      {
+        href: '/guides/third-working-holiday-visa-179-days',
+        title: 'Third Visa: The 179 Days',
+        blurb: 'Six months of specified work during your second visa, the 1 July 2019 rule and bridging visas.',
+      },
+      {
+        href: '/guides/uk-working-holiday-specified-work-exemption',
+        title: 'UK Citizens and the 88 Days',
+        blurb: 'Why UK passport holders applying from 1 July 2024 don’t need specified work for a 417.',
+      },
     ],
   },
 ];
@@ -160,6 +190,7 @@ export default function GuidesIndexPage() {
             <a href="/tax-brackets" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Tax brackets 2026-27</a>
             <a href="/salary-table" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Salary &amp; tax table</a>
             <a href="/hecs-help-repayment" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">HECS-HELP repayment</a>
+            <a href="/88-days-calculator" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">88 days calculator</a>
             <a href="/glossary" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Tax glossary</a>
           </div>
         </section>

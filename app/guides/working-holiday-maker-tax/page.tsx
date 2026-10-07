@@ -305,7 +305,10 @@ export default function WhmTaxGuidePage() {
               <h3 className="font-semibold text-slate-900 dark:text-white mb-1 text-[15px]">Is the 88-day regional work rule a tax rule?</h3>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
                 No, it&rsquo;s a visa rule. It affects whether you can apply for a second or third
-                working holiday visa, not the tax rate on your wages.
+                working holiday visa, not the tax rate on your wages. To track your days and check
+                whether your postcode counts, use our{' '}
+                <a href="/88-days-calculator" className="text-blue-500 hover:underline">88 days calculator</a>{' '}
+                and read <a href="/guides/how-88-days-are-counted" className="text-blue-500 hover:underline">how the 88 days are counted</a>.
               </p>
             </div>
           </div>

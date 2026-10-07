@@ -218,6 +218,19 @@ export default function WorkingHolidayMakerPage() {
           </div>
         </section>
 
+        {/* Specified work tools */}
+        <section className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl p-5">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Working towards a second or third visa?</h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            Track your 88 or 179 days of specified work with the{' '}
+            <a href="/88-days-calculator" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">88 days calculator</a>,
+            check{' '}
+            <a href="/guides/specified-work-postcodes" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">whether your postcode counts</a>{' '}
+            and see{' '}
+            <a href="/guides/how-88-days-are-counted" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">how the days are counted</a>.
+          </p>
+        </section>
+
         {/* CTA */}
         <div className="text-center">
           <a

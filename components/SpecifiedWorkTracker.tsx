@@ -19,6 +19,10 @@ const OFFICIAL_417 =
 const OFFICIAL_462 =
   'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462/specified-462-work';
 
+function prettyDate(iso: string): string {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
 function todayISO(): string {
   return new Date().toISOString().slice(0, 10);
 }
@@ -187,7 +191,7 @@ export default function SpecifiedWorkTracker() {
             {result.projectedCompletion && (
               <p className="text-xs text-blue-700 dark:text-blue-300 mt-2">
                 At the pace of your latest job you would reach {settings.target} days around{' '}
-                <strong>{result.projectedCompletion}</strong>.
+                <strong>{prettyDate(result.projectedCompletion)}</strong>.
               </p>
             )}
           </>

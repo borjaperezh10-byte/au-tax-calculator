@@ -189,7 +189,9 @@ export default function EightyEightDaysPage() {
             <a href={OFFICIAL_417} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">specified work (subclass 417)</a>{' '}
             and{' '}
             <a href={OFFICIAL_462} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">specified subclass 462 work</a>.
-            The full postcode tables are on those pages and change from time to time.
+            The calculator above checks your postcode against those tables (last updated by Home Affairs on 24
+            September 2026, checked by us on 7 October 2026). They change from time to time, so confirm on the
+            official page before you apply.
           </p>
         </section>
 
@@ -213,10 +215,12 @@ export default function EightyEightDaysPage() {
         <section>
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">What evidence to keep</h2>
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px] mb-3">
-            For a third visa, Home Affairs lists evidence such as payslips, Australian bank statements for the
-            period, piecework agreements, group certificates, payment summaries, tax returns, employer references
-            and a signed agreement covering lawful deductions. Your evidence should cover every period you worked,
-            and the Department may contact your employers.
+            For second and third visas, Home Affairs lists evidence such as payslips, Australian bank statements
+            covering the period, piecework agreements (showing the piece rate and how it is measured), group
+            certificates, payment summaries, tax returns, employer references and a signed agreement covering
+            lawful deductions. On the subclass 462 pages, payslips and bank statements are grouped as
+            &ldquo;evidence of payment&rdquo;. Your evidence should cover every period you worked, and the
+            Department may contact your employers.
           </p>
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
             For volunteer bushfire or flood recovery, keep a signed letter from the coordinator with your passport
@@ -224,6 +228,26 @@ export default function EightyEightDaysPage() {
             <a href={OFFICIAL_THIRD_417} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">third Working Holiday visa page</a>{' '}
             for the current list.
           </p>
+        </section>
+
+        {/* Guides */}
+        <section>
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Specified work guides</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              ['/guides/how-88-days-are-counted', 'How the 88 days are counted', 'Weekends, part-time, rain days and rosters, with examples.'],
+              ['/guides/specified-work-postcodes', 'Does my postcode count?', 'Check any postcode by industry and visa.'],
+              ['/guides/specified-work-evidence', 'Evidence to keep', 'Payslips, bank statements, references and volunteer letters.'],
+              ['/guides/417-vs-462-specified-work', '417 vs 462', 'Which industries count where on each visa.'],
+              ['/guides/third-working-holiday-visa-179-days', 'Third visa: 179 days', 'The six-month rule, 1 July 2019 and bridging visas.'],
+              ['/guides/uk-working-holiday-specified-work-exemption', 'UK citizens and the 88 days', 'The exemption for UK passport holders from July 2024.'],
+            ].map(([href, title, blurb]) => (
+              <a key={href} href={href} className="block border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-blue-400 transition-colors">
+                <p className="font-semibold text-slate-900 dark:text-white text-sm">{title}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{blurb}</p>
+              </a>
+            ))}
+          </div>
         </section>
 
         {/* Related */}

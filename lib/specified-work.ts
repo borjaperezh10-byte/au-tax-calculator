@@ -313,3 +313,14 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
     projectedCompletion,
   };
 }
+
+/** Official Home Affairs pages (checked 7 October 2026). */
+export const OFFICIAL = {
+  specified417: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work',
+  specified462: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462/specified-462-work',
+  second417: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/second-working-holiday-417',
+  third417: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/third-working-holiday-417',
+  second462: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462/second-work-holiday-462',
+  third462: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462/third-work-and-holiday-462',
+  conditions: 'https://immi.homeaffairs.gov.au/what-we-do/whm-program/specified-work-conditions',
+} as const;

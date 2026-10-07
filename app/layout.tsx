@@ -100,6 +100,7 @@ const NAV_LINKS = [
   { href: '/',                   label: 'Calculator' },
   { href: '/tax-brackets',       label: 'Tax Brackets' },
   { href: '/working-holiday-maker', label: 'Working Holiday' },
+  { href: '/88-days-calculator', label: '88 Days' },
   { href: '/hecs-help-repayment', label: 'HECS-HELP' },
   { href: '/guides',           label: 'Guides' },
   { href: '/about',              label: 'About' },
