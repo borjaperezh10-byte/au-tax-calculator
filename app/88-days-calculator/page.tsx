@@ -241,6 +241,7 @@ export default function EightyEightDaysPage() {
               ['/guides/417-vs-462-specified-work', '417 vs 462', 'Which industries count where on each visa.'],
               ['/guides/third-working-holiday-visa-179-days', 'Third visa: 179 days', 'The six-month rule, 1 July 2019 and bridging visas.'],
               ['/guides/uk-working-holiday-specified-work-exemption', 'UK citizens and the 88 days', 'The exemption for UK passport holders from July 2024.'],
+              ['/guides/working-holiday-6-month-employer-limit', 'The 6-month rule with one employer', 'When your 6 months end and which sectors are exempt.'],
             ].map(([href, title, blurb]) => (
               <a key={href} href={href} className="block border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-blue-400 transition-colors">
                 <p className="font-semibold text-slate-900 dark:text-white text-sm">{title}</p>

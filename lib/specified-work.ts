@@ -22,6 +22,9 @@
  *  - Third-visa work must be on or after 1 July 2019.
  *  - UK passport holders applying for a second or third 417 from
  *    1 July 2024 do not need specified work.
+ *  - Separate from the day count: condition 8547 (6 months per employer
+ *    and location) is flagged for construction, fishing, tree and mining
+ *    work outside Northern Australia — see lib/six-month-limit.ts.
  *
  * This is an estimate tool. It does not replace the Department's
  * assessment.
@@ -33,6 +36,7 @@ import {
   inAreas,
   type PostcodeArea,
 } from '@/lib/specified-work-postcodes';
+import { limitVerdict, sixMonthLastDay, type LimitSector } from '@/lib/six-month-limit';
 
 export type Subclass = '417' | '462';
 export type Target = 88 | 179;
@@ -292,6 +296,8 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
     });
   }
 
+  notices.push(...sixMonthNotices(raw.map(r => r.job)));
+
   if (raw.some(r => r.job.mode === 'part-time')) {
     notices.push({
       severity: 'info',
@@ -312,6 +318,53 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
     notices,
     projectedCompletion,
   };
+}
+
+/* --------------------- 6-month employer limitation -------------------- */
+
+const LIMIT_SECTOR_BY_INDUSTRY: Record<Industry, LimitSector> = {
+  'plant-animal': 'plant-animal',
+  construction: 'construction',
+  'fishing-pearling': 'fishing-pearling',
+  'tree-farming': 'tree-farming',
+  mining: 'mining',
+  'tourism-hospitality': 'tourism-hospitality',
+  'bushfire-recovery': 'disaster-recovery',
+  'disaster-recovery': 'disaster-recovery',
+  'covid-health': 'health',
+};
+
+/**
+ * Condition 8547: warn when the same employer at the same location spans
+ * more than 6 months in a sector that is not exempt. Jobs are grouped by
+ * ABN (or employer name) and postcode, because each location has its own
+ * 6 months. Months are counted from the first start date, gaps included.
+ */
+function sixMonthNotices(jobs: Job[]): Notice[] {
+  const groups = new Map<string, Job[]>();
+  for (const job of jobs) {
+    const who = job.abn.replace(/\s/g, '') || job.employer.trim().toLowerCase();
+    if (!who) continue;
+    const key = `${who}|${job.postcode.trim()}`;
+    groups.set(key, [...(groups.get(key) ?? []), job]);
+  }
+
+  const out: Notice[] = [];
+  for (const group of groups.values()) {
+    const limited = group.filter(j => limitVerdict(LIMIT_SECTOR_BY_INDUSTRY[j.industry], j.postcode) === 'limited');
+    if (limited.length === 0) continue;
+    const first = group.map(j => j.start).sort()[0];
+    const lastEnd = limited.map(j => j.end).sort().pop() ?? '';
+    const lastDay = sixMonthLastDay(first);
+    if (lastDay && lastEnd > lastDay) {
+      out.push({
+        severity: 'warning',
+        text: `Working holiday makers can usually work up to 6 months with one employer at one location. In this sector outside Northern Australia that ends around ${lastDay}; to keep working there you need permission from Home Affairs, requested before then.`,
+        jobId: limited[limited.length - 1].id,
+      });
+    }
+  }
+  return out;
 }
 
 /** Official Home Affairs pages (checked 7 October 2026). */
