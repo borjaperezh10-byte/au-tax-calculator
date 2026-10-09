@@ -6,7 +6,7 @@ const SITE_URL = 'https://www.auincometax.com';
 export const metadata: Metadata = {
   title: 'About — AU Income Tax Calculator',
   description:
-    'About auincometax.com — a free Australian income tax calculator built by Borja Pérez to provide accurate, up-to-date take-home pay estimates for the 2026-27 financial year.',
+    'About AUIncomeTax: a free Australian income tax calculator built by Borja Pérez for accurate 2026-27 take-home pay estimates.',
   alternates: { canonical: '/about' },
   openGraph: {
     images: ['/opengraph-image'],
