@@ -3,7 +3,7 @@ import GuideArticle, { B, Callout, Ext, GuideSection, In, SimpleTable } from '@/
 import { OFFICIAL } from '@/lib/specified-work';
 
 const PATH = '/guides/how-88-days-are-counted';
-const TITLE = 'How the 88 Days Are Counted (With Worked Examples)';
+const TITLE = 'How the 88 Days Are Counted: Examples';
 const DESC =
   'How Home Affairs counts your 88 or 179 days of specified work: calendar days, weekends, part-time work, overtime, several employers, unpaid weather days, rosters and piece rates — with worked examples.';
 
