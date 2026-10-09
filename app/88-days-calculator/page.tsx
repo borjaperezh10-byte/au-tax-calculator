@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import SpecifiedWorkTracker from '@/components/SpecifiedWorkTracker';
 
 export const metadata: Metadata = {
-  title: '88 Days Calculator — Specified Work Tracker for 417 & 462 Visas',
+  title: '88 Days Calculator: 417 and 462 Visas',
   description:
     'Track your 88 or 179 days of specified work for a second or third Working Holiday visa. Counts full-time, part-time and volunteer work the way Home Affairs describes it, with overlap and unpaid-day checks.',
   alternates: { canonical: '/88-days-calculator' },
