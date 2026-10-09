@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How Australian Income Tax Works (2026-27) — A Plain-English Guide',
+  title: 'How Australian Income Tax Works (2026-27)',
   description:
     'A clear, complete guide to how income tax works in Australia for FY 2026-27: the tax-free threshold, marginal brackets, the Stage 3 cuts, LITO, the Medicare levy and surcharge, super, HECS-HELP, and residency. Written with worked examples.',
   // Relative — resolved against metadataBase in app/layout.tsx, same pattern as
