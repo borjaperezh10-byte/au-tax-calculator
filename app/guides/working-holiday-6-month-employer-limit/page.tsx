@@ -54,6 +54,9 @@ export default function Page() {
         { href: '/guides/specified-work-postcodes', label: 'Postcode checker' },
         { href: '/working-holiday-maker', label: 'WHM tax calculator' },
         { href: '/guides/working-holiday-maker-tax', label: 'Working holiday maker tax' },
+        { href: '/guides/how-88-days-are-counted', label: 'How the 88 days are counted' },
+        { href: '/guides/specified-work-evidence', label: 'What evidence to keep' },
+        { href: '/guides/417-vs-462-specified-work', label: '417 vs 462 specified work' },
       ]}
     >
       <GuideSection title="Check when your 6 months end">
