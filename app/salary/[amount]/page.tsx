@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const k   = (salary / 1000).toFixed(0);
 
   return {
-    title: `$${k},000 Salary Australia 2026-27 — Take-Home Pay After Tax`,
+    title: `$${k},000 Salary After Tax Australia 2026-27`,
     description: `On a $${k},000 salary in Australia, your take-home pay is ${net} per year after ${tax} in income tax and Medicare levy (2026-27).`,
     // Relative — resolved against metadataBase in app/layout.tsx
     alternates: { canonical: `/salary/${salary}` },
