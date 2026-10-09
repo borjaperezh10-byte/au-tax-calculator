@@ -33,6 +33,14 @@ const STRUCTURED_DATA = {
         'Creator and maintainer of auincometax.com. Builds and maintains the calculator and keeps its tax rates aligned with ATO published tables.',
     },
     {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org`,
+      name: 'AU Income Tax Calculator',
+      url: SITE_URL,
+      founder: { '@id': `${SITE_URL}/#author` },
+      sameAs: ['https://x.com/auincometax_au', 'https://au.pinterest.com/auincometax/'],
+    },
+    {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
       url: SITE_URL,
@@ -292,6 +300,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="text-xs text-slate-400">
                 For indicative purposes only — not financial or tax advice.{' '}
                 <a href="/tax-disclaimer" className="text-blue-500 hover:underline">Full disclaimer →</a>
+              </p>
+              <p className="text-xs text-slate-400">
+                Follow us:{' '}
+                <a href="https://x.com/auincometax_au" target="_blank" rel="me noopener noreferrer" className="text-blue-500 hover:underline">X</a>
+                {' · '}
+                <a href="https://au.pinterest.com/auincometax/" target="_blank" rel="me noopener noreferrer" className="text-blue-500 hover:underline">Pinterest</a>
+                {' · '}
+                <a href="/guides" className="text-blue-500 hover:underline">All guides</a>
               </p>
               <p className="text-xs text-slate-400">
                 © {new Date().getFullYear()} auincometax.com — Free Australian income tax calculator
