@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How to Read Your Payslip in Australia (2026-27)',
+  title: 'How to Read Your Payslip (2026-27)',
   description:
     'A plain-English guide to reading an Australian payslip: gross vs net pay, tax withheld, super on top, year-to-date figures, deductions and Payday Super, with a fully worked $90,000 example.',
   alternates: { canonical: '/guides/how-to-read-your-payslip' },
