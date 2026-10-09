@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 
 export const metadata: Metadata = {
   title: 'How to Read Your Payslip (2026-27)',
@@ -73,6 +74,7 @@ export default function PayslipGuidePage() {
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <GuideBreadcrumbLd path={"/guides/how-to-read-your-payslip"} title={"How to read your Australian payslip"} />
 
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
@@ -274,6 +276,8 @@ export default function PayslipGuidePage() {
             </div>
           </div>
         </section>
+
+        <GuideShare path={"/guides/how-to-read-your-payslip"} title={"How to read your Australian payslip"} />
 
         {/* Disclaimer */}
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
