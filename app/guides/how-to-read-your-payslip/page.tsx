@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     'A plain-English guide to reading an Australian payslip: gross vs net pay, tax withheld, super on top, year-to-date figures, deductions and Payday Super, with a fully worked $90,000 example.',
   alternates: { canonical: '/guides/how-to-read-your-payslip' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/guides/how-to-read-your-payslip',
     title: 'How to Read Your Payslip in Australia (2026-27)',
     description:
