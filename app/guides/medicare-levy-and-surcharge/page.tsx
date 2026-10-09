@@ -4,7 +4,7 @@ import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 export const metadata: Metadata = {
   title: 'Medicare Levy and Surcharge (2026-27)',
   description:
-    'A plain-English guide to the Medicare levy and the Medicare Levy Surcharge in Australia for 2026-27: the 2% levy, the low-income thresholds, who pays the surcharge, the 2026-27 income tiers, and how private hospital cover can save you money.',
+    'The Medicare levy and surcharge in Australia for 2026-27: the 2% levy, low-income thresholds, who pays the surcharge and the income tiers.',
   alternates: { canonical: '/guides/medicare-levy-and-surcharge' },
   openGraph: {
     images: ['/opengraph-image'],
