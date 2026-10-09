@@ -206,6 +206,13 @@ export default function DeductionsGuidePage() {
               part above $300.
             </p>
             <p>
+              From 1 July 2026 there is also a simple option that needs no receipts: the{" "}
+              <a href="/guides/instant-1000-work-deduction" className="text-blue-500 hover:underline">
+                $1,000 instant work deduction
+              </a>
+              . Read how it works before you start itemising your claims.
+            </p>
+            <p>
               The easiest way to stay ready is to keep records as you go. The ATO&rsquo;s myDeductions
               tool in the ATO app lets you photograph receipts and log trips through the year, so
               nothing&rsquo;s scrambled together at tax time.
