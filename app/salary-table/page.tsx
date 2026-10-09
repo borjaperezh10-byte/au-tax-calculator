@@ -5,7 +5,7 @@ import CopyTableButton from '@/components/CopyTableButton';
 export const metadata: Metadata = {
   title: 'Australian Salary & Tax Table 2026-27',
   description:
-    'Free reference table: income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000, for the 2026-27 financial year. Copy into Excel or Sheets, or cite with attribution.',
+    'Income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000 in 2026-27. Copy into Excel or Sheets.',
   alternates: { canonical: 'https://www.auincometax.com/salary-table' },
 };
 
