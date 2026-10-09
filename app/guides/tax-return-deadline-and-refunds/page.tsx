@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 
 export const metadata: Metadata = {
   title: 'Tax Return Deadline and Refunds (2026)',
@@ -65,6 +66,7 @@ export default function TaxReturnGuidePage() {
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <GuideBreadcrumbLd path={"/guides/tax-return-deadline-and-refunds"} title={"Tax return deadline and refunds in Australia"} />
 
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
@@ -256,6 +258,8 @@ With 31 October close, a few minutes of preparation usually saves a second attem
             </div>
           </div>
         </section>
+
+        <GuideShare path={"/guides/tax-return-deadline-and-refunds"} title={"Tax return deadline and refunds in Australia"} />
 
         {/* Disclaimer */}
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
