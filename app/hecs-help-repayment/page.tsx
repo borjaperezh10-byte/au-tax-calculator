@@ -4,7 +4,7 @@ import HecsHelpCalculator from '@/components/HecsHelpCalculator';
 export const metadata: Metadata = {
   title: 'HECS-HELP Repayment Calculator 2026-27',
   description:
-    'Work out your compulsory HECS-HELP repayment for 2026-27 under the new marginal system. Enter your repayment income to see your yearly, fortnightly and monthly repayment, plus how long your balance will take to clear.',
+    'HECS-HELP repayment calculator for 2026-27 under the new marginal system: yearly, fortnightly and monthly repayments and time to clear your debt.',
   // Relative — resolved against metadataBase in app/layout.tsx, same pattern
   // as every other page.
   alternates: { canonical: '/hecs-help-repayment' },
