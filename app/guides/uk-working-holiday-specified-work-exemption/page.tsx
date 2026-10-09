@@ -5,7 +5,7 @@ import { OFFICIAL } from '@/lib/specified-work';
 const PATH = '/guides/uk-working-holiday-specified-work-exemption';
 const TITLE = 'Do UK Citizens Still Need to Do 88 Days?';
 const DESC =
-  'UK passport holders applying for a second or third Working Holiday visa (subclass 417) from 1 July 2024 do not need specified work. Who it covers, who it does not, and what still applies.';
+  'UK passport holders applying for a second or third 417 visa from 1 July 2024 do not need specified work. Who it covers, who it does not, and what applies.';
 
 export const metadata: Metadata = {
   title: TITLE,
