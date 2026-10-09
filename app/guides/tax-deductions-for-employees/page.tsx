@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 
 export const metadata: Metadata = {
   title: 'Employee Tax Deductions Australia (2026-27)',
@@ -65,6 +66,7 @@ export default function DeductionsGuidePage() {
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <GuideBreadcrumbLd path={"/guides/tax-deductions-for-employees"} title={"Tax deductions for employees"} />
 
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
@@ -248,6 +250,8 @@ export default function DeductionsGuidePage() {
             </div>
           </div>
         </section>
+
+        <GuideShare path={"/guides/tax-deductions-for-employees"} title={"Tax deductions for employees"} />
 
         {/* Disclaimer */}
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
