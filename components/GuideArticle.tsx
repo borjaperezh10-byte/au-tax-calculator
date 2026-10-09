@@ -118,9 +118,28 @@ export default function GuideArticle(props: Props) {
     })),
   };
 
+  const shareUrl = SITE + props.path;
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: SITE + '/guides' },
+      { '@type': 'ListItem', position: 3, name: props.title, item: shareUrl },
+    ],
+  };
+  const shareLinks = [
+    { name: 'X', href: 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(props.title) + '&url=' + encodeURIComponent(shareUrl) },
+    { name: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl) },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl) },
+    { name: 'WhatsApp', href: 'https://wa.me/?text=' + encodeURIComponent(props.title + ' ' + shareUrl) },
+    { name: 'Reddit', href: 'https://www.reddit.com/submit?url=' + encodeURIComponent(shareUrl) + '&title=' + encodeURIComponent(props.title) },
+  ];
+
   return (
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       {props.faqs.length > 0 && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       )}
@@ -154,6 +173,21 @@ export default function GuideArticle(props: Props) {
             </div>
           </section>
         )}
+
+        <section aria-label="Share this guide" className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="font-semibold text-slate-700 dark:text-slate-200 mr-1">Share this guide</span>
+          {shareLinks.map((s) => (
+            <a
+              key={s.name}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              {s.name}
+            </a>
+          ))}
+        </section>
 
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
           {props.disclaimer ?? (
