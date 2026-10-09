@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Marginal vs Effective Tax Rate in Australia (2026-27)',
+  title: 'Marginal vs Effective Tax Rate (2026-27)',
   description:
     'What your marginal and effective tax rates mean in Australia for 2026-27, why a pay rise never leaves you worse off, and how much of your next $1,000 you actually keep at each salary level.',
   alternates: { canonical: '/guides/marginal-vs-effective-tax-rate' },
