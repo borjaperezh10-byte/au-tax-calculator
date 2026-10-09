@@ -4,7 +4,7 @@ import GuideArticle, { B, Ext, GuideSection, In } from '@/components/GuideArticl
 const PATH = '/guides/instant-1000-work-deduction';
 const TITLE = 'The $1,000 Instant Work Deduction (2026-27)';
 const DESC =
-  'How the new $1,000 standard deduction for work-related expenses works from the 2026-27 income year: who gets it, how claiming expenses reduces it, and when keeping receipts still matters.';
+  'How the new $1,000 standard deduction for work-related expenses works from 2026-27: who gets it, how claiming expenses affects it, and when receipts matter.';
 
 export const metadata: Metadata = {
   title: TITLE,
