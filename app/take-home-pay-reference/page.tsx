@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   // as every other page.
   alternates: { canonical: '/take-home-pay-reference' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/take-home-pay-reference',
     title: 'Australian Take-Home Pay Reference 2026-27',
     description:
