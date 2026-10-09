@@ -135,8 +135,29 @@ export default async function SalaryPage({ params }: Props) {
     { label: 'Marginal tax rate', value: r.marginalRate + '%' },
   ];
 
+  const datasetLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'Australian take-home pay on a $' + k + ',000 salary, 2026-27',
+    description:
+      'Income tax, Medicare levy and take-home pay for a $' + k + ',000 salary for an Australian resident in 2026-27, calculated with the 2026-27 resident rates.',
+    url: 'https://www.auincometax.com/salary/' + salary,
+    isAccessibleForFree: true,
+    inLanguage: 'en-AU',
+    temporalCoverage: '2026-07-01/2027-06-30',
+    spatialCoverage: 'Australia',
+    keywords: ['salary after tax', 'take-home pay', 'Australia', '2026-27'],
+    creator: { '@type': 'Organization', name: 'AU Income Tax Calculator', url: 'https://www.auincometax.com' },
+    variableMeasured: [
+      { '@type': 'PropertyValue', name: 'Annual take-home pay (AUD)', value: Math.round(r.netIncome) },
+      { '@type': 'PropertyValue', name: 'Income tax (AUD)', value: Math.round(r.netIncomeTax) },
+      { '@type': 'PropertyValue', name: 'Medicare levy (AUD)', value: Math.round(r.medicareLevy) },
+    ],
+  };
+
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }} />
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-4xl mx-auto px-4 py-8">
