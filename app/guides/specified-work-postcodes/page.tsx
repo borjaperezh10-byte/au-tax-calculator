@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { url: PATH, title: TITLE, description: DESC, type: 'article' },
+  openGraph: {
+    images: ['/opengraph-image'], url: PATH, title: TITLE, description: DESC, type: 'article' },
   authors: [{ name: 'Borja Pérez', url: 'https://www.auincometax.com/about' }],
 };
 
