@@ -6,7 +6,7 @@ import { OFFICIAL } from '@/lib/specified-work';
 const PATH = '/guides/specified-work-postcodes';
 const TITLE = 'Does My Postcode Count for the 88 Days?';
 const DESC =
-  'Check whether a postcode counts for specified work on a 417 or 462 visa, by industry. Farm, construction, fishing, mining, tourism and hospitality, and bushfire or disaster recovery — based on the Home Affairs tables.';
+  'Check whether a postcode counts for specified work on a 417 or 462 visa, by industry, based on the Home Affairs tables.';
 
 export const metadata: Metadata = {
   title: TITLE,
