@@ -70,10 +70,26 @@ const faqSchema = {
   ],
 };
 
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: '88 Days Calculator: Specified Work Tracker',
+  url: 'https://www.auincometax.com/88-days-calculator',
+  description:
+    'Free tracker for the 88 or 179 days of specified work behind a second or third Working Holiday (417) or Work and Holiday (462) visa.',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  inLanguage: 'en-AU',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' },
+  publisher: { '@type': 'Organization', name: 'AU Income Tax Calculator', url: 'https://www.auincometax.com' },
+};
+
 export default function EightyEightDaysPage() {
   return (
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
 
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
