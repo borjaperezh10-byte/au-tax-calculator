@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'About auincometax.com — a free Australian income tax calculator built by Borja Pérez to provide accurate, up-to-date take-home pay estimates for the 2026-27 financial year.',
   alternates: { canonical: '/about' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/about',
     title: 'About — AU Income Tax Calculator',
     description:
