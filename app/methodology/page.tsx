@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   // metadataBase existed and is no longer needed).
   alternates: { canonical: '/methodology' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/methodology',
     title: 'Methodology — How We Calculate Australian Income Tax',
     description:
