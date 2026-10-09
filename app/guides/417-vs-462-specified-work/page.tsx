@@ -45,6 +45,9 @@ export default function Page() {
         { href: '/88-days-calculator', label: '88 days calculator' },
         { href: '/guides/how-88-days-are-counted', label: 'How the days are counted' },
         { href: '/guides/uk-working-holiday-specified-work-exemption', label: 'UK exemption' },
+        { href: '/guides/specified-work-evidence', label: 'What evidence to keep' },
+        { href: '/guides/third-working-holiday-visa-179-days', label: 'Third visa: the 179 days' },
+        { href: '/guides/working-holiday-6-month-employer-limit', label: 'The 6-month employer limit' },
       ]}
     >
       <GuideSection title="Side by side">
