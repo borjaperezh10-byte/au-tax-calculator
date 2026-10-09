@@ -3,7 +3,7 @@ import { calculate, fmtAUD, SALARY_PAGES } from '@/lib/tax';
 import CopyTableButton from '@/components/CopyTableButton';
 
 export const metadata: Metadata = {
-  title: 'Australian Salary & Tax Table 2026-27 — Full Take-Home Pay Reference',
+  title: 'Australian Salary & Tax Table 2026-27',
   description:
     'Free reference table: income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000, for the 2026-27 financial year. Copy into Excel or Sheets, or cite with attribution.',
   alternates: { canonical: 'https://www.auincometax.com/salary-table' },
