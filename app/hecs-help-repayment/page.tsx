@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   // as every other page.
   alternates: { canonical: '/hecs-help-repayment' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/hecs-help-repayment',
     title: 'HECS-HELP Repayment Calculator Australia 2026-27',
     description:
