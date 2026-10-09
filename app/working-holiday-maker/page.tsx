@@ -3,7 +3,7 @@ import TaxCalculator from '@/components/TaxCalculator';
 import { fmtAUD, calcWHMIncomeTax, WHM_BRACKETS_2627 } from '@/lib/tax';
 
 export const metadata: Metadata = {
-  title: 'Working Holiday Maker Tax Calculator Australia 2026-27',
+  title: 'Working Holiday Tax Calculator 2026-27',
   description:
     'Calculate income tax for working holiday makers (visa 417 & 462) in Australia for 2026-27. 15% tax on first $45,000 — no tax-free threshold. ATO official rates.',
   alternates: { canonical: 'https://www.auincometax.com/working-holiday-maker' },
