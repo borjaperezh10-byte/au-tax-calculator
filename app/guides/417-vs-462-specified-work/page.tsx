@@ -5,7 +5,7 @@ import { OFFICIAL } from '@/lib/specified-work';
 const PATH = '/guides/417-vs-462-specified-work';
 const TITLE = 'Specified Work: 417 vs 462 Visa Differences';
 const DESC =
-  'How specified work differs between the Working Holiday (417) and Work and Holiday (462) visas: which industries count where, mining, fishing and tree work, the UK exemption and evidence.';
+  'How specified work differs between the 417 and 462 visas: which industries count, mining, fishing and tree work, the UK exemption and evidence.';
 
 export const metadata: Metadata = {
   title: TITLE,
