@@ -45,6 +45,9 @@ export default function Page() {
         { href: '/guides/how-88-days-are-counted', label: 'How the days are counted' },
         { href: '/guides/uk-working-holiday-specified-work-exemption', label: 'UK exemption' },
         { href: '/guides/specified-work-evidence', label: 'Evidence to keep' },
+        { href: '/guides/specified-work-postcodes', label: 'Which postcodes count' },
+        { href: '/guides/417-vs-462-specified-work', label: '417 vs 462 specified work' },
+        { href: '/guides/working-holiday-6-month-employer-limit', label: 'The 6-month employer limit' },
       ]}
     >
       <GuideSection title="The requirement">
