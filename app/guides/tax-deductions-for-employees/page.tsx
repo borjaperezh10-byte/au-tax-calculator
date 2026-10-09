@@ -4,7 +4,7 @@ import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 export const metadata: Metadata = {
   title: 'Employee Tax Deductions Australia (2026-27)',
   description:
-    'A plain-English guide to work-related tax deductions for Australian employees in 2026-27: the three golden rules, what you can and can’t claim, the working-from-home 70c fixed rate, the $300 records rule, and how much a deduction is actually worth.',
+    'Work-related tax deductions for Australian employees in 2026-27: the three golden rules, what you can claim, work-from-home rates and the $300 records rule.',
   alternates: { canonical: '/guides/tax-deductions-for-employees' },
   openGraph: {
     images: ['/opengraph-image'],
