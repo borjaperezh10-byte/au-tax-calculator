@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     'Track your 88 or 179 days of specified work for a second or third Working Holiday visa. Counts full-time, part-time and volunteer work the way Home Affairs describes it, with overlap and unpaid-day checks.',
   alternates: { canonical: '/88-days-calculator' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/88-days-calculator',
     title: '88 Days Calculator — Specified Work Tracker (417 & 462)',
     description:
