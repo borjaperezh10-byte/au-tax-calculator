@@ -30,6 +30,7 @@ const STRUCTURED_DATA = {
       name: 'Borja Pérez',
       url: `${SITE_URL}/about`,
       email: 'mailto:borja@auincometax.com',
+      sameAs: ['https://www.linkedin.com/in/borjaph/'],
       description:
         'Creator and maintainer of auincometax.com. Builds and maintains the calculator and keeps its tax rates aligned with ATO published tables.',
     },
