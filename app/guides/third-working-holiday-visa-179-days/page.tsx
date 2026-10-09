@@ -5,7 +5,7 @@ import { OFFICIAL } from '@/lib/specified-work';
 const PATH = '/guides/third-working-holiday-visa-179-days';
 const TITLE = 'Third Working Holiday Visa: The 179 Days';
 const DESC =
-  'What you need for a third Working Holiday (417) or Work and Holiday (462) visa: 179 days of specified work during your second visa, the 1 July 2019 rule, bridging visas and the UK exemption.';
+  'What you need for a third Working Holiday (417) or Work and Holiday (462) visa: 179 days of specified work, the 1 July 2019 rule and bridging visas.';
 
 export const metadata: Metadata = {
   title: TITLE,
