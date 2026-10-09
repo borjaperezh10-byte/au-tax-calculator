@@ -6,7 +6,7 @@ import { LAST_REVIEWED } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Australia Income Tax Calculator 2026-27 | Take-Home Pay',
   description:
-    'Free Australian income tax calculator for 2026-27. Calculate your take-home pay, income tax, Medicare levy, HECS repayment and super. Updated for the new 15% tax rate. Instant results.',
+    'Free Australian income tax calculator for 2026-27. Work out take-home pay, income tax, Medicare levy, HECS repayment and super in seconds.',
   alternates: { canonical: 'https://www.auincometax.com' },
 };
 
