@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Tax Deductions for Employees (Australia 2026-27) — What You Can Claim',
+  title: 'Employee Tax Deductions Australia (2026-27)',
   description:
     'A plain-English guide to work-related tax deductions for Australian employees in 2026-27: the three golden rules, what you can and can’t claim, the working-from-home 70c fixed rate, the $300 records rule, and how much a deduction is actually worth.',
   alternates: { canonical: '/guides/tax-deductions-for-employees' },
