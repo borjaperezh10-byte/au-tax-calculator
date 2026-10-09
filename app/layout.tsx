@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
 import { LAST_REVIEWED } from '@/lib/site';
@@ -173,20 +174,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Two color variants swapped by theme for contrast — the artwork's
                   navy text is unreadable on a dark header, so a light-text version
                   renders in dark mode instead of recoloring via CSS filters. */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo-header.png"
-                alt="AU Income Tax — Calculate with confidence"
-                height={38}
-                className="h-[38px] w-auto flex-shrink-0 dark:hidden"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo-header-dark.png"
-                alt="AU Income Tax — Calculate with confidence"
-                height={38}
-                className="h-[38px] w-auto flex-shrink-0 hidden dark:block"
-              />
+              <Image src="/logo-header.png" alt="AU Income Tax — Calculate with confidence" width={157} height={38} loading="eager" className="h-[38px] w-auto flex-shrink-0 dark:hidden" />
+              <Image src="/logo-header-dark.png" alt="AU Income Tax — Calculate with confidence" width={157} height={38} className="h-[38px] w-auto flex-shrink-0 hidden dark:block" />
             </a>
             <nav aria-label="Main navigation" className="min-w-0 overflow-x-auto overflow-y-hidden">
               <ul className="flex items-center gap-1 flex-nowrap" role="list">
