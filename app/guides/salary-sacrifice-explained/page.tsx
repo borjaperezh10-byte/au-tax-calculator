@@ -4,7 +4,7 @@ import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 export const metadata: Metadata = {
   title: 'Salary Sacrifice Explained (2026-27)',
   description:
-    'A plain-English guide to salary sacrifice in Australia for 2026-27: how sacrificing into super saves tax, the 15% contributions rate vs your marginal rate, the $32,500 concessional cap, Division 293, carry-forward, and the HECS trap. With a worked example.',
+    'Salary sacrifice in Australia for 2026-27: how super contributions save tax, the 15% rate vs your marginal rate, the concessional cap and Division 293.',
   alternates: { canonical: '/guides/salary-sacrifice-explained' },
   openGraph: {
     images: ['/opengraph-image'],
