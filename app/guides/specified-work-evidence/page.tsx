@@ -45,6 +45,9 @@ export default function Page() {
         { href: '/guides/how-88-days-are-counted', label: 'How the 88 days are counted' },
         { href: '/guides/specified-work-postcodes', label: 'Which postcodes count' },
         { href: '/guides/how-to-read-your-payslip', label: 'How to read your payslip' },
+        { href: '/guides/417-vs-462-specified-work', label: '417 vs 462 specified work' },
+        { href: '/guides/third-working-holiday-visa-179-days', label: 'Third visa: the 179 days' },
+        { href: '/guides/working-holiday-6-month-employer-limit', label: 'The 6-month employer limit' },
       ]}
     >
       <GuideSection title="The evidence Home Affairs lists">
