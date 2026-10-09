@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 
 export const metadata: Metadata = {
   title: 'Salary Sacrifice Explained (2026-27)',
@@ -73,6 +74,7 @@ export default function SalarySacrificeGuidePage() {
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <GuideBreadcrumbLd path={"/guides/salary-sacrifice-explained"} title={"Salary sacrifice, explained"} />
 
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
@@ -314,6 +316,8 @@ export default function SalarySacrificeGuidePage() {
             </div>
           </div>
         </section>
+
+        <GuideShare path={"/guides/salary-sacrifice-explained"} title={"Salary sacrifice, explained"} />
 
         {/* Disclaimer */}
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
