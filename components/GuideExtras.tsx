@@ -1,3 +1,5 @@
+import CopyLinkButton from './CopyLinkButton';
+
 const SITE = 'https://www.auincometax.com';
 
 /* Breadcrumb schema and share links for the older hand-built guides
@@ -40,6 +42,10 @@ export function GuideShare({ path, title }: { path: string; title: string }) {
           {l.label}
         </a>
       ))}
+      <a href={'mailto:?subject=' + t + '&body=' + u} className="rounded-full border border-slate-300 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+        Email
+      </a>
+      <CopyLinkButton url={SITE + path} className="rounded-full border border-slate-300 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800" />
     </section>
   );
 }
