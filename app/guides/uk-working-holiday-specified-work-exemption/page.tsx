@@ -45,6 +45,9 @@ export default function Page() {
         { href: '/guides/third-working-holiday-visa-179-days', label: 'Third visa: 179 days' },
         { href: '/guides/working-holiday-maker-tax', label: 'Working holiday maker tax' },
         { href: '/working-holiday-maker', label: 'WHM tax calculator' },
+        { href: '/guides/how-88-days-are-counted', label: 'How the 88 days are counted' },
+        { href: '/guides/specified-work-postcodes', label: 'Which postcodes count' },
+        { href: '/guides/specified-work-evidence', label: 'What evidence to keep' },
       ]}
     >
       <GuideSection title="The exemption">
