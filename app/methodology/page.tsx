@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { LAST_REVIEWED } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Methodology — How We Calculate Australian Income Tax',
+  title: 'Methodology: How We Calculate Income Tax',
   description:
     'How auincometax.com calculates income tax, Medicare levy, HECS/HELP, and super for 2026-27. Sources, formulas, calculation steps, and our corrections policy.',
   // Relative — resolved against metadataBase in app/layout.tsx, same pattern
