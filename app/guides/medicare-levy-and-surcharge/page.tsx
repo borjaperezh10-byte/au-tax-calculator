@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Medicare Levy & Surcharge Explained (Australia 2026-27)',
+  title: 'Medicare Levy and Surcharge (2026-27)',
   description:
     'A plain-English guide to the Medicare levy and the Medicare Levy Surcharge in Australia for 2026-27: the 2% levy, the low-income thresholds, who pays the surcharge, the 2026-27 income tiers, and how private hospital cover can save you money.',
   alternates: { canonical: '/guides/medicare-levy-and-surcharge' },
