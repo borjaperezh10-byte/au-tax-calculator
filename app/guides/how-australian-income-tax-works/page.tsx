@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 
 export const metadata: Metadata = {
   title: 'How Australian Income Tax Works (2026-27)',
@@ -80,6 +81,7 @@ export default function IncomeTaxGuidePage() {
     <main className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <GuideBreadcrumbLd path={"/guides/how-australian-income-tax-works"} title={"How Australian income tax works"} />
 
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
@@ -395,6 +397,8 @@ export default function IncomeTaxGuidePage() {
             </div>
           </div>
         </section>
+
+        <GuideShare path={"/guides/how-australian-income-tax-works"} title={"How Australian income tax works"} />
 
         {/* Disclaimer */}
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
