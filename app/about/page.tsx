@@ -43,6 +43,11 @@ export default function AboutPage() {
               one, sourced every rate directly from the ATO, and published exactly how it calculates on the{' '}
               <a href="/methodology" className="text-blue-600 dark:text-blue-400 hover:underline">Methodology page</a>.
             </p>
+          <p>
+            You can also find me on{" "}
+            <a href="https://www.linkedin.com/in/borjaph/" target="_blank" rel="me noopener noreferrer" className="text-blue-500 hover:underline">LinkedIn</a>
+            {" "}or write to borja@auincometax.com.
+          </p>
             <p>
               If you spot something that looks wrong, or you just want to ask a question about how a figure was
               calculated, you can reach me directly via the{' '}
