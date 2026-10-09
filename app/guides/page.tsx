@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     'Plain-English guides to Australian income tax for 2026-27: how tax works, marginal vs effective rates, Medicare levy, payslips, salary sacrifice, second jobs, deductions, working holiday makers and tax return deadlines.',
   alternates: { canonical: '/guides' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/guides',
     title: 'Australian Tax Guides (2026-27)',
     description:
