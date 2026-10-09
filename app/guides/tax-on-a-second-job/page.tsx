@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     'How tax works when you have two jobs in Australia in 2026-27: claiming the tax-free threshold once, why the second job is withheld at a higher rate, and a worked example of a $70,000 job plus a $30,000 job.',
   alternates: { canonical: '/guides/tax-on-a-second-job' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/guides/tax-on-a-second-job',
     title: 'Tax on a Second Job in Australia (2026-27)',
     description:
