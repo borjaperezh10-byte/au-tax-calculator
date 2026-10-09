@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   // every other page.
   alternates: { canonical: '/guides/how-australian-income-tax-works' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/guides/how-australian-income-tax-works',
     title: 'How Australian Income Tax Works (2026-27)',
     description:
