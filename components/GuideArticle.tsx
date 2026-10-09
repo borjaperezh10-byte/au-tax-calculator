@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import CopyLinkButton from './CopyLinkButton';
 
 /* Shared layout for long-form guides: header with byline, Article + FAQ
  * structured data, body, FAQ, disclaimer and related links. Matches the
@@ -187,6 +188,10 @@ export default function GuideArticle(props: Props) {
               {s.name}
             </a>
           ))}
+          <a href={'mailto:?subject=' + encodeURIComponent(props.title + ' (free Australian tax guide)') + '&body=' + encodeURIComponent(shareUrl)} className="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400">
+            Email
+          </a>
+          <CopyLinkButton url={shareUrl} className="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400" />
         </section>
 
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
