@@ -4,7 +4,7 @@ import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 export const metadata: Metadata = {
   title: 'Tax Return Deadline and Refunds (2026)',
   description:
-    'When your Australian tax return is due (31 October if you lodge yourself), how tax agents can extend it, how long refunds take, what the late lodgement penalty is, and how a refund or bill is actually worked out.',
+    'When your Australian tax return is due (31 October if you self-lodge), agent extensions, refund timing and late lodgement penalties.',
   alternates: { canonical: '/guides/tax-return-deadline-and-refunds' },
   openGraph: {
     images: ['/opengraph-image'],
