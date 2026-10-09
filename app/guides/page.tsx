@@ -71,6 +71,11 @@ const GROUPS: Group[] = [
         blurb: 'The 31 October deadline, how long refunds take and what happens if you lodge late.',
       },
       {
+        href: '/guides/instant-1000-work-deduction',
+        title: 'The $1,000 Instant Work Deduction',
+        blurb: 'The new standard deduction from 2026-27: who gets it, how your own claims reduce it, and when you still need receipts.',
+      },
+      {
         href: '/guides/tax-deductions-for-employees',
         title: 'Tax Deductions for Employees',
         blurb: 'The three golden rules for work-related deductions, and what Australian employees can and can\u2019t claim.',
