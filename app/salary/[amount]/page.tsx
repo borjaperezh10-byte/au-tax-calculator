@@ -332,6 +332,18 @@ export default async function SalaryPage({ params }: Props) {
           <a href="/salary-table" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
             See the full salary &amp; tax table →
           </a>
+          <a href="/tax-brackets" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            Australian tax brackets 2026-27 →
+          </a>
+          <a href="/guides/how-australian-income-tax-works" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            How Australian income tax works →
+          </a>
+          <a href="/guides/marginal-vs-effective-tax-rate" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            Marginal vs effective tax rate →
+          </a>
+          <a href="/guides/how-to-read-your-payslip" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            How to read your payslip →
+          </a>
         </div>
       </div>
       {/* The ATO source line and disclaimer now live once, in the site footer
