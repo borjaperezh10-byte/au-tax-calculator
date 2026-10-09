@@ -3,7 +3,7 @@ import GuideArticle, { B, Ext, GuideSection, In } from '@/components/GuideArticl
 import { OFFICIAL } from '@/lib/specified-work';
 
 const PATH = '/guides/specified-work-evidence';
-const TITLE = 'Evidence for Your 88 Days: What to Keep for Your Second or Third Visa';
+const TITLE = 'Evidence for Your 88 Days: What to Keep';
 const DESC =
   'The evidence Home Affairs asks for to prove specified work on a 417 or 462 visa: payslips, bank statements, piecework agreements, payment summaries, employer references and volunteer letters — and how to keep it.';
 
