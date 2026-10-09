@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Australia Income Tax Calculator 2026-27 | Take-Home Pay',
-    template: '%s | AU Income Tax Calculator',
+    template: '%s | AUIncomeTax',
   },
   description:
     'Free Australian income tax calculator for 2026-27. Calculate take-home pay, income tax, Medicare levy, HECS/HELP and super. Updated for the new 15% tax rate. Instant results.',
