@@ -4,7 +4,7 @@ import SixMonthChecker from '@/components/SixMonthChecker';
 import { SIX_MONTH_OFFICIAL } from '@/lib/six-month-limit';
 
 const PATH = '/guides/working-holiday-6-month-employer-limit';
-const TITLE = 'Working Holiday 6-Month Rule: How Long Can You Work for One Employer?';
+const TITLE = 'Working Holiday 6-Month Rule Explained';
 const DESC =
   'Working holiday makers (417 and 462) can usually work 6 months with one employer. Check when your 6 months end, which sectors are exempt, how locations and labour hire work, and how to ask for permission.';
 
