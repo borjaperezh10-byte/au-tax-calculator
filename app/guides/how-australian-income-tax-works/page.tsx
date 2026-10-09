@@ -4,7 +4,7 @@ import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 export const metadata: Metadata = {
   title: 'How Australian Income Tax Works (2026-27)',
   description:
-    'A clear, complete guide to how income tax works in Australia for FY 2026-27: the tax-free threshold, marginal brackets, the Stage 3 cuts, LITO, the Medicare levy and surcharge, super, HECS-HELP, and residency. Written with worked examples.',
+    'How income tax works in Australia for 2026-27: tax-free threshold, marginal brackets, LITO, Medicare levy, super, HECS-HELP and residency, with examples.',
   // Relative — resolved against metadataBase in app/layout.tsx, same pattern as
   // every other page.
   alternates: { canonical: '/guides/how-australian-income-tax-works' },
