@@ -94,7 +94,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `On a $${k},000 salary in Australia, your take-home pay is ${net} per year after ${tax} in income tax and Medicare levy (2026-27).`,
     // Relative — resolved against metadataBase in app/layout.tsx
     alternates: { canonical: `/salary/${salary}` },
-    openGraph: { url: `/salary/${salary}` },
+    openGraph: {
+      images: ['/opengraph-image'], url: `/salary/${salary}` },
   };
 }
 
