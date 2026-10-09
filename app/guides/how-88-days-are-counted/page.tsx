@@ -50,6 +50,8 @@ export default function Page() {
         { href: '/guides/specified-work-evidence', label: 'Evidence to keep' },
         { href: '/guides/417-vs-462-specified-work', label: '417 vs 462' },
         { href: '/guides/working-holiday-maker-tax', label: 'Working holiday maker tax' },
+        { href: '/guides/third-working-holiday-visa-179-days', label: 'Third visa: the 179 days' },
+        { href: '/guides/working-holiday-6-month-employer-limit', label: 'The 6-month employer limit' },
       ]}
     >
       <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
