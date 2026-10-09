@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     'When your Australian tax return is due (31 October if you lodge yourself), how tax agents can extend it, how long refunds take, what the late lodgement penalty is, and how a refund or bill is actually worked out.',
   alternates: { canonical: '/guides/tax-return-deadline-and-refunds' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/guides/tax-return-deadline-and-refunds',
     title: 'Tax Return Deadline and Refunds in Australia (2026)',
     description:
