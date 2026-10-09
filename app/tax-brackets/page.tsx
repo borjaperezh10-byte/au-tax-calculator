@@ -4,7 +4,7 @@ import { calculate, fmtAUD } from '@/lib/tax';
 export const metadata: Metadata = {
   title: 'Australia Tax Brackets 2026-27',
   description:
-    'Australia income tax brackets and rates for 2026-27. Includes resident and non-resident rates, what changed from the new 15% bracket, and worked examples for common incomes.',
+    'Australian income tax brackets and rates for 2026-27, resident and non-resident, with the new 15% bracket explained and worked examples.',
   alternates: { canonical: 'https://www.auincometax.com/tax-brackets' },
 };
 
