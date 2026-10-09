@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     'A plain-English guide to the Medicare levy and the Medicare Levy Surcharge in Australia for 2026-27: the 2% levy, the low-income thresholds, who pays the surcharge, the 2026-27 income tiers, and how private hospital cover can save you money.',
   alternates: { canonical: '/guides/medicare-levy-and-surcharge' },
   openGraph: {
+    images: ['/opengraph-image'],
     url: '/guides/medicare-levy-and-surcharge',
     title: 'Medicare Levy & Surcharge Explained (Australia 2026-27)',
     description:
