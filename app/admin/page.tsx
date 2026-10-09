@@ -8,6 +8,18 @@ export const dynamic = 'force-dynamic';
 const fmt = (n: number) => Math.round(n).toLocaleString('en-AU');
 const pct = (n: number) => (n * 100).toFixed(1) + '%';
 
+const COUNTRIES: Record<string, string> = {
+  aus: 'Australia', usa: 'United States', gbr: 'United Kingdom', nzl: 'New Zealand', can: 'Canada', irl: 'Ireland', ind: 'India',
+  phl: 'Philippines', idn: 'Indonesia', sgp: 'Singapore', mys: 'Malaysia', zaf: 'South Africa', deu: 'Germany', fra: 'France',
+  esp: 'Spain', ita: 'Italy', nld: 'Netherlands', bra: 'Brazil', arg: 'Argentina', col: 'Colombia', mex: 'Mexico', chl: 'Chile',
+  chn: 'China', hkg: 'Hong Kong', jpn: 'Japan', kor: 'South Korea', twn: 'Taiwan', tha: 'Thailand', vnm: 'Vietnam', npl: 'Nepal',
+  pak: 'Pakistan', bgd: 'Bangladesh', lka: 'Sri Lanka', are: 'United Arab Emirates', sau: 'Saudi Arabia', tur: 'Turkey',
+  pol: 'Poland', prt: 'Portugal', swe: 'Sweden', nor: 'Norway', dnk: 'Denmark', fin: 'Finland', che: 'Switzerland',
+  aut: 'Austria', bel: 'Belgium', rus: 'Russia', ukr: 'Ukraine', nga: 'Nigeria', ken: 'Kenya', egy: 'Egypt', fji: 'Fiji',
+};
+const countryName = (k: string) => (COUNTRIES[k] ? COUNTRIES[k] + ' (' + k.toUpperCase() + ')' : k.toUpperCase());
+const deviceName = (k: string) => k.charAt(0) + k.slice(1).toLowerCase();
+
 function delta(cur: number, prev: number): string {
   if (prev === 0) return cur === 0 ? '–' : 'new';
   const d = ((cur - prev) / prev) * 100;
@@ -146,7 +158,7 @@ function PositionChart({ rows, start, end }: { rows: Row[]; start: string; end: 
   );
 }
 
-function Table({ title, rows, keyLabel }: { title: string; rows: Row[]; keyLabel: string }) {
+function Table({ title, rows, keyLabel, fmtKey }: { title: string; rows: Row[]; keyLabel: string; fmtKey?: (k: string) => string }) {
   return (
     <section className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
       <h2 className="font-semibold text-slate-900 dark:text-white mb-3">{title}</h2>
@@ -168,7 +180,7 @@ function Table({ title, rows, keyLabel }: { title: string; rows: Row[]; keyLabel
             )}
             {rows.map((r) => (
               <tr key={r.keys?.[0]} className="border-t border-slate-100 dark:border-slate-700">
-                <td className="py-1.5 pr-3 break-all">{(r.keys?.[0] ?? '').replace('https://www.auincometax.com', '') || '/'}</td>
+                <td className="py-1.5 pr-3 break-all">{fmtKey ? fmtKey(r.keys?.[0] ?? '') : (r.keys?.[0] ?? '').replace('https://www.auincometax.com', '') || '/'}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums">{fmt(r.clicks)}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums">{fmt(r.impressions)}</td>
                 <td className="py-1.5 text-right tabular-nums">{r.position.toFixed(1)}</td>
@@ -202,21 +214,27 @@ export default async function AdminPage() {
   let daily: Row[] = [];
   let pages: Row[] = [];
   let queries: Row[] = [];
+  let countries: Row[] = [];
+  let devices: Row[] = [];
   try {
     const curRange = { startDate: isoDaysAgo(30), endDate: isoDaysAgo(3) };
     const prevRange = { startDate: isoDaysAgo(58), endDate: isoDaysAgo(31) };
-    const [c, p, d, pg, q] = await Promise.all([
+    const [c, p, d, pg, q, co, dv] = await Promise.all([
       searchAnalytics({ ...curRange }),
       searchAnalytics({ ...prevRange }),
       searchAnalytics({ ...curRange, dimensions: ['date'], rowLimit: 60 }),
       searchAnalytics({ ...curRange, dimensions: ['page'], rowLimit: 10 }),
       searchAnalytics({ ...curRange, dimensions: ['query'], rowLimit: 15 }),
+        searchAnalytics({ ...curRange, dimensions: ['country'], rowLimit: 15 }),
+        searchAnalytics({ ...curRange, dimensions: ['device'], rowLimit: 5 }),
     ]);
     cur = c[0];
     prev = p[0];
     daily = d.sort((a, b) => (a.keys?.[0] ?? '').localeCompare(b.keys?.[0] ?? ''));
     pages = pg;
     queries = q;
+    countries = co;
+    devices = dv;
   } catch (e) {
     error = e instanceof Error ? e.message : 'Unknown error';
   }
@@ -262,6 +280,11 @@ export default async function AdminPage() {
         <div className="grid lg:grid-cols-2 gap-4">
           <Table title="Top pages" rows={pages} keyLabel="Page" />
           <Table title="Top queries" rows={queries} keyLabel="Query" />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Table title="Top countries" rows={countries} keyLabel="Country" fmtKey={countryName} />
+          <Table title="Devices" rows={devices} keyLabel="Device" fmtKey={deviceName} />
         </div>
 
         <p className="text-xs text-slate-400">
