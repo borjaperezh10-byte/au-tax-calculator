@@ -4,7 +4,7 @@ import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 export const metadata: Metadata = {
   title: 'Working Holiday Maker Tax (2026-27 Guide)',
   description:
-    'How tax works on a working holiday visa (subclass 417 and 462) in Australia for 2026-27: the 15% rate up to $45,000, the higher brackets, super and DASP, TFNs, tax returns and what you actually take home.',
+    'How tax works on a working holiday visa (417 and 462) in Australia for 2026-27: the 15% rate, super and DASP, TFNs, tax returns and take-home pay.',
   alternates: { canonical: '/guides/working-holiday-maker-tax' },
   openGraph: {
     images: ['/opengraph-image'],
