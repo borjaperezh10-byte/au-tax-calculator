@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Australian Tax Glossary 2026-27 | Key Terms Explained',
+  title: 'Australian Tax Glossary 2026-27',
   description:
     'Plain-English definitions of Australian income tax terms for 2026-27 — taxable income, HECS/HELP, Medicare levy, LITO, salary sacrifice, franking credits, and more.',
   alternates: { canonical: 'https://www.auincometax.com/glossary' },
