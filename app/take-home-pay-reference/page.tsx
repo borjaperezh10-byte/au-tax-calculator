@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { calculate, fmtAUD } from '@/lib/tax';
 
 export const metadata: Metadata = {
-  title: 'Australian Take-Home Pay Reference 2026-27 — What You Actually Keep',
+  title: 'Australian Take-Home Pay Reference 2026-27',
   description:
     'A full reference table of take-home pay after tax in Australia for FY 2026-27, from $30,000 to $300,000: income tax, Medicare levy, net pay, monthly pay and effective rate. Plus the marginal reality — how much of each extra $10,000 you actually keep.',
   // Relative — resolved against metadataBase in app/layout.tsx, same pattern
