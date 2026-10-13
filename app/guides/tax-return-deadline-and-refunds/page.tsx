@@ -154,7 +154,11 @@ export default function TaxReturnGuidePage() {
               what you paid, not free money, and you need records to back the claims. See{' '}
               <a href="/guides/tax-deductions-for-employees" className="text-blue-600 dark:text-blue-400 hover:underline">
                 tax deductions for employees
-              </a>.
+              </a>. From 2026-27 there is also a standard deduction for work-related expenses; the{' '}
+              <a href="/guides/instant-1000-work-deduction" className="text-blue-600 dark:text-blue-400 hover:underline">
+                instant $1,000 work deduction guide
+              </a>{' '}
+              explains who gets it and when receipts still matter.
             </p>
             <p>
               A refund is also possible with no deductions at all, for example if you claimed the
