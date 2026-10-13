@@ -218,6 +218,17 @@ export default function WorkingHolidayMakerPage() {
           </div>
         </section>
 
+        {/* Leaving Australia kit */}
+        <section className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl p-5">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Leaving Australia soon?</h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            The{' '}
+            <a href="/leaving-australia-money-kit" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">Leaving Australia Money Kit</a>{' '}
+            is a 108-page guide and Excel planner for your final tax return, your DASP super claim and your exit
+            checklist.
+          </p>
+        </section>
+
         {/* Specified work tools */}
         <section className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl p-5">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Working towards a second or third visa?</h2>
