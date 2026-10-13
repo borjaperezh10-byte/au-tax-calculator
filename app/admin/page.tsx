@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { getAdminEmail } from '@/lib/admin-auth';
 import { gscConfigured, isoDaysAgo, searchAnalytics, type Row } from '@/lib/gsc';
 import AdminNav from './nav';
+import TrafficCharts from './TrafficCharts';
 
 export const dynamic = 'force-dynamic';
 
@@ -276,6 +277,8 @@ export default async function AdminPage() {
           <h2 className="font-semibold text-slate-900 dark:text-white mb-3">Average position over time</h2>
           <PositionChart rows={daily} start={isoDaysAgo(30)} end={isoDaysAgo(3)} />
         </section>
+
+        <TrafficCharts />
 
         <div className="grid lg:grid-cols-2 gap-4">
           <Table title="Top pages" rows={pages} keyLabel="Page" />
