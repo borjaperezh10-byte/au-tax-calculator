@@ -264,6 +264,12 @@ export default function WhmTaxGuidePage() {
               even after the 65% bite. A registered tax agent can also lodge it for you, though they
               charge a fee.
             </p>
+            <p>
+              Leaving Australia soon? The{' '}
+              <a href="/leaving-australia-money-kit" className="text-blue-600 dark:text-blue-400 hover:underline">Leaving Australia Money Kit</a>{' '}
+              is a paid 108-page guide and Excel planner that walks through the final tax return, the DASP claim and
+              the exit checklist.
+            </p>
           </div>
         </section>
 
