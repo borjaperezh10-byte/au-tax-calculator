@@ -131,9 +131,32 @@ export default function HomePage() {
 
       {/* Calculator */}
       <div className="max-w-4xl mx-auto px-4 py-8">
+        <a
+          href="/leaving-australia-money-kit"
+          className="mb-4 flex flex-col gap-1 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 transition-colors hover:bg-blue-100 dark:border-blue-800 dark:bg-blue-950 dark:hover:bg-blue-900 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+        >
+          <span className="text-sm text-slate-700 dark:text-slate-200">
+            <strong className="text-slate-900 dark:text-white">Leaving Australia?</strong> The Money Kit: a 108-page guide and Excel planner for your final tax return and super (DASP).
+          </span>
+          <span className="whitespace-nowrap text-sm font-semibold text-blue-700 dark:text-blue-300">See the kit · A$29 →</span>
+        </a>
         <TaxCalculator initialSalary={80000} />
 
         {/* Info cards — quick reference */}
+        <section className="mt-12 rounded-xl border border-blue-200 bg-blue-50 p-6 dark:border-blue-800 dark:bg-blue-950">
+          <p className="text-xs font-semibold uppercase tracking-widest text-blue-700 dark:text-blue-300">For working holiday makers</p>
+          <h2 className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">Leaving Australia Money Kit</h2>
+          <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+            A 108-page guide and a 15-sheet Excel planner to lodge your final tax return, claim your super (DASP) and move your money out of Australia. Includes a dated checklist and 20 email templates.
+          </p>
+          <a
+            href="/leaving-australia-money-kit"
+            className="mt-4 inline-block rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700"
+          >
+            See what is inside · A$29
+          </a>
+        </section>
+
         <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
           <InfoCard
             title="2026-27 Tax Brackets"
