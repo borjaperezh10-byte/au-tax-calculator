@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { getAdminEmail } from '@/lib/admin-auth';
 import { gscConfigured, isoDaysAgo, searchAnalytics, type Row } from '@/lib/gsc';
 import AdminNav from './nav';
-import TrafficCharts from './TrafficCharts';
+import TrafficCharts, { BarChart } from './TrafficCharts';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,40 +38,12 @@ function Card({ label, value, note }: { label: string; value: string; note: stri
 }
 
 function Bars({ rows }: { rows: Row[] }) {
-  const max = Math.max(1, ...rows.map((r) => r.clicks));
-  const w = 560;
-  const h = 120;
-  const bw = rows.length ? w / rows.length : w;
   return (
-    <div>
-      <svg viewBox={'0 0 ' + w + ' ' + (h + 18)} className="w-full" role="img" aria-label="Daily clicks from Google Search">
-        {rows.map((r, i) => {
-          const bh = (r.clicks / max) * h;
-          return (
-            <rect
-              key={r.keys?.[0] ?? i}
-              x={i * bw + 1}
-              y={h - bh}
-              width={Math.max(1, bw - 2)}
-              height={bh}
-              rx={1}
-              className="fill-blue-500"
-            >
-              <title>{(r.keys?.[0] ?? '') + ': ' + r.clicks + ' clicks'}</title>
-            </rect>
-          );
-        })}
-        <text x={0} y={h + 14} className="fill-slate-500 dark:fill-slate-400" fontSize="10">
-          {rows[0]?.keys?.[0] ?? ''}
-        </text>
-        <text x={w} y={h + 14} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
-          {rows[rows.length - 1]?.keys?.[0] ?? ''}
-        </text>
-        <text x={w} y={10} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
-          {'max ' + max}
-        </text>
-      </svg>
-    </div>
+    <BarChart
+      points={rows.map((r) => ({ label: (r.keys && r.keys[0]) || '', value: r.clicks }))}
+      unit="clicks"
+      ariaLabel="Daily clicks from Google Search"
+    />
   );
 }
 
