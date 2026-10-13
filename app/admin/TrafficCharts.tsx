@@ -1,4 +1,4 @@
-const SITE_TAG = process.env.CF_SITE_TAG || 'e37a6c8e41624b568583a441031261ea';
+const SITE_TAG = process.env.CF_SITE_TAG || 'de781a02aeee405b9380b074e9d3ffbd';
 
 type Day = { date: string; views: number; visits: number };
 
