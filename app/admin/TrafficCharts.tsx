@@ -43,29 +43,36 @@ async function load(days: number): Promise<{ rows?: Day[]; error?: string }> {
   }
 }
 
-function DayBars({ rows, field, label }: { rows: Day[]; field: 'views' | 'visits'; label: string }) {
-  const max = Math.max(1, ...rows.map((r) => r[field]));
+export function BarChart({ points, unit, ariaLabel }: { points: { label: string; value: number }[]; unit: string; ariaLabel: string }) {
+  const max = Math.max(1, ...points.map((p) => p.value));
+  const mid = max >= 3 ? Math.round(max / 2) : 0;
   const w = 560;
+  const left = 34;
+  const top = 8;
   const h = 120;
-  const bw = w / rows.length;
+  const bw = (w - left) / Math.max(1, points.length);
+  const y = (v: number) => top + h - (v / max) * h;
+  const ticks = mid > 0 && mid < max ? [0, mid, max] : [0, max];
   return (
-    <svg viewBox={'0 0 ' + w + ' ' + (h + 18)} className="w-full" role="img" aria-label={label}>
-      {rows.map((r, i) => {
-        const bh = (r[field] / max) * h;
-        return (
-          <rect key={r.date} x={i * bw + 1} y={h - bh} width={Math.max(1, bw - 2)} height={bh} rx={1} className="fill-blue-500">
-            <title>{r.date + ': ' + r[field]}</title>
-          </rect>
-        );
-      })}
-      <text x={0} y={h + 14} className="fill-slate-500 dark:fill-slate-400" fontSize="10">
-        {rows[0].date}
+    <svg viewBox={'0 0 ' + w + ' ' + (top + h + 18)} className="w-full" role="img" aria-label={ariaLabel}>
+      {ticks.map((t) => (
+        <g key={t}>
+          <line x1={left} x2={w} y1={y(t)} y2={y(t)} className="stroke-slate-200 dark:stroke-slate-700" strokeWidth={1} />
+          <text x={left - 6} y={y(t) + 3} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
+            {t}
+          </text>
+        </g>
+      ))}
+      {points.map((p, i) => (
+        <rect key={p.label + i} x={left + i * bw + 1} y={y(p.value)} width={Math.max(1, bw - 2)} height={(p.value / max) * h} rx={1} className="fill-blue-500">
+          <title>{p.label + ': ' + p.value + ' ' + unit}</title>
+        </rect>
+      ))}
+      <text x={left} y={top + h + 14} className="fill-slate-500 dark:fill-slate-400" fontSize="10">
+        {points.length ? points[0].label : ''}
       </text>
-      <text x={w} y={h + 14} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
-        {rows[rows.length - 1].date}
-      </text>
-      <text x={w} y={10} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
-        {'max ' + max}
+      <text x={w} y={top + h + 14} textAnchor="end" className="fill-slate-500 dark:fill-slate-400" fontSize="10">
+        {points.length ? points[points.length - 1].label : ''}
       </text>
     </svg>
   );
@@ -91,11 +98,11 @@ export default async function TrafficCharts() {
     <>
       <section className={BOX}>
         <h2 className={H2}>{'Page views per day (last 30 days: ' + totalViews.toLocaleString('en-AU') + ')'}</h2>
-        <DayBars rows={rows} field="views" label="Daily page views from Cloudflare Web Analytics" />
+        <BarChart points={rows.map((r) => ({ label: r.date, value: r.views }))} unit="views" ariaLabel="Daily page views from Cloudflare Web Analytics" />
       </section>
       <section className={BOX}>
         <h2 className={H2}>{'Visits per day, closest to unique users (last 30 days: ' + totalVisits.toLocaleString('en-AU') + ')'}</h2>
-        <DayBars rows={rows} field="visits" label="Daily visits from Cloudflare Web Analytics" />
+        <BarChart points={rows.map((r) => ({ label: r.date, value: r.visits }))} unit="visits" ariaLabel="Daily visits from Cloudflare Web Analytics" />
         <p className={MUTED + ' mt-2'}>Cloudflare counts visits, not unique people: the same person returning later counts again.</p>
       </section>
     </>
