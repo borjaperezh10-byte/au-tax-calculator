@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import MobileNav from '@/components/MobileNav';
 import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
 import { LAST_REVIEWED } from '@/lib/site';
@@ -113,13 +114,14 @@ const NAV_LINKS = [
   { href: '/88-days-calculator', label: '88 Days' },
   { href: '/hecs-help-repayment', label: 'HECS-HELP' },
   { href: '/guides',           label: 'Guides' },
+  { href: '/leaving-australia-money-kit', label: 'Money Kit' },
   { href: '/about',              label: 'About' },
 ];
 
 const TRUST_SIGNALS = [
   'Updated for FY 2026–27',
   'Rates sourced from the ATO',
-  '100% free, no signup',
+  'Free calculators, no signup',
   'No income data stored',
 ];
 
@@ -178,7 +180,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Image src="/logo-header.png" alt="AU Income Tax — Calculate with confidence" width={157} height={38} loading="eager" className="h-[38px] w-auto flex-shrink-0 dark:hidden" />
               <Image src="/logo-header-dark.png" alt="AU Income Tax — Calculate with confidence" width={157} height={38} className="h-[38px] w-auto flex-shrink-0 hidden dark:block" />
             </a>
-            <nav aria-label="Main navigation" className="min-w-0 overflow-x-auto overflow-y-hidden">
+            <nav aria-label="Main navigation" className="hidden md:block min-w-0 overflow-x-auto overflow-y-hidden">
               <ul className="flex items-center gap-1 flex-nowrap" role="list">
                 {NAV_LINKS.map(({ href, label }) => (
                   <li key={href} className="flex-shrink-0">
@@ -192,7 +194,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ))}
               </ul>
             </nav>
-            <ThemeToggle />
+            <div className="flex items-center gap-1">
+              <MobileNav links={NAV_LINKS} />
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Trust bar — verifiable claims only, each backed by a page on the site (Methodology / Privacy Policy) */}
