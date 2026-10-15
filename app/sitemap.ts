@@ -4,7 +4,7 @@ import { SALARY_PAGES } from '@/lib/tax';
 const BASE_URL = 'https://www.auincometax.com';
 
 // Date of the last content change. Update it when pages change so that lastmod stays truthful.
-const LAST_MOD = new Date('2026-10-13T00:00:00Z');
+const LAST_MOD = new Date('2026-10-15T00:00:00Z');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const salaryUrls = SALARY_PAGES.map(salary => ({
