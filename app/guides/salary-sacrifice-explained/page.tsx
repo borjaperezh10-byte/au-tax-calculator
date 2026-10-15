@@ -90,14 +90,29 @@ export default function SalarySacrificeGuidePage() {
             savings, the caps, and the traps most guides skip.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> Salary sacrifice into super is taxed at a flat 15% inside the fund instead of at your marginal rate, so the saving is roughly the gap between the two. For someone on a 32% marginal rate (30% plus Medicare), sacrificing $10,000 puts $8,500 into super instead of $6,800 in the bank. The 2026-27 concessional cap is $32,500, and the money is locked away until retirement.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>The cap includes your employer&rsquo;s 12% super guarantee, so your room to sacrifice is lower.</li>
+<li>Division 293 adds another 15% if income plus concessional contributions exceed $250,000.</li>
+<li>Salary sacrifice does not reduce your HECS-HELP repayment, because reportable super contributions are added back.</li>
+<li>Unused cap from the past five years can be carried forward if your total super balance is under $500,000.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, super for individuals and families</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             Salary sacrifice is one of the few genuinely simple tax strategies available to ordinary
