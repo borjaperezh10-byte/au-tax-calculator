@@ -26,6 +26,13 @@ export default function Page() {
       badge="🇦🇺 Guide · Third visa"
       subtitle="Six months of specified work during your second visa — counted the same way as the 88 days, with a few extra rules."
       updated="October 2026"
+quick="A third Working Holiday visa needs 179 days of specified work, which is six calendar months, done during your second visa. The days are counted the same way as the 88 days, only work done on or after 1 July 2019 counts, and the requirement cannot be completed in less than six calendar months."
+keyFacts={[
+'179 days for a third visa (the six shortest calendar months of the year).',
+'Work on a bridging visa counts only if you applied for the second visa while the first was still valid.',
+'UK passport holders applying for a third 417 from 1 July 2024 do not need specified work.',
+]}
+source={{ href: OFFICIAL.third417, label: 'Home Affairs, third Working Holiday visa (417)' }}
       faqs={[
         {
           q: 'How many days do I need for a third Working Holiday visa?',
