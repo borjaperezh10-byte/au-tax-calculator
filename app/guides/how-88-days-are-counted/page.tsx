@@ -26,6 +26,14 @@ export default function Page() {
       badge="🇦🇺 Guide · Visas 417 & 462"
       subtitle="Weekends, part-time work, overtime, second jobs, rain days and rosters — how Home Affairs turns your work into days, with worked examples."
       updated="October 2026"
+quick="The 88 days (179 for a third visa) are calendar days, not shifts: weekends inside a period of full-time work count, part-time work counts as a proportion of full-time, and each calendar day counts once even with two jobs. Days you are stood down without pay, such as rain days, do not count."
+keyFacts={[
+'Full-time work from 1 January to 29 March counts as 88 days.',
+'Part-time example: 5 days a fortnight for 122 calendar days counts as 61 days.',
+'The requirement cannot be met in under three calendar months (six for the 179 days).',
+'Paid public holidays and paid leave count; unpaid stand-down days do not.',
+]}
+source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417)' }}
       faqs={[
         {
           q: 'Do weekends count towards the 88 days?',
