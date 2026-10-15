@@ -82,14 +82,29 @@ export default function DeductionsGuidePage() {
             much a deduction is really worth.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> Employees can claim work-related expenses they paid themselves, that directly relate to earning their income and that they can prove with records. A deduction lowers taxable income, so it is worth your marginal rate: a $1,000 deduction at a 32% marginal rate (30% plus Medicare) saves about $320 in tax. From 1 July 2026 there is also a $1,000 standard deduction that needs no receipts.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>The three tests: you spent the money yourself, it relates to earning your income, and you have a record.</li>
+<li>The normal commute between home and your regular workplace is not deductible.</li>
+<li>Mixed-use expenses such as a phone can only be claimed for the work portion.</li>
+<li>Your own claims can reduce the $1,000 standard deduction; see the guide to the instant work deduction.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, work-related deductions</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             A tax deduction lowers the income you&rsquo;re taxed on, which lowers your tax bill. For
