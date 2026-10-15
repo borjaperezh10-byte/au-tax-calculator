@@ -161,7 +161,7 @@ export default function IncomeTaxGuidePage() {
               <em>Tax file number declaration</em>. A common trap: if you hold two jobs at once and
               claim the threshold on both, not enough tax is withheld overall and you can end up with
               a bill at tax time. The usual advice is to claim it only on your main (highest-paying)
-              job.
+              job. See our guide to <a href="/guides/tax-on-a-second-job" className="text-blue-600 dark:text-blue-400 hover:underline">tax on a second job</a> for the detail.
             </p>
           </div>
         </section>
@@ -286,7 +286,7 @@ export default function IncomeTaxGuidePage() {
               cover, and for many people at that income the surcharge costs more than a basic hospital
               policy would — which is worth checking. Our{' '}
               <a href="/" className="text-blue-600 dark:text-blue-400 hover:underline">calculator</a>{' '}
-              lets you toggle private cover on and off to see the difference.
+              lets you toggle private cover on and off to see the difference. For the full rules, read our <a href="/guides/medicare-levy-and-surcharge" className="text-blue-600 dark:text-blue-400 hover:underline">Medicare levy and surcharge guide</a>.
             </p>
           </div>
         </section>
@@ -354,7 +354,7 @@ export default function IncomeTaxGuidePage() {
               lodge a <em>tax return</em> that reconciles what was withheld against what you actually
               owe. If too much was withheld, you get a refund; if too little, you get a bill. Claiming
               legitimate work-related deductions (and offsets like LITO) is what often turns that into
-              a refund.
+              a refund. Key dates are in our guide to the <a href="/guides/tax-return-deadline-and-refunds" className="text-blue-600 dark:text-blue-400 hover:underline">tax return deadline and refunds</a>, and the <a href="/guides/tax-deductions-for-employees" className="text-blue-600 dark:text-blue-400 hover:underline">employee deductions guide</a> covers what you can claim.
             </p>
           </div>
         </section>
@@ -420,6 +420,10 @@ export default function IncomeTaxGuidePage() {
             <a href="/take-home-pay-reference" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Take-home pay reference</a>
             <a href="/hecs-help-repayment" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">HECS-HELP repayment</a>
             <a href="/glossary" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Tax glossary</a>
+<a href="/guides/tax-on-a-second-job" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Tax on a second job</a>
+<a href="/guides/tax-return-deadline-and-refunds" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Tax return deadline and refunds</a>
+<a href="/guides/medicare-levy-and-surcharge" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Medicare levy and surcharge</a>
+<a href="/guides/tax-deductions-for-employees" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Deductions for employees</a>
           </div>
         </section>
       </div>
