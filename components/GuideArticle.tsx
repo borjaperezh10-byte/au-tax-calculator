@@ -25,6 +25,9 @@ interface Props {
   updated: string; // e.g. 'October 2026'
   faqs: Faq[];
   related: RelatedLink[];
+  quick?: string; // direct answer shown first, for search and AI assistants
+  keyFacts?: string[];
+  source?: { href: string; label: string };
   disclaimer?: ReactNode;
   children: ReactNode;
 }
@@ -159,7 +162,27 @@ export default function GuideArticle(props: Props) {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {props.children}
+        {props.quick && (
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> {props.quick}
+</p>
+{((props.keyFacts && props.keyFacts.length > 0) || props.source) && (
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+{props.keyFacts?.map(k => (
+<li key={k}>{k}</li>
+))}
+{props.source && (
+<li>
+Source: <Ext href={props.source.href}>{props.source.label}</Ext>.
+</li>
+)}
+</ul>
+)}
+</section>
+)}
+
+{props.children}
 
         {props.faqs.length > 0 && (
           <section>
