@@ -112,7 +112,22 @@ export default function EightyEightDaysPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-12">
-        <SpecifiedWorkTracker />
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> To qualify for a second Working Holiday visa you need 88 days of specified work in an eligible regional area, and 179 days for a third. The days are calendar days, full-time work counts every day and part-time counts as a proportion, and you cannot finish in less than three calendar months (six for 179 days).
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>Your postcode must be on the eligible list for your visa and industry.</li>
+<li>The work must normally be paid under Australian law and awards.</li>
+<li>UK passport holders applying for a second or third 417 visa from 1 July 2024 do not need specified work.</li>
+<li>
+Source: <a href={OFFICIAL_417} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Home Affairs, specified work (417)</a>.
+</li>
+</ul>
+</section>
+
+<SpecifiedWorkTracker />
 
         <p className="text-sm text-slate-500 dark:text-slate-400 bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded-xl p-4">
           <strong className="text-amber-800 dark:text-amber-200">This is an estimate, not a decision.</strong>{' '}
