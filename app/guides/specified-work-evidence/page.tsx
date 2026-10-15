@@ -26,6 +26,13 @@ export default function Page() {
       badge="🇦🇺 Guide · Visas 417 & 462"
       subtitle="Home Affairs can ask you to prove every day you claim. Here’s the evidence it lists, and how to keep it organised from day one."
       updated="October 2026"
+quick="Keep payslips and Australian bank statements covering every period of specified work you claim, plus any piecework agreement, group certificates, tax returns and employer references. Home Affairs can contact your employers, and volunteer recovery work needs a signed letter from the coordinator or host."
+keyFacts={[
+'Payslips and bank statements are the most common proof of paid work.',
+'Evidence must cover every period you claim, and the work site postcode matters.',
+'Volunteer letter: passport details, tasks, postcodes and number of days worked.',
+]}
+source={{ href: OFFICIAL.second417, label: 'Home Affairs, second Working Holiday visa (417)' }}
       faqs={[
         {
           q: 'Do I need payslips for every job?',
