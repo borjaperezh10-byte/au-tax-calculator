@@ -27,6 +27,14 @@ export default function Page() {
       badge="🇦🇺 Checker · Visas 417 & 462"
       subtitle="Your work only counts if the postcode where you physically worked is on the eligible list for your visa and your industry. Check it here."
       updated="October 2026"
+quick="A postcode counts only if it is on the Home Affairs list for your visa and your industry, and what is checked is where you physically worked, not your employer's office. Farm work in a regional town often counts, but a bar job there usually does not, because tourism and hospitality need Northern, Remote or Very Remote Australia."
+keyFacts={[
+'Tourism and hospitality: Northern, Remote or Very Remote Australia, plus postcodes 4406, 4416, 4498 and 7215.',
+'All postcodes in South Australia, Tasmania and the Northern Territory are regional.',
+'Cairns (4870) and Darwin (0800) count for both farm work and hospitality; Adelaide (5000) and Dubbo (2830) count for farm work only.',
+'Melbourne (3000) and Sydney (2000) count for neither.',
+]}
+source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417)' }}
       faqs={[
         {
           q: 'Does hospitality work in a regional town count for the 88 days?',
