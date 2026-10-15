@@ -27,6 +27,13 @@ export default function Page() {
       badge="🇦🇺 Guide · Condition 8547"
       subtitle="Most working holiday makers can work up to 6 months with one employer at one location — but farm, hospitality, care and several other sectors are exempt. Check your job below."
       updated="October 2026"
+quick="Working holiday makers on a 417 or 462 visa can usually work a maximum of 6 months with any one employer (condition 8547), counted in calendar months from the first day, with each location having its own 6 months. Plant and animal cultivation, agriculture and food processing, health and care work, childcare, tourism and hospitality are exempt anywhere in Australia."
+keyFacts={[
+'Exempt in Northern Australia only: fishing and pearling, tree farming and felling, construction and mining.',
+'The 6 months start again with each new working holiday visa.',
+'Other work needs permission from Home Affairs; send the request before the 6 months run out.',
+]}
+source={{ href: SIX_MONTH_OFFICIAL.limitation, label: 'Home Affairs, 6 month work limitation' }}
       faqs={[
         {
           q: 'Can I work more than 6 months for one employer on a working holiday visa?',
