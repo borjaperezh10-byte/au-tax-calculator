@@ -26,6 +26,13 @@ export default function Page() {
       badge="🇬🇧 → 🇦🇺 Guide"
       subtitle="Short answer: not if you apply for your second or third 417 visa from 1 July 2024 with a UK passport."
       updated="October 2026"
+quick="No. UK passport holders who apply for a second or third Working Holiday visa (subclass 417) on or after 1 July 2024 do not need to complete specified work: no 88 days for the second visa and no 179 days for the third. It only applies to applications made with a UK passport and does not cover the 462 visa."
+keyFacts={[
+'Applies to the subclass 417 only, for applications from 1 July 2024.',
+'Applications on a non-UK passport follow the normal specified work rules.',
+'Tax does not change: working holiday makers pay 15% on the first $45,000.',
+]}
+source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417)' }}
       faqs={[
         {
           q: 'Do British backpackers need to do farm work for a second year visa?',
