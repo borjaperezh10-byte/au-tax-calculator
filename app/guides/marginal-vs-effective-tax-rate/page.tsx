@@ -94,14 +94,29 @@ export default function MarginalVsEffectiveGuidePage() {
             all of them. Here are both for 2026-27, and how much of a pay rise you really keep.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> Your marginal rate is the tax on your next dollar of income, while your effective rate is your total tax divided by your total income. On a $90,000 salary in 2026-27 the marginal rate is 30% (32% with the Medicare levy) and the effective rate is about 21.5%. A pay rise never reduces your take-home pay, because each rate applies only to income inside its bracket.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>2026-27 resident rates: 0% to $18,200, 15% to $45,000, 30% to $135,000, 37% to $190,000, 45% above.</li>
+<li>On $90,000, total tax including Medicare is $19,320.</li>
+<li>You keep about $680 of an extra $1,000 between $70,000 and $135,000, and $530 at $200,000.</li>
+<li>Between $45,000 and $66,667 the low income tax offset phases out, lifting the marginal rate to 33.5%.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, tax rates for Australian residents</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             &ldquo;I&rsquo;m in the 30% bracket&rdquo; is one of the most misunderstood sentences in
