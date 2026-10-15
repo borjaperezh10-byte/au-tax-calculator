@@ -88,7 +88,23 @@ export default function TaxReturnGuidePage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> If you lodge your own 2025-26 tax return, it is due by 31 October 2026, which falls on a Saturday, so aim to lodge the week before. A registered tax agent can lodge later if you are on their lodgment program. Most refunds from a return lodged online through myTax are issued within about two weeks.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>Wait until your income statement shows as tax ready in myGov before you lodge.</li>
+<li>Paper returns are slower: most refunds are issued within around 50 business days.</li>
+<li>The late lodgement penalty is one penalty unit per 28 days overdue, up to five penalty units.</li>
+<li>The ATO generally does not penalise a late return that results in a refund or a nil balance.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/individuals-and-families/your-tax-return" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, your tax return</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             Most employees don&rsquo;t need a tax accountant to lodge, but a lot of people put it off
