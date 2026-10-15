@@ -82,14 +82,30 @@ export default function MedicareGuidePage() {
             hospital cover actually saves you money in 2026-27.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> The Medicare levy is 2% of taxable income for most residents, with no levy below a low-income threshold of about $28,000 for a single person. The separate Medicare Levy Surcharge adds 1% to 1.5% only if you earn above $105,000 (single) or $210,000 (family) and do not hold appropriate private hospital cover.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>Surcharge tiers for singles in 2026-27: nil to $105,000, 1% to $123,000, 1.25% to $164,000, 1.5% above.</li>
+<li>On $90,000 the levy is $1,800 a year; on $60,000 it is $1,200.</li>
+<li>Income for the surcharge includes reportable fringe benefits and reportable super contributions.</li>
+<li>Extras-only cover does not avoid the surcharge; only hospital cover does.</li>
+<li>Foreign residents and most working holiday makers do not pay the levy.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, Medicare levy surcharge</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             Two things on your tax bill share the word &ldquo;Medicare&rdquo; and are constantly
