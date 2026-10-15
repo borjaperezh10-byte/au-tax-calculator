@@ -28,6 +28,14 @@ export default function Page() {
       badge="Guide · Deductions"
       subtitle="From the 2026-27 income year the ATO applies a standard work-related deduction of up to $1,000 without receipts. Here is how it works and how it interacts with your own claims."
       updated="October 2026"
+quick="From the 2026-27 income year the ATO applies a standard deduction of up to $1,000 for work-related expenses without receipts. You must be an Australian resident for tax purposes with assessable labour income such as wages. The maximum is the lower of $1,000 or your labour income, and your own claims for certain expenses reduce it dollar for dollar."
+keyFacts={[
+'Applies from 1 July 2026, so it is not part of the 2025-26 return due by 31 October 2026.',
+'It reduces taxable income: at a 30% marginal rate, $1,000 saves about $300 in tax.',
+'Claim more than the maximum and you need written evidence for all the expenses you claim.',
+'From 1 July 2026 the $300 work expense limit and the $150 laundry limit no longer apply.',
+]}
+source={{ href: ATO_URL, label: 'ATO, standard deduction for work-related expenses' }}
       faqs={[
         {
           q: 'Do I need receipts for the $1,000 standard deduction?',
