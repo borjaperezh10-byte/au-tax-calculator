@@ -88,14 +88,33 @@ export default function SecondJobGuidePage() {
             small, and what the extra income actually adds to your year.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> claim the
+tax-free threshold from only one payer, usually your highest-paying job, and say you do
+not claim it on the others. Claiming it twice means too little tax is withheld, which
+normally leaves a tax bill when you lodge. In 2026-27 a $30,000 second job on top of a
+$70,000 main job adds about $20,400 to your take-home pay.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>Tax-free threshold: $18,200, claimed from one payer at a time (all payers only if your total income is $18,200 or less).</li>
+<li>Rate on income from $45,001 to $135,000: 30% plus the 2% Medicare levy.</li>
+<li>Example: tax and Medicare on $100,000 combined is $22,520.</li>
+<li>
+Source: the ATO&rsquo;s{' '}
+<a href="https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/multiple-jobs-or-change-of-job" className="text-blue-600 dark:text-blue-400 hover:underline" rel="noopener">multiple jobs guidance</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             Picking up a second job, casual shifts or a side gig is common, and the first surprise is
