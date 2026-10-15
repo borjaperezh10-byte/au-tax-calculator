@@ -93,14 +93,29 @@ export default function WhmTaxGuidePage() {
             what you actually take home in 2026-27.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> Working holiday makers on a 417 or 462 visa pay 15% tax on income up to $45,000 in 2026-27, then 30% from $45,001 to $135,000, 37% to $190,000 and 45% above that. There is no tax-free threshold, and you generally pay no Medicare levy.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>Your employer pays 12% super on top of your wages.</li>
+<li>When you leave and your visa has ended, you can claim it back as a DASP, taxed at 65% for working holiday makers.</li>
+<li>You generally do not need to lodge a return if all your income was working holiday wages and taxable income was $45,000 or less.</li>
+<li>Without a TFN, employers must withhold 45% on all your pay.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/working-in-australia/working-holiday-makers" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, working holiday makers</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             If you&rsquo;re in Australia on a{' '}
