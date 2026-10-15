@@ -90,14 +90,29 @@ export default function PayslipGuidePage() {
             they add up, with a full $90,000 example for 2026-27.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> Your payslip shows gross pay, then tax withheld and any other deductions, leaving net pay, which is what lands in your bank. Super is paid by your employer on top of your wages and is not taken out of your pay. On a $90,000 salary paid fortnightly, gross pay is $3,461.54 and net pay is $2,718.46.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>Employer super is 12%: $415.38 per fortnight on a $90,000 salary.</li>
+<li>Since 1 July 2026 (Payday Super) employers must pay super into your fund within 7 business days of paying you.</li>
+<li>Year-to-date totals should match the income statement in your ATO online account.</li>
+<li>Tax withheld is an estimate from ATO tables; your final tax is settled when you lodge.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, tax rates for Australian residents</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             A payslip is short, but it&rsquo;s easy to misread: the number you were promised is not the
