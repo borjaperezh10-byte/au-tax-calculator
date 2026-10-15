@@ -26,6 +26,13 @@ export default function Page() {
       badge="🇦🇺 Guide · 417 vs 462"
       subtitle="Same days, same postcode tables — but different industries count in different places. Here’s what changes between the two visas."
       updated="October 2026"
+quick="Mining counts as specified work only on a 417. Fishing and tree work count anywhere regional on a 417 but only in Northern Australia on a 462, and farm and construction work also count in Northern Australia on a 462. The day counts and postcode tables are the same for both visas."
+keyFacts={[
+'Days: 88 for a second visa and 179 for a third, counted as calendar days on both visas.',
+'Mining: counts in regional Australia on a 417; does not count on a 462.',
+'The UK exemption from specified work applies to the 417 only.',
+]}
+source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417)' }}
       faqs={[
         {
           q: 'Does mining count as specified work on a 462 visa?',
