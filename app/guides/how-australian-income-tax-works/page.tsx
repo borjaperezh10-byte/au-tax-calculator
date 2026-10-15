@@ -97,14 +97,29 @@ export default function IncomeTaxGuidePage() {
             brackets, the offsets and levies, and what actually reaches your bank account.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated
-            September 2026 · Figures are FY 2026-27 (1 July 2026 – 30 June 2027)
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Figures are FY 2026-27 (1 July 2026 – 30 June 2027)
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-10">
-        {/* Intro */}
+        {/* Quick answer (direct answer first, for search and AI assistants) */}
+<section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
+<p>
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> Australian residents pay no tax on the first $18,200 of income in 2026-27, then 15% up to $45,000, 30% up to $135,000, 37% up to $190,000 and 45% above that. Each rate applies only to the slice of income inside its bracket, and most residents also pay a 2% Medicare levy.
+</p>
+<ul className="list-disc pl-5 space-y-1 text-[14px]">
+<li>A higher bracket never reduces take-home pay, because only the income above each threshold is taxed at the higher rate.</li>
+<li>On $90,000 the income tax is $17,520 and the marginal rate is 30%, but the effective rate is about 21.5% including Medicare.</li>
+<li>The 12% super guarantee is paid by your employer on top of your salary and is not part of take-home pay.</li>
+<li>Foreign residents and most working holiday makers are taxed on different rates.</li>
+<li>
+Source: <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, tax rates for Australian residents</a>.
+</li>
+</ul>
+</section>
+
+{/* Intro */}
         <section className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
           <p>
             Australia&rsquo;s income tax system looks intimidating from the outside, but it&rsquo;s
