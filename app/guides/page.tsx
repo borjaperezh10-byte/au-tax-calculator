@@ -122,6 +122,11 @@ const GROUPS: Group[] = [
         blurb: 'Why UK passport holders applying from 1 July 2024 don’t need specified work for a 417.',
       },
       {
+        href: '/guides/departing-australia-super-dasp',
+        title: 'Claim Your Super When You Leave (DASP)',
+        blurb: 'Who can claim a Departing Australia Superannuation Payment, the 35%, 45% and 65% tax rates, how to apply from overseas and what happens if you wait.',
+      },
+      {
         href: '/guides/working-holiday-6-month-employer-limit',
         title: 'The 6-Month Rule with One Employer',
         blurb: 'When your 6 months end, which sectors are exempt, locations, labour hire and permission.',
