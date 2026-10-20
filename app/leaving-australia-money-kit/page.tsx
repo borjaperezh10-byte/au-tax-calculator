@@ -65,7 +65,8 @@ export default function Page() {
       ]}
       related={[
         { href: '/guides/working-holiday-maker-tax', label: 'Working holiday maker tax rates' },
-        { href: '/guides/tax-return-deadline-and-refunds', label: 'Tax return deadline and refunds' },
+        { href: '/guides/departing-australia-super-dasp', label: 'Claim your super (DASP) when you leave' },
+{ href: '/guides/tax-return-deadline-and-refunds', label: 'Tax return deadline and refunds' },
         { href: '/88-days-calculator', label: '88-day regional work calculator' },
       ]}
       disclaimer={
@@ -118,7 +119,8 @@ export default function Page() {
         <p>
           If you only need the numbers, our free tools may be enough: the{' '}
           <In href="/working-holiday-maker">working holiday maker calculator</In>, the{' '}
-          <In href="/guides/working-holiday-maker-tax">working holiday maker tax guide</In> and the{' '}
+          <In href="/guides/working-holiday-maker-tax">working holiday maker tax guide</In>, the{' '}
+<In href="/guides/departing-australia-super-dasp">DASP super guide</In> and the{' '}
           <In href="/88-days-calculator">88-day calculator</In>. The kit is for people who want the whole exit plan in one place.
         </p>
         <BuyButton label="Get the kit for A$29" />
