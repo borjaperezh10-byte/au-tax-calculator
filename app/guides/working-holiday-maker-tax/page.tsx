@@ -273,7 +273,7 @@ Source: <a href="https://www.ato.gov.au/individuals-and-families/coming-to-austr
               $3,000, you&rsquo;d receive about $1,050 after tax.
             </p>
             <p>
-              You claim through the ATO&rsquo;s online DASP system, which is free. You can start it before
+              Our <a href="/guides/departing-australia-super-dasp" className="text-blue-600 dark:text-blue-400 hover:underline">DASP guide</a> explains who can claim and how. You claim through the ATO&rsquo;s online DASP system, which is free. You can start it before
               you go but can only submit after you&rsquo;ve left. If you don&rsquo;t claim, the fund
               eventually passes the money to the ATO and it just sits there, so it&rsquo;s worth doing
               even after the 65% bite. A registered tax agent can also lodge it for you, though they
