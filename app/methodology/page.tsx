@@ -258,8 +258,8 @@ export default function MethodologyPage() {
             </p>
             <ul className="space-y-2 pl-4 list-disc">
               <li>The 19% resident rate on income $18,201–$45,000 was reduced to <strong className="text-slate-700 dark:text-slate-300">15%</strong>.</li>
-              <li>Working holiday makers also benefit: the upper bracket above $45,000 was reduced from 32.5% to <strong className="text-slate-700 dark:text-slate-300">30%</strong>.</li>
-              <li>The Superannuation Guarantee reached <strong className="text-slate-700 dark:text-slate-300">12%</strong> (up from 11.5% in 2024-25).</li>
+              <li>Working holiday maker rates for 2026-27 are 15% up to $45,000, then <strong className="text-slate-700 dark:text-slate-300">30%</strong> to $135,000, 37% to $190,000 and 45% above that (the 30% rate has applied since 2024-25, down from 32.5%), as set out in ATO Schedule 15.</li>
+              <li>The Superannuation Guarantee is <strong className="text-slate-700 dark:text-slate-300">12%</strong> (it rose from 11.5% on 1 July 2025).</li>
             </ul>
           </div>
         </section>
