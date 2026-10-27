@@ -361,6 +361,7 @@ export default function DaspGuidePage() {
         <section>
           <h2 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-4">Related reading</h2>
           <div className="flex flex-wrap gap-2">
+            <a href="/guides/working-holiday-tax-residency" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Working holiday tax residency</a>
             <a href="/guides/working-holiday-maker-tax" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Working holiday maker tax</a>
             <a href="/guides/tax-return-deadline-and-refunds" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Tax return deadline &amp; refunds</a>
             <a href="/leaving-australia-money-kit" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Leaving Australia Money Kit</a>
