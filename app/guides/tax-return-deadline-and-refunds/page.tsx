@@ -39,7 +39,7 @@ const faqLd = {
       name: 'When is my Australian tax return due?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'If you lodge it yourself, the 2025-26 tax return is due by 31 October 2026. If you use a registered tax agent and are on their lodgment program, your due date can be later. Contact an agent before 31 October if you are new to them.',
+        text: 'If you lodge it yourself, the 2025-26 tax return is due by 31 October 2026. Because 31 October 2026 is a Saturday, the ATO says the due date is the next business day, Monday 2 November 2026. If you use a registered tax agent and are on their lodgment program, your due date can be later. Contact an agent before 31 October if you are new to them.',
       },
     },
     {
@@ -91,7 +91,7 @@ export default function TaxReturnGuidePage() {
         {/* Quick answer (direct answer first, for search and AI assistants) */}
 <section className="border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 rounded-lg p-5 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300 space-y-3">
 <p>
-<strong className="text-slate-900 dark:text-white">Quick answer:</strong> If you lodge your own 2025-26 tax return, it is due by 31 October 2026, which falls on a Saturday, so aim to lodge the week before. A registered tax agent can lodge later if you are on their lodgment program. Most refunds from a return lodged online through myTax are issued within about two weeks.
+<strong className="text-slate-900 dark:text-white">Quick answer:</strong> If you lodge your own 2025-26 tax return, it is due by 31 October 2026, which falls on a Saturday, so the ATO says the due date moves to the next business day, Monday 2 November 2026. Still aim to lodge a few days early. A registered tax agent can lodge later if you are on their lodgment program. Most refunds from a return lodged online through myTax are issued within about two weeks.
 </p>
 <ul className="list-disc pl-5 space-y-1 text-[14px]">
 <li>Wait until your income statement shows as tax ready in myGov before you lodge.</li>
@@ -122,7 +122,8 @@ Source: <a href="https://www.ato.gov.au/individuals-and-families/your-tax-return
             <p>
               If you lodge your own return, for example online through myTax, the due date is{' '}
               <strong className="text-slate-900 dark:text-white">31 October</strong>. In 2026 that falls
-              on a Saturday, so don&rsquo;t plan to lodge on the day; aim for the week before.
+              on a Saturday. The ATO says that when 31 October falls on a weekend the due date is the next
+              business day, so the 2025-26 return is due Monday 2 November 2026. Don&rsquo;t leave it to the last day.
             </p>
             <p>
               A registered tax agent can lodge later than 31 October if you are on their lodgment
@@ -199,7 +200,7 @@ With 31 October close, a few minutes of preparation usually saves a second attem
 <li>Compare the pre-filled figures with your payslips and bank interest, and fix anything that looks wrong.</li>
 <li>Gather records for any deduction you plan to claim; you need them if the ATO asks.</li>
 <li>Confirm the bank account details where your refund will be paid.</li>
-<li>31 October 2026 is a Saturday, so aim to lodge the week before.</li>
+<li>31 October 2026 is a Saturday, so the ATO due date moves to Monday 2 November 2026.</li>
 <li>If you want a registered tax agent and don&rsquo;t have one, contact them before 31 October.</li>
 </ul>
 </div>
