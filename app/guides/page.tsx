@@ -92,6 +92,11 @@ const GROUPS: Group[] = [
         blurb: 'How working holiday makers are taxed in Australia, how it differs from resident tax and what to do at tax time.',
       },
       {
+        href: '/guides/working-holiday-tax-residency',
+        title: 'Are You a Tax Resident? (Working Holiday Makers)',
+        blurb: 'The ATO’s resides and 183-day tests, five official examples, the eight non-discrimination countries and what changes on your return.',
+      },
+      {
         href: '/guides/how-88-days-are-counted',
         title: 'How the 88 Days Are Counted',
         blurb: 'Calendar days, weekends, part-time work, rain days, rosters and piece rates — with worked examples.',
