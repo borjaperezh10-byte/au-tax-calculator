@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import TaxCalculator from '@/components/TaxCalculator';
 import { calculate, fmtAUD } from '@/lib/tax';
 import { LAST_REVIEWED } from '@/lib/site';
+import { FEATURED_GUIDE } from '@/lib/featured-guide';
 
 export const metadata: Metadata = {
   title: 'Australia Income Tax Calculator 2026-27 | Take-Home Pay',
@@ -131,6 +132,16 @@ export default function HomePage() {
 
       {/* Calculator */}
       <div className="max-w-4xl mx-auto px-4 py-8">
+        <a
+          href={FEATURED_GUIDE.href}
+          className="mb-4 flex flex-col gap-1 rounded-xl border border-slate-200 bg-white px-4 py-3 transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+        >
+          <span className="text-sm text-slate-700 dark:text-slate-200">
+            <span className="mr-2 rounded-full bg-blue-600 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">{FEATURED_GUIDE.label}</span>
+            <strong className="text-slate-900 dark:text-white">{FEATURED_GUIDE.title}</strong> {FEATURED_GUIDE.blurb}
+          </span>
+          <span className="whitespace-nowrap text-sm font-semibold text-blue-700 dark:text-blue-300">Read the guide →</span>
+        </a>
         <a
           href="/leaving-australia-money-kit"
           className="mb-4 flex flex-col gap-1 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 transition-colors hover:bg-blue-100 dark:border-blue-800 dark:bg-blue-950 dark:hover:bg-blue-900 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
