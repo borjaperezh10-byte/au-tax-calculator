@@ -4,7 +4,7 @@ import { SALARY_PAGES } from '@/lib/tax';
 const BASE_URL = 'https://www.auincometax.com';
 
 // Date of the last content change. Update it when pages change so that lastmod stays truthful.
-const LAST_MOD = new Date('2026-10-20T00:00:00Z');
+const LAST_MOD = new Date('2026-10-27T00:00:00Z');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const salaryUrls = SALARY_PAGES.map(salary => ({
@@ -89,6 +89,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/guides/departing-australia-super-dasp`,
+      lastModified: LAST_MOD,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/guides/working-holiday-tax-residency`,
       lastModified: LAST_MOD,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
