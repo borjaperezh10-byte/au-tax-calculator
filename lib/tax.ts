@@ -61,7 +61,7 @@ export function calcNonResidentIncomeTax(income: number): number {
 // Source: ATO Schedule 15 – Tax table for working holiday makers
 // Applies to visa subclass 417 (Working Holiday) and 462 (Work and Holiday)
 // No tax-free threshold. No LITO. No Medicare Levy (in most cases).
-// Stage 3 cuts apply from 1 July 2026: $45,001–$135,000 rate reduced to 30%.
+// The $45,001–$135,000 rate has been 30% since 2024-25 (down from 32.5%); Schedule 15 for 2026-27 keeps the same rates.
 export function calcWHMIncomeTax(income: number): number {
   if (income <= 45_000)  return income * 0.15;
   if (income <= 135_000) return 6_750 + (income - 45_000) * 0.30;
@@ -266,7 +266,7 @@ export const RESIDENT_BRACKETS_2526 = [
 /** WHM bracket summary (for display) */
 export const WHM_BRACKETS_2627 = [
   { range: '$0 – $45,000',        rate: '15%', note: 'Flat rate, no tax-free threshold' },
-  { range: '$45,001 – $135,000',  rate: '30%', note: 'Reduced from 32.5% (Stage 3 cuts)' },
+  { range: '$45,001 – $135,000',  rate: '30%', note: 'Reduced from 32.5% in 2024-25; unchanged for 2026-27' },
   { range: '$135,001 – $190,000', rate: '37%', note: '' },
   { range: '$190,001+',           rate: '45%', note: '' },
 ];
