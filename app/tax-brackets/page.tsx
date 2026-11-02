@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const RESIDENT_BRACKETS = [
   { range: '$0 – $18,200',         rate: '0%',  note: 'Tax-free threshold' },
-  { range: '$18,201 – $45,000',    rate: '15%', note: '↓ reduced from 19% (Stage 3 cuts)' },
+  { range: '$18,201 – $45,000',    rate: '15%', note: '↓ reduced from 16% in 2025-26' },
   { range: '$45,001 – $135,000',   rate: '30%', note: '' },
   { range: '$135,001 – $190,000',  rate: '37%', note: '' },
   { range: '$190,001+',            rate: '45%', note: 'Plus 2% Medicare levy' },
@@ -61,8 +61,8 @@ export default function TaxBracketsPage() {
         <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded-xl p-5">
           <h2 className="font-semibold text-amber-900 dark:text-amber-200 mb-2">🆕 What changed in 2026-27</h2>
           <p className="text-sm text-amber-800 dark:text-amber-300">
-            The second income tax bracket (income $18,201–$45,000) was reduced from <strong>19%</strong> to <strong>15%</strong> from 1 July 2026.
-            This is part of the Stage 3 tax cuts legislated in 2024. Every resident taxpayer earning above $45,000 saves up to <strong>$804 per year</strong> compared to 2024-25 rates.
+            The second income tax bracket (income $18,201–$45,000) was reduced from <strong>16%</strong> to <strong>15%</strong> from 1 July 2026.
+            Every resident taxpayer earning above $45,000 saves up to <strong>$268 per year</strong> compared to 2025-26 rates. (The 16% rate itself replaced 19% on 1 July 2024 under the Stage 3 cuts.)
             The tax-free threshold and all other brackets remain unchanged.
           </p>
         </div>
