@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ENTRIES = [
   {
+    date: 'November 2026',
+    version: '2.3',
+    label: 'Fix',
+    labelColor: 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300',
+    changes: [
+      'Resident tax rates: several pages said the 19% rate on $18,201–$45,000 was cut to 15% for 2026-27 and quoted a saving of up to $804 a year. The ATO table shows the rate was already 16% in 2025-26, so the 2026-27 cut is from 16% to 15% and the saving is up to $268 a year. The homepage, the homepage FAQ, the tax brackets page, the methodology page, the glossary and the bracket tables now say this. The calculator itself already used the correct 2026-27 figures.',
+    ],
+  },
+  {
     date: 'October 2026',
     version: '2.2',
     label: 'Fix',
@@ -36,7 +45,7 @@ const ENTRIES = [
     labelColor: 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300',
     changes: [
       'Updated all resident, non-resident, and working holiday maker tax rates for 2026-27.',
-      'Implemented Stage 3 tax cuts: resident 19% bracket reduced to 15% from 1 July 2026.',
+      'Updated the resident rate on $18,201–$45,000 to 15% from 1 July 2026 (see the November 2026 correction above for the 2025-26 comparison).',
       'Checked working holiday maker rates for 2026-27 against ATO Schedule 15: 15% to $45,000, then 30%, 37% and 45% (the 30% rate has applied since 2024-25).',
       'Updated Superannuation Guarantee rate to 12% (effective 1 July 2025).',
       'Added Working Holiday Maker dedicated page and calculator.',
