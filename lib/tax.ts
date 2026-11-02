@@ -248,7 +248,7 @@ export const SALARY_PAGES = [
 /** 2026-27 resident bracket summary (for display) */
 export const RESIDENT_BRACKETS_2627 = [
   { range: '$0 – $18,200',        rate: '0%',  note: 'Tax-free threshold' },
-  { range: '$18,201 – $45,000',   rate: '15%', note: 'Reduced from 19% (Stage 3 cuts)' },
+  { range: '$18,201 – $45,000',   rate: '15%', note: 'Reduced from 16% in 2025-26' },
   { range: '$45,001 – $135,000',  rate: '30%', note: '' },
   { range: '$135,001 – $190,000', rate: '37%', note: '' },
   { range: '$190,001+',           rate: '45%', note: 'Plus 2% Medicare Levy' },
@@ -257,7 +257,7 @@ export const RESIDENT_BRACKETS_2627 = [
 /** 2025-26 resident bracket summary (for comparison) */
 export const RESIDENT_BRACKETS_2526 = [
   { range: '$0 – $18,200',        rate: '0%',  note: 'Tax-free threshold' },
-  { range: '$18,201 – $45,000',   rate: '19%', note: 'Now 15% from 1 July 2026' },
+  { range: '$18,201 – $45,000',   rate: '16%', note: 'Now 15% from 1 July 2026' },
   { range: '$45,001 – $135,000',  rate: '30%', note: '' },
   { range: '$135,001 – $190,000', rate: '37%', note: '' },
   { range: '$190,001+',           rate: '45%', note: '' },
