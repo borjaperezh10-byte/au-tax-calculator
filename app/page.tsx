@@ -32,7 +32,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What changed in the 2026-27 Australian tax year?',
-    a: 'The biggest change for 2026-27 is the second tax bracket rate dropped from 19% to 15%, applying to income between $18,201 and $45,000. This gives every resident taxpayer earning above $45,000 an annual saving of up to $804 compared to 2024-25 rates. These are known as the Stage 3 tax cuts (legislated in 2024 and effective from 1 July 2026).',
+    a: 'The biggest change for 2026-27 is the second tax bracket rate dropping from 16% to 15%, applying to income between $18,201 and $45,000. This gives every resident taxpayer earning above $45,000 an annual saving of up to $268 compared to 2025-26. The 16% rate itself came from the Stage 3 tax cuts that started on 1 July 2024.',
   },
   {
     q: 'What is the tax-free threshold in Australia for 2026-27?',
@@ -123,8 +123,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 py-3">
           <p className="text-sm text-amber-800 dark:text-amber-200">
             <span className="font-semibold">🆕 What changed in 2026-27:</span>{' '}
-            The 19% tax bracket has been cut to <strong>15%</strong> (income $18,201–$45,000),
-            saving taxpayers up to <strong>$804 per year</strong>.{' '}
+            The 16% tax bracket has been cut to <strong>15%</strong> (income $18,201–$45,000),
+            saving taxpayers up to <strong>$268 per year</strong>.{' '}
             <a href="/tax-brackets" className="underline hover:no-underline">See full 2026-27 tax brackets →</a>
           </p>
         </div>
