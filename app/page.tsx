@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import TaxCalculator from '@/components/TaxCalculator';
-import { calculate, fmtAUD } from '@/lib/tax';
+import { calculate, fmtAUD, RESIDENT_BRACKETS_2627 } from '@/lib/tax';
 import { LAST_REVIEWED } from '@/lib/site';
 import { FEATURED_GUIDE } from '@/lib/featured-guide';
 
@@ -16,6 +16,8 @@ const ex80k  = calculate(80_000, true, false, true);
 const ex100k = calculate(100_000, true, false, true);
 const ex60k  = calculate(60_000, true, false, true);
 const ex150k = calculate(150_000, true, false, false);
+const ex90k  = calculate(90_000, true, false, true);
+const ex120k = calculate(120_000, true, false, true);
 
 const FAQ_ITEMS = [
   {
@@ -198,6 +200,44 @@ export default function HomePage() {
               { label: 'Super Guarantee', value: '12%' },
             ]}
           />
+        </section>
+
+        {/* 2026-27 rates and worked examples */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">2026-27 resident tax rates and worked examples</h2>
+          <p className="text-slate-700 dark:text-slate-300 mb-4">
+            For 2026-27 an Australian resident pays no tax on the first $18,200, 15% on $18,201 to $45,000, 30% on $45,001 to $135,000, 37% on $135,001 to $190,000 and 45% above $190,000, plus the 2% Medicare levy. These are the rates published by the{' '}
+            <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" className="text-blue-600 dark:text-blue-400 underline">Australian Taxation Office</a>. Last updated {LAST_REVIEWED}.
+          </p>
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm border border-slate-200 dark:border-slate-700">
+              <thead className="bg-slate-100 dark:bg-slate-800 text-left text-slate-700 dark:text-slate-300">
+                <tr><th className="p-2">Taxable income</th><th className="p-2">Tax rate</th><th className="p-2">Note</th></tr>
+              </thead>
+              <tbody>
+                {RESIDENT_BRACKETS_2627.map(b => (
+                  <tr key={b.range} className="border-t border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+                    <td className="p-2">{b.range}</td><td className="p-2">{b.rate}</td><td className="p-2">{b.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">How the tax is worked out</h3>
+          <p className="text-slate-700 dark:text-slate-300 mb-4">
+            Each rate applies only to the slice of income inside its bracket, not to your whole salary. Add up the tax on each slice, subtract any offsets such as the low income tax offset, then add the Medicare levy. The three examples below use the same maths as the calculator: a resident with no HECS-HELP debt and private hospital cover.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[ex60k, ex90k, ex120k].map(ex => (
+              <div key={ex.grossIncome} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4 text-sm text-slate-700 dark:text-slate-300">
+                <p className="font-semibold text-slate-900 dark:text-white">{fmtAUD(ex.grossIncome)} salary</p>
+                <p className="mt-1">Income tax {fmtAUD(ex.netIncomeTax)}</p>
+                <p>Medicare levy {fmtAUD(ex.medicareLevy)}</p>
+                <p>Take-home {fmtAUD(ex.netIncome)} a year ({fmtAUD(ex.netIncome / 12)} a month)</p>
+                <p>Effective rate {ex.effectiveRate.toFixed(1)}%</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Common salaries — internal links */}
