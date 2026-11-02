@@ -71,7 +71,7 @@ const TERMS = [
   {
     term: 'Stage 3 tax cuts',
     definition:
-      'A package of income tax changes that took effect from 1 July 2026 for the 2026-27 financial year. The key change: the 19% marginal rate on income between $18,201 and $45,000 was reduced to 15%. This means most Australian workers pay less tax from 1 July 2026.',
+      'A package of income tax changes that took effect on 1 July 2024. It cut the 19% rate on income between $18,201 and $45,000 to 16%, and the 32.5% rate to 30%. From 1 July 2026 the 16% rate is 15%, so most Australian workers pay slightly less tax again in 2026-27.',
   },
   {
     term: 'PAYG withholding',
