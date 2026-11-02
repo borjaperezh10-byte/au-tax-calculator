@@ -85,7 +85,7 @@ export default function MethodologyPage() {
                 text: 'ATO — How much super to pay',
               },
               {
-                label: 'Stage 3 tax cuts (2026-27 15% bracket)',
+                label: 'ATO resident tax rates 2026-27 (15% bracket)',
                 url: 'https://treasury.gov.au/tax/personal-income-tax-cuts',
                 text: 'Treasury — Personal income tax cuts',
               },
@@ -254,10 +254,10 @@ export default function MethodologyPage() {
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">What changed for 2026-27</h2>
           <div className="text-sm text-slate-600 dark:text-slate-400 space-y-3">
             <p>
-              The most significant change for 2026-27 is the <strong className="text-slate-700 dark:text-slate-300">Stage 3 tax cuts</strong>, which came into effect from 1 July 2026:
+              The most significant change for 2026-27 is a further cut to the second resident tax rate, which came into effect from <strong className="text-slate-700 dark:text-slate-300">1 July 2026</strong>:
             </p>
             <ul className="space-y-2 pl-4 list-disc">
-              <li>The 19% resident rate on income $18,201–$45,000 was reduced to <strong className="text-slate-700 dark:text-slate-300">15%</strong>.</li>
+              <li>The 16% resident rate on income $18,201–$45,000 (2025-26) was reduced to <strong className="text-slate-700 dark:text-slate-300">15%</strong>, a saving of up to $268 a year. The 16% rate itself replaced 19% on 1 July 2024.</li>
               <li>Working holiday maker rates for 2026-27 are 15% up to $45,000, then <strong className="text-slate-700 dark:text-slate-300">30%</strong> to $135,000, 37% to $190,000 and 45% above that (the 30% rate has applied since 2024-25, down from 32.5%), as set out in ATO Schedule 15.</li>
               <li>The Superannuation Guarantee is <strong className="text-slate-700 dark:text-slate-300">12%</strong> (it rose from 11.5% on 1 July 2025).</li>
             </ul>
