@@ -97,6 +97,11 @@ const GROUPS: Group[] = [
         blurb: 'The ATO’s resides and 183-day tests, five official examples, the eight non-discrimination countries and what changes on your return.',
       },
       {
+        href: '/guides/backpacker-tfn-working-holiday',
+        title: 'Working Holiday TFN: How to Get One',
+        blurb: 'Free to apply, about 28 days by post, and why having no tax file number can mean 45% tax withheld.',
+      },
+      {
         href: '/guides/how-88-days-are-counted',
         title: 'How the 88 Days Are Counted',
         blurb: 'Calendar days, weekends, part-time work, rain days, rosters and piece rates — with worked examples.',
