@@ -258,8 +258,8 @@ export default function TakeHomeReferencePage() {
           <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
             <p>
               Every number on this page is computed with the same open methodology as the main
-              calculator: 2026-27 resident income tax brackets (with the Stage 3 rates in effect from
-              1 July 2026), the Low Income Tax Offset, and the 2% Medicare levy. The table assumes no
+              calculator: 2026-27 resident income tax brackets (15% on income from $18,201 to $45,000,
+              in effect from 1 July 2026), the Low Income Tax Offset, and the 2% Medicare levy. The table assumes no
               HECS/HELP debt and that private hospital cover is held, so no Medicare Levy Surcharge
               applies. Superannuation is paid by your employer on top and is not part of take-home
               pay.
