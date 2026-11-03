@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import GuideArticle, { B, Callout, Ext, GuideSection, In, SimpleTable } from '@/components/GuideArticle';
 
 const PATH = '/guides/backpacker-tfn-working-holiday';
-const TITLE = 'Working Holiday TFN: How to Get a Tax File Number';
+const TITLE = 'TFN on a Working Holiday Visa: How to Apply';
 const DESC =
   'Working in Australia on a 417 or 462 visa? See how to apply for a TFN, how long it takes and why having none can mean 45% tax withheld.';
 
