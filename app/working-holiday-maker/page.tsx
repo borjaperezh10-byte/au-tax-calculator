@@ -185,7 +185,7 @@ export default function WorkingHolidayMakerPage() {
               },
               {
                 q: 'How is working holiday maker tax different from resident tax?',
-                a: `Australian residents benefit from a tax-free threshold ($18,200), the Low Income Tax Offset (LITO), and the Medicare Levy applying at a low 2%. Working holiday makers receive none of these — but the flat 15% rate on the first $45,000 is actually lower than the rate Australian residents pay on income in that range (19% in 2025-26, reduced to 15% from 1 July 2026 under Stage 3 cuts). From 2026-27 the rate is the same 15% for both groups on that bracket.`,
+                a: `Australian residents benefit from a tax-free threshold ($18,200), the Low Income Tax Offset (LITO), and the Medicare Levy applying at a low 2%. Working holiday makers receive none of these — but the flat 15% rate on the first $45,000 is actually lower than the rate Australian residents pay on income in that range (16% in 2025-26, reduced to 15% from 1 July 2026). From 2026-27 the rate is the same 15% for both groups on that bracket.`,
               },
               {
                 q: 'Do I pay Medicare Levy as a working holiday maker?',
