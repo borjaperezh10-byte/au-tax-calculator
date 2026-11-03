@@ -51,7 +51,7 @@ export default function SalaryTablePage() {
             Australian Salary &amp; Tax Table 2026-27
           </h1>
           <p className="text-slate-500 dark:text-slate-400 mt-2 max-w-2xl">
-            Income tax, Medicare levy and take-home pay for Australian resident salaries from $30,000 to $300,000, for the 2026-27 financial year (Stage 3 rates applied). Free to reuse with attribution.
+            Income tax, Medicare levy and take-home pay for Australian resident salaries from $30,000 to $300,000, for the 2026-27 financial year (2026-27 resident rates applied). Free to reuse with attribution.
           </p>
         </div>
       </div>
