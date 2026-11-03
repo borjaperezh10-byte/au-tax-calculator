@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { GuideBreadcrumbLd, GuideShare } from '@/components/GuideExtras';
 
 export const metadata: Metadata = {
-  title: 'Claim Your Super When You Leave Australia (DASP Guide)',
+  title: 'Claim Your Super Leaving Australia (DASP Guide)',
   description:
     'How the Departing Australia Superannuation Payment works: who can claim it, the 35%, 45% and 65% tax rates, how to apply and what happens if you wait.',
   alternates: { canonical: '/guides/departing-australia-super-dasp' },
   openGraph: {
     images: ['/opengraph-image'],
     url: '/guides/departing-australia-super-dasp',
-    title: 'Claim Your Super When You Leave Australia (DASP Guide)',
+    title: 'Claim Your Super Leaving Australia (DASP Guide)',
     description:
       'Who can claim a DASP, what the 65% working holiday maker rate means, how to apply from overseas and what happens to unclaimed super.',
     type: 'article',
