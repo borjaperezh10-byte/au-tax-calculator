@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import GuideArticle, { B, Callout, Ext, GuideSection, In, SimpleTable } from '@/components/GuideArticle';
 
 const PATH = '/guides/working-holiday-tax-residency';
-const TITLE = 'Working Holiday Maker Tax Residency: Are You a Resident?';
+const TITLE = 'Are You a Tax Resident on a Working Holiday?';
 const DESC =
   'Most backpackers are foreign residents for tax, but not all. See the ATO’s two residency tests, five official examples and what changes on your return.';
 
