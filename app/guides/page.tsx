@@ -59,6 +59,11 @@ const GROUPS: Group[] = [
         title: 'Tax on a Second Job',
         blurb: 'Why a second job is taxed harder, how the tax-free threshold works and how to avoid a surprise bill.',
       },
+      {
+        href: '/guides/payday-super',
+        title: 'Payday Super: What Changes for You',
+        blurb: 'Since 1 July 2026 super is paid with each payday, within 7 business days. What counts as qualifying earnings and what to check.',
+      },
     ],
   },
   {
