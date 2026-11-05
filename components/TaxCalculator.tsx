@@ -28,10 +28,10 @@ const RESIDENCY_OPTIONS: { value: ResidencyType; label: string; title: string }[
   { value: 'working-holiday', label: '🎒 Working Holiday',    title: 'Visa subclass 417 or 462' },
 ];
 
-export default function TaxCalculator({ initialSalary = 80_000 }: { initialSalary?: number }) {
+export default function TaxCalculator({ initialSalary = 80_000, initialResidency = 'resident' }: { initialSalary?: number; initialResidency?: ResidencyType }) {
   const [salary, setSalary]             = useState(initialSalary);
   const [period, setPeriod]             = useState<Period>('annual');
-  const [residency, setResidency]       = useState<ResidencyType>('resident');
+  const [residency, setResidency]       = useState<ResidencyType>(initialResidency);
   const [hecs, setHecs]                 = useState(false);
   const [privateHealth, setPrivate]     = useState(true);
   const [showSuper, setShowSuper]       = useState(false);
@@ -39,13 +39,13 @@ export default function TaxCalculator({ initialSalary = 80_000 }: { initialSalar
   const [salarySacrifice, setSacrifice] = useState(0);
   const [showSacrifice, setShowSacrifice] = useState(false);
 
-  const WORK_DEDUCTION_AMT = 300;
+  const WORK_DEDUCTION_AMT = 1000;
   const result = calculate(
     salary,
     residency,
     hecs,
     privateHealth,
-    workDeduction ? WORK_DEDUCTION_AMT : 0,
+    workDeduction && residency === 'resident' ? WORK_DEDUCTION_AMT : 0,
     showSacrifice ? salarySacrifice : 0,
   );
   const d = (n: number) => forPeriod(n, period);
@@ -208,8 +208,8 @@ export default function TaxCalculator({ initialSalary = 80_000 }: { initialSalar
             id="workded"
             checked={workDeduction}
             onChange={setWorkDed}
-            name="Claim $300 work expenses"
-            desc="ATO allows up to $300 without receipts"
+            name="Claim $1,000 standard work deduction"
+            desc="Residents only, from 1 July 2026: up to $1,000 without receipts (nil if you claim more actual expenses)"
           />
           <Toggle
             id="super"
