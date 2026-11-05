@@ -124,6 +124,9 @@ export default function MethodologyPage() {
                 <p>
                   Salary sacrifice reduces your taxable income. It does not reduce the salary used to calculate the employer Super Guarantee (12% of your salary before sacrifice): the sacrificed amount is paid into super as an extra contribution on top. Work deductions include the $1,000 standard deduction from 1 July 2026, which applies to Australian residents only and is nil if you claim more than $1,000 in actual work-related expenses.
                 </p>
+              <p>
+                Reference test cases for 2026-27: a resident on $80,000 takes home $63,880 (income tax $14,520, Medicare levy $1,600, no LITO at this income), or $64,180 with the $1,000 standard deduction. A non-resident on $60,000 takes home $42,000 (30% from the first dollar, no Medicare levy). A working holiday maker on $45,000 takes home $38,250 (15% on the first $45,000, no LITO and no Medicare levy). With a $10,000 salary sacrifice on a $100,000 salary, the employer Super Guarantee stays at $12,000.
+              </p>
               </div>
             </div>
 
