@@ -64,6 +64,11 @@ const GROUPS: Group[] = [
         title: 'Payday Super: What Changes for You',
         blurb: 'Since 1 July 2026 super is paid with each payday, within 7 business days. What counts as qualifying earnings and what to check.',
       },
+      {
+        href: '/guides/help-loan-repayments-explained',
+        title: 'HELP Loan Repayments 2026-27',
+        blurb: 'The marginal repayment rates, what counts as repayment income and worked examples against the old system.',
+      },
     ],
   },
   {
