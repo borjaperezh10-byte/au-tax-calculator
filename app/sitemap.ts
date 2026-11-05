@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { SALARY_PAGES } from '@/lib/tax';
+import { SALARY_PAGES_INDEXED } from '@/lib/tax';
 
 const BASE_URL = 'https://www.auincometax.com';
 
@@ -7,7 +7,7 @@ const BASE_URL = 'https://www.auincometax.com';
 const LAST_MOD = new Date('2026-11-03T00:00:00Z');
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const salaryUrls = SALARY_PAGES.map(salary => ({
+  const salaryUrls = SALARY_PAGES_INDEXED.map(salary => ({
     url: `${BASE_URL}/salary/${salary}`,
     lastModified: LAST_MOD,
     changeFrequency: 'yearly' as const,
