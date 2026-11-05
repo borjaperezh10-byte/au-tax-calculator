@@ -110,7 +110,7 @@ export default function WhmTaxGuidePage() {
 <li>You generally do not need to lodge a return if all your income was working holiday wages and taxable income was $45,000 or less.</li>
 <li>Without a TFN, employers must withhold 45% on all your pay.</li>
 <li>
-Source: <a href="https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/working-in-australia/working-holiday-makers" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, working holiday makers</a>.
+Source: <a href="https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, working holiday makers</a>.
 </li>
 </ul>
 </section>
