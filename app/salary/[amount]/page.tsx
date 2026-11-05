@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import TaxCalculator from '@/components/TaxCalculator';
-import { calculate, fmtAUD, SALARY_PAGES } from '@/lib/tax';
+import { calculate, fmtAUD, SALARY_PAGES, SALARY_PAGES_INDEXED } from '@/lib/tax';
 
 interface Props {
   params: Promise<{ amount: string }>;
@@ -94,6 +94,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `On a $${k},000 salary in Australia, your take-home pay is ${net} per year after ${tax} in income tax and Medicare levy (2026-27).`,
     // Relative — resolved against metadataBase in app/layout.tsx
     alternates: { canonical: `/salary/${salary}` },
+    robots: { index: SALARY_PAGES_INDEXED.includes(salary), follow: true },
     openGraph: {
       images: ['/opengraph-image'], url: `/salary/${salary}` },
   };
@@ -121,6 +122,24 @@ export default async function SalaryPage({ params }: Props) {
   // Strictly greater: $105,000 exactly is still in the nil tier.
   const aboveMLSThreshold = salary > MLS_SINGLE_THRESHOLD;
   const vsAverage = salary - AVERAGE_FULLTIME_SALARY;
+
+  // What-if scenarios for this exact salary, computed with the site engine
+  const scenarioHelp = calculate(salary, true, true, true)
+  const scenarioDeduction = calculate(salary, true, false, true, 1000)
+  const scenarioSacrifice = calculate(salary, true, false, true, 0, 5000)
+  const scenarioWhm = calculate(salary, 'working-holiday', false, true)
+  const scenarioNonRes = calculate(salary, 'non-resident', false, true)
+  const scenarioRows = [
+    { label: 'Resident, no extras (the figure above)', net: r.netIncome },
+    { label: 'Resident with a HELP or HECS debt', net: scenarioHelp.netIncome },
+    { label: 'Resident claiming the $1,000 standard deduction', net: scenarioDeduction.netIncome },
+    { label: 'Resident sacrificing $5,000 into super', net: scenarioSacrifice.netIncome },
+    { label: 'Working holiday maker (visa 417 or 462)', net: scenarioWhm.netIncome },
+    { label: 'Foreign resident for tax purposes', net: scenarioNonRes.netIncome },
+  ]
+  const helpCost = r.netIncome - scenarioHelp.netIncome
+  const sacrificeCost = r.netIncome - scenarioSacrifice.netIncome
+  const whmDiff = scenarioWhm.netIncome - r.netIncome
 
   // Quick stats for the static header
   const stats = [
@@ -316,6 +335,51 @@ export default async function SalaryPage({ params }: Props) {
             Every rate on this page comes from the ATO's legislated 2026–27 tables. The full workings,
             including the low income tax offset and Medicare levy shade-in, are set out on our{' '}
             <a href="/methodology" className="text-blue-500 hover:underline">methodology page</a>.
+          </p>
+        </section>
+
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            How your situation changes the {fmtAUD(salary)} result
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
+            The figure above is for an Australian tax resident with no study debt and no extra
+            deductions. Here is the same salary under the most common variations, all worked out
+            with the 2026-27 rates.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-left text-xs text-slate-500 dark:text-slate-400">
+                  <th className="px-3 py-2 font-medium">Situation</th>
+                  <th className="px-3 py-2 font-medium text-right">Take-home per year</th>
+                  <th className="px-3 py-2 font-medium text-right">Difference</th>
+                </tr>
+              </thead>
+              <tbody>
+                {scenarioRows.map((row) => (
+                  <tr key={row.label} className="border-t border-slate-200 dark:border-slate-700">
+                    <td className="px-3 py-2 text-slate-700 dark:text-slate-300">{row.label}</td>
+                    <td className="px-3 py-2 font-mono tabular-nums text-right text-slate-900 dark:text-white">{fmtAUD(row.net)}</td>
+                    <td className="px-3 py-2 font-mono tabular-nums text-right text-slate-700 dark:text-slate-300">
+                      {row.net === r.netIncome ? '-' : (row.net > r.netIncome ? '+' : '-') + fmtAUD(Math.abs(row.net - r.netIncome))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-300 mt-4">
+            On {fmtAUD(salary)} your employer also pays about {fmtAUD(r.superEmployer)} a year into
+            super (12%), so the full package is worth around {fmtAUD(salary + r.superEmployer)}.{' '}
+            {helpCost > 0
+              ? 'A HELP or HECS debt takes ' + fmtAUD(helpCost) + ' a year at this income. '
+              : 'No compulsory HELP or HECS repayment applies at this income. '}
+            A $5,000 salary sacrifice lowers your take-home by only {fmtAUD(sacrificeCost)}, because
+            it also cuts your tax by {fmtAUD(5000 - sacrificeCost)}, and the full $5,000 goes into
+            super. A working holiday maker on the same salary takes home {fmtAUD(Math.abs(whmDiff))}{' '}
+            {whmDiff >= 0 ? 'more' : 'less'} than a resident. The difference comes from the working
+            holiday rates: no tax-free threshold and no low income offset, but no Medicare levy.
           </p>
         </section>
 
