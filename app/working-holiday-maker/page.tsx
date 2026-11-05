@@ -107,7 +107,7 @@ export default function WorkingHolidayMakerPage() {
         {/* Calculator */}
         <section>
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Calculate your take-home pay</h2>
-          <TaxCalculator initialSalary={45_000} />
+          <TaxCalculator initialSalary={45_000} initialResidency="working-holiday" />
           <p className="text-xs text-slate-400 mt-2 pl-1">
             Select &ldquo;Working Holiday&rdquo; under Tax residency above to apply WHM rates.
           </p>
