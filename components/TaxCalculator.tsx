@@ -304,7 +304,7 @@ export default function TaxCalculator({ initialSalary = 80_000, initialResidency
           {showSacrifice && salarySacrifice > 0 && (
             <Row label={`Salary sacrifice (super)`} value={`−${fmtAUD(d(salarySacrifice))}`} color="text-amber-600 dark:text-amber-400" dot="bg-amber-400" small />
           )}
-          {workDeduction && (
+          {workDeduction && residency === 'resident' && (
             <Row label="Standard work deduction" value={`−${fmtAUD(d(WORK_DEDUCTION_AMT))}`} color="text-slate-500 dark:text-slate-400" small />
           )}
           <Row label="Income tax" value={`−${f(result.netIncomeTax)}`} color="text-red-600 dark:text-red-400" dot="bg-red-500" />
