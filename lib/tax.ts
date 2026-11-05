@@ -169,7 +169,7 @@ export function getMarginalRate(income: number, residency: ResidencyType): numbe
  * @param hecs           Has HECS/HELP debt?
  * @param privateHealth  Has private hospital cover? (affects MLS)
  * @param workDeduction  Work-related deduction amount (reduces taxable income)
- * @param salarySacrifice Pre-tax super/salary sacrifice (reduces taxable income + gross super)
+ * @param salarySacrifice Pre-tax super/salary sacrifice (reduces taxable income; employer SG stays 12% of salary before sacrifice)
  */
 export function calculate(
   salary: number,
