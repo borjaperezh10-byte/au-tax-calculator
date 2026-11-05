@@ -88,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/guides/help-loan-repayments-explained`,
+      lastModified: LAST_MOD,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/guides/payday-super`,
       lastModified: LAST_MOD,
       changeFrequency: 'monthly' as const,
