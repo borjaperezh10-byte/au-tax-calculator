@@ -200,7 +200,7 @@ Source: <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian
               So the salary that sounded like $3,461 a fortnight puts $2,718 in the bank, and another
               $415 goes to super on top. Over the year that&rsquo;s $70,680 in your account and $10,800
               in your super. In monthly terms it&rsquo;s about $5,890 net. See the{' '}
-              <a href="/take-home-pay-reference" className="text-blue-600 dark:text-blue-400 hover:underline">
+              <a href="/salary-table" className="text-blue-600 dark:text-blue-400 hover:underline">
                 take-home pay reference
               </a>{' '}
               for other salaries.
@@ -309,7 +309,7 @@ Source: <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian
           <h2 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-4">Related reading</h2>
           <div className="flex flex-wrap gap-2">
             <a href="/" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Take-home pay calculator</a>
-            <a href="/take-home-pay-reference" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Take-home pay reference</a>
+            <a href="/salary-table" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Take-home pay reference</a>
             <a href="/guides/how-australian-income-tax-works" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">How income tax works</a>
             <a href="/guides/salary-sacrifice-explained" className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-1.5 transition-colors">Salary sacrifice explained</a>
           </div>
