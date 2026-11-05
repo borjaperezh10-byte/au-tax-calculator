@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { calculate, fmtAUD, SALARY_PAGES } from '@/lib/tax';
+import { calculate, fmtAUD, SALARY_PAGES, SALARY_PAGES_INDEXED } from '@/lib/tax';
 import CopyTableButton from '@/components/CopyTableButton';
 
 export const metadata: Metadata = {
   title: 'Australian Salary & Tax Table 2026-27',
   description:
-    'Income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000 in 2026-27. Copy into Excel or Sheets.',
+    'Income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000 in 2026-27. See how much of each extra $10,000 you keep. Copy into Excel or Sheets.',
   alternates: { canonical: 'https://www.auincometax.com/salary-table' },
 };
 
@@ -39,6 +39,18 @@ export default function SalaryTablePage() {
       ].join('\t')
     ),
   ].join('\n');
+
+  // How much of each extra $10,000 an Australian resident keeps
+  // (moved here from the former take-home pay reference page)
+  const MARGINAL_STEPS = [
+    60_000, 70_000, 80_000, 90_000, 100_000, 110_000, 120_000, 130_000, 140_000,
+    150_000, 160_000, 170_000, 180_000, 190_000, 200_000,
+  ]
+  const marginalRows = MARGINAL_STEPS.slice(1).map((g, i) => {
+    const lower = MARGINAL_STEPS[i]
+    const kept = calculate(g, true, false, true).netIncome - calculate(lower, true, false, true).netIncome
+    return { from: lower, to: g, kept, pct: kept / (g - lower) * 100 }
+  })
 
   return (
     <main className="min-h-screen">
@@ -100,6 +112,56 @@ export default function SalaryTablePage() {
             </tbody>
           </table>
         </div>
+
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            How much of each extra $10,000 you keep
+          </h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 max-w-2xl">
+            The table above shows the average tax on a whole salary. What matters for a pay rise
+            is the marginal rate, which is the tax on the next dollar. This table shows how much of
+            each extra $10,000 an Australian resident keeps after income tax and Medicare levy,
+            using the 2026-27 rates. The 30% rate applies from $45,001 to $135,000 and the 37%
+            rate from $135,001 to $190,000, with the Medicare levy of 2% on top.
+          </p>
+          <div className="overflow-x-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200 dark:border-slate-700 text-left text-xs text-slate-400 uppercase tracking-wide">
+                  <th className="px-4 py-3 font-medium">Pay rise</th>
+                  <th className="px-4 py-3 font-medium text-right">You keep</th>
+                  <th className="px-4 py-3 font-medium text-right">Share kept</th>
+                </tr>
+              </thead>
+              <tbody>
+                {marginalRows.map((row) => (
+                  <tr key={row.to} className="border-b border-slate-100 dark:border-slate-700/50 last:border-0">
+                    <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300">{fmtAUD(row.from)} to {fmtAUD(row.to)}</td>
+                    <td className="px-4 py-2.5 text-right font-mono tabular-nums text-slate-900 dark:text-white">{fmtAUD(row.kept)}</td>
+                    <td className="px-4 py-2.5 text-right font-mono tabular-nums text-slate-600 dark:text-slate-400">{row.pct.toFixed(0)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-3">
+            Worked examples with HELP, super and visa scenarios
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {SALARY_PAGES_INDEXED.map((s) => (
+              <a
+                key={s}
+                href={'/salary/' + s}
+                className="text-sm px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+              >
+                {fmtAUD(s)} salary
+              </a>
+            ))}
+          </div>
+        </section>
 
         <div className="mt-8 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl p-5 text-sm text-blue-800 dark:text-blue-300">
           <p className="font-semibold mb-1">Free to cite or reference</p>
