@@ -25,7 +25,7 @@ export default function Page() {
       description={DESC}
       badge="🇦🇺 Guide · Visas 417 & 462"
       subtitle="Weekends, part-time work, overtime, second jobs, rain days and rosters — how Home Affairs turns your work into days, with worked examples."
-      updated="October 2026"
+      updated="November 2026"
 quick="The 88 days (179 for a third visa) are calendar days, not shifts: weekends inside a period of full-time work count, part-time work counts as a proportion of full-time, and each calendar day counts once even with two jobs. Days you are stood down without pay, such as rain days, do not count."
 keyFacts={[
 'Full-time work from 1 January to 29 March counts as 88 days.',
@@ -48,6 +48,18 @@ source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417
           a: 'Days you are stood down without pay, for example because of bad weather, do not count. Paid public holidays and paid leave do.',
         },
         {
+q: 'Does a 10-hour day count as two days?',
+a: 'No. Home Affairs says work on one calendar day never counts as more than one day of specified work, even if it is done in separate shifts or for several employers and is longer than the standard day in the industry.',
+},
+{
+q: 'How do I estimate part-time work?',
+a: 'Home Affairs gives examples rather than a formula. A practical estimate is days worked per week divided by the days a full-time employee in that role normally works, multiplied by the calendar days of the period. Five days a fortnight in a ten-day fortnight is half of full-time, so 122 calendar days count as 61. Treat the result as an estimate and keep your rosters.',
+},
+{
+q: 'Do I need to agree my hours with the employer?',
+a: 'Home Affairs says you should agree the number of working hours with your employer before you start. One day of work is the normal number of hours per day or shift for that industry and role. If you work under an award, check its rostering, overtime and penalty rate conditions.',
+},
+{
           q: 'Does working two jobs on the same day count as two days?',
           a: 'No. Even with several employers, each calendar day counts as one day at most.',
         },
@@ -123,7 +135,7 @@ source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417
         <p className="text-xs text-slate-400">
           Based on the examples on the official{' '}
           <Ext href={OFFICIAL.specified417}>subclass 417</Ext> and{' '}
-          <Ext href={OFFICIAL.specified462}>subclass 462</Ext> specified work pages (checked 7 October 2026).
+          <Ext href={OFFICIAL.specified462}>subclass 462</Ext> specified work pages (checked 5 November 2026).
         </p>
       </GuideSection>
 
@@ -142,7 +154,54 @@ source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417
         </p>
       </GuideSection>
 
-      <GuideSection title="Splitting it up across jobs">
+      <GuideSection title="The cases Home Affairs publishes">
+<p>These are short versions of the official examples, so you can compare them with your own situation.</p>
+<SimpleTable
+head={['Case', 'What happened', 'Result']}
+rows={[
+['Full-time builder', '5 days a week, 1 December to 26 February (88 calendar days), paid correctly', 'Meets the 3 months'],
+['Two days a week at a vineyard', '1 February to 30 April, paid correctly', 'Does not meet it: far fewer days than a full-time worker'],
+['Fruit picker, then casual vegetable work', '120 calendar days full-time plus 122 days at half of full-time hours (61)', 'Meets the 6 months'],
+['Dairy farm', '5 days a week, 6 hours a day split into two shifts, for 6 months', 'Every day counts'],
+['Cattle station', '5 or 6 days a week, 5 to 9 hours a day including meal breaks, 3 months', 'Meets the 3 months'],
+['Hospital nurse', 'Three 12-hour shifts a week for 3 months, normal for the industry', 'Meets the 3 months'],
+['Sugar cane harvest', '88-day contract, 5 scheduled days lost to weather and unpaid, then 5 more working days with another employer', 'Meets the 3 months'],
+]}
+/>
+<p>
+The sugar cane case is the one to remember: the unpaid weather days were not counted, and the person made them
+up with extra working days instead of getting an exception.
+</p>
+</GuideSection>
+
+<GuideSection title="A practical way to estimate part-time work">
+<p>
+Home Affairs does not publish a formula for part-time work, so this is our estimate method, based on its
+examples. Divide the days you work in a week by the days a full-time employee in that role normally works, then
+multiply by the calendar days of the period.
+</p>
+<p>
+Example: you work 3 days a week in a job where full-time is 5 days. That is 3 divided by 5, or 60% of
+full-time. To reach 88 days you need roughly 88 divided by 0.6, which is about 147 calendar days, or 21 weeks.
+The same 21 weeks at full-time would have counted as 147 days, so part-time does not make the total smaller, it
+makes the period you need longer.
+</p>
+<p className="text-xs text-slate-400">
+Estimate only. The decision is made by Home Affairs on the evidence you provide.
+</p>
+</GuideSection>
+
+<GuideSection title="Mistakes that leave people short">
+<ul className="list-disc pl-5 space-y-2">
+<li>Counting the days they worked instead of the calendar days of a full-time period.</li>
+<li>Counting unpaid bad weather days or unpaid public holidays.</li>
+<li>Counting a long day as two days.</li>
+<li>Counting work done on the wrong visa. For the third visa, only work from 1 July 2019 while you held the second visa counts, apart from the special bridging and COVID-19 cases.</li>
+<li>Leaving the work until late in the visa. Home Affairs says no exception is made if you run short because of weather or any other reason.</li>
+</ul>
+</GuideSection>
+
+<GuideSection title="Splitting it up across jobs">
         <p>
           The days don&rsquo;t have to be continuous or with one employer. You can mix full-time and part-time periods
           across the life of your visa. What matters is that each job is in an eligible industry and{' '}
