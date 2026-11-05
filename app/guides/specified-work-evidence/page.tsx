@@ -25,7 +25,7 @@ export default function Page() {
       description={DESC}
       badge="🇦🇺 Guide · Visas 417 & 462"
       subtitle="Home Affairs can ask you to prove every day you claim. Here’s the evidence it lists, and how to keep it organised from day one."
-      updated="October 2026"
+      updated="November 2026"
 quick="Keep payslips and Australian bank statements covering every period of specified work you claim, plus any piecework agreement, group certificates, tax returns and employer references. Home Affairs can contact your employers, and volunteer recovery work needs a signed letter from the coordinator or host."
 keyFacts={[
 'Payslips and bank statements are the most common proof of paid work.',
@@ -43,6 +43,18 @@ source={{ href: OFFICIAL.second417, label: 'Home Affairs, second Working Holiday
           a: 'Yes. The official pages say the Department may contact your employers to check the work you declare.',
         },
         {
+q: 'Do paid public holidays and sick days count, and what proof do I need?',
+a: 'Home Affairs says Australian public holidays and sick days, or equivalent workers compensation leave days, can count as a day of specified work if you are paid for that day. Unpaid ones cannot. Your payslips are the natural proof, because they show the paid leave line.',
+},
+{
+q: 'What should I keep if I work rostered shifts, such as two weeks on and two weeks off?',
+a: 'Home Affairs says variable shift arrangements that are standard practice in the industry can count, including rostered-off days if you are paid for the whole period, and tells applicants to keep a copy of the employment contract. Keep the contract together with the payslips.',
+},
+{
+q: 'What evidence do I need for critical COVID-19 work?',
+a: 'Home Affairs says applicants should include evidence showing how the work supports Australia response to the COVID-19 pandemic, in addition to the normal proof of work and payment.',
+},
+{
           q: 'What do I need for volunteer recovery work?',
           a: 'A signed letter from the coordinator or host with your passport details, the tasks you did, the postcodes and the number of days worked.',
         },
@@ -76,7 +88,7 @@ source={{ href: OFFICIAL.second417, label: 'Home Affairs, second Working Holiday
         <p className="text-xs text-slate-400">
           Sources: <Ext href={OFFICIAL.second417}>second 417</Ext>, <Ext href={OFFICIAL.third417}>third 417</Ext>,{' '}
           <Ext href={OFFICIAL.second462}>second 462</Ext> and <Ext href={OFFICIAL.third462}>third 462</Ext> visa
-          pages, checked 7 October 2026.
+          pages, checked 5 November 2026. The sections below on piecework, shift work, paid leave and disaster recovery work follow the Home Affairs specified work page, also checked 5 November 2026.
         </p>
       </GuideSection>
 
@@ -111,7 +123,62 @@ source={{ href: OFFICIAL.second417, label: 'Home Affairs, second Working Holiday
         </ul>
       </GuideSection>
 
-      <GuideSection title="Make sure you were paid properly">
+      <GuideSection title="Evidence for the different ways of working">
+<ul className="list-disc pl-5 space-y-2">
+<li>
+<B>Piecework.</B> Home Affairs counts piecework days, which can vary with weather and ripening of crops, but
+you still need proof of the days you worked. Keep the agreement and the payslips that show the days or
+periods covered.
+</li>
+<li>
+<B>Rostered shifts.</B> If your contract has weeks on and weeks off and this is standard practice in the
+industry, Home Affairs says to keep a copy of your employment contract. That contract is what explains the
+rostered-off days on your payslips.
+</li>
+<li>
+<B>Paid public holidays and sick days.</B> They can count as days of specified work if you were paid for them,
+so do not throw away payslips that show them.
+</li>
+<li>
+<B>Several short jobs.</B> You may combine periods of full-time and part-time work, so each job needs its own
+set of evidence. One employer reference does not cover the others.
+</li>
+<li>
+<B>Disaster recovery work.</B> For flood or other disaster recovery work, you must choose the matching
+employment type in the ImmiAccount form (flood recovery paid or volunteer). Keep evidence that links the
+work to the declared area.
+</li>
+<li>
+<B>Critical COVID-19 work.</B> Include evidence showing how the work supports the COVID-19 response.
+</li>
+</ul>
+</GuideSection>
+
+<GuideSection title="A simple evidence checklist for each job">
+<ol className="list-decimal pl-5 space-y-2">
+<li>Contract or written agreement, including rostered hours or the piece rate.</li>
+<li>All payslips, with the work site postcode somewhere in the file, such as a reference.</li>
+<li>Bank statements showing the matching deposits.</li>
+<li>A reference from the employer with start and end dates and the work site address.</li>
+<li>Your own day-by-day log from the <In href="/88-days-calculator">88 days calculator</In>, so you can see gaps before Home Affairs does.</li>
+</ol>
+<p>
+This checklist is our suggestion for staying organised. The official evidence requirements are the ones listed
+by Home Affairs above.
+</p>
+</GuideSection>
+
+<GuideSection title="Common gaps that cause problems">
+<ul className="list-disc pl-5 space-y-2">
+<li>Payslips that show only a head office address, with no work site postcode.</li>
+<li>Cash payments that do not appear in your bank statements.</li>
+<li>Unpaid days counted in the total. Unpaid bad weather days and unpaid leave cannot be counted.</li>
+<li>Counting more than one day for a long shift. One calendar day counts as one day at most.</li>
+<li>Leaving the work late in the visa. Home Affairs says no exception is made if you fall short, whatever the reason.</li>
+</ul>
+</GuideSection>
+
+<GuideSection title="Make sure you were paid properly">
         <p>
           Specified work must be paid in line with Australian law and awards. Being underpaid is a problem in its own
           right, and the Fair Work Ombudsman can help. Unpaid work does not count, except volunteer recovery work in
