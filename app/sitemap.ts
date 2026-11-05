@@ -4,7 +4,7 @@ import { SALARY_PAGES_INDEXED } from '@/lib/tax';
 const BASE_URL = 'https://www.auincometax.com';
 
 // Date of the last content change. Update it when pages change so that lastmod stays truthful.
-const LAST_MOD = new Date('2026-11-03T00:00:00Z');
+const LAST_MOD = new Date('2026-11-05T00:00:00Z');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const salaryUrls = SALARY_PAGES_INDEXED.map(salary => ({
@@ -88,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/guides/payday-super`,
+      lastModified: LAST_MOD,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/guides/departing-australia-super-dasp`,
       lastModified: LAST_MOD,
       changeFrequency: 'monthly' as const,
@@ -113,12 +119,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/hecs-help-repayment`,
-      lastModified: LAST_MOD,
-      changeFrequency: 'yearly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/take-home-pay-reference`,
       lastModified: LAST_MOD,
       changeFrequency: 'yearly' as const,
       priority: 0.9,
