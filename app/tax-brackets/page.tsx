@@ -37,6 +37,53 @@ const EXAMPLES = [
   };
 });
 
+function SimpleTable({ head, rows }: { head: string[]; rows: string[][] }) {
+  return (
+    <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+            {head.map(h => (
+              <th key={h} className="text-left px-4 py-3 font-semibold text-slate-600 dark:text-slate-400">{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-slate-100 dark:divide-slate-700 bg-white dark:bg-slate-900">
+          {rows.map(r => (
+            <tr key={r.join('|')}>
+              {r.map((c, i) => (
+                <td key={i} className="px-4 py-3 text-slate-700 dark:text-slate-300">{c}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+const TAX_FORMULA = [
+  ['$0 to $18,200', 'Nil', 'Nil'],
+  ['$18,201 to $45,000', '15c for each $1 over $18,200', '$4,020 at $45,000'],
+  ['$45,001 to $135,000', '$4,020 plus 30c for each $1 over $45,000', '$31,020 at $135,000'],
+  ['$135,001 to $190,000', '$31,020 plus 37c for each $1 over $135,000', '$51,370 at $190,000'],
+  ['$190,001 and over', '$51,370 plus 45c for each $1 over $190,000', ''],
+];
+
+const BRACKETS_BY_YEAR = [
+  ['2023-24', '19%', '32.5% to $120,000', '37% to $180,000', '45% above $180,000'],
+  ['2024-25', '16%', '30% to $135,000', '37% to $190,000', '45% above $190,000'],
+  ['2025-26', '16%', '30% to $135,000', '37% to $190,000', '45% above $190,000'],
+  ['2026-27', '15%', '30% to $135,000', '37% to $190,000', '45% above $190,000'],
+];
+
+const KEEP_PER_1000 = [
+  ['15%', '$150', '$20', '$830'],
+  ['30%', '$300', '$20', '$680'],
+  ['37%', '$370', '$20', '$610'],
+  ['45%', '$450', '$20', '$530'],
+];
+
 export default function TaxBracketsPage() {
   return (
     <main className="min-h-screen">
@@ -91,7 +138,7 @@ export default function TaxBracketsPage() {
             </table>
           </div>
           <p className="text-xs text-slate-400 mt-2 pl-1">
-            Plus 2% Medicare Levy on all income (over the $28,011 shade-in threshold).
+            Plus 2% Medicare levy, with reductions for low incomes.
             Low Income Tax Offset (LITO) up to $700 reduces tax payable for incomes below $66,667.
           </p>
         </section>
@@ -179,7 +226,79 @@ export default function TaxBracketsPage() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Formula */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">How the ATO states the 2026-27 resident rates</h2>
+<p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+The ATO publishes each bracket as a base amount plus a rate on the income above the bracket start. The base is just the tax already owed on all the lower brackets, which is why you can check any result by hand.
+</p>
+<SimpleTable head={['Taxable income', 'Tax on this income', 'Tax at top of bracket']} rows={TAX_FORMULA} />
+<p className="text-xs text-slate-400 mt-2 pl-1">
+Source: <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" target="_blank" rel="noopener" className="text-blue-500 hover:underline">ATO, tax rates for Australian residents</a>. The rates do not include the 2% Medicare levy.
+</p>
+</section>
+
+{/* By year */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">How the brackets have changed since 2023-24</h2>
+<p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+The first taxed bracket, from $18,201 to $45,000, has fallen from 19% to 16% and now to 15%. The Stage 3 changes in 2024-25 also replaced the 32.5% bracket with a 30% rate up to $135,000 and moved the 37% and 45% thresholds up. The tax-free threshold stayed at $18,200 throughout.
+</p>
+<SimpleTable head={['Income year', '$18,201 to $45,000', 'Next bracket', 'Third bracket', 'Top bracket']} rows={BRACKETS_BY_YEAR} />
+<p className="text-xs text-slate-400 mt-2 pl-1">
+Resident rates as listed by the ATO, checked on 5 November 2026. Medicare levy not included.
+</p>
+</section>
+
+{/* Marginal */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">What each extra $1,000 is worth after tax</h2>
+<p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+The marginal rate is the tax on your next dollar. A pay rise never reduces your take-home pay, because only the part above a threshold is taxed at the higher rate.
+</p>
+<SimpleTable head={['Marginal rate', 'Income tax on $1,000', 'Medicare levy at 2%', 'You keep']} rows={KEEP_PER_1000} />
+<p className="text-xs text-slate-400 mt-2 pl-1">
+Simple estimate for a resident who pays the full Medicare levy. It ignores LITO phase-out, HELP repayments and the Medicare levy surcharge, which can change the amount you keep. Use the calculator for your own numbers.
+</p>
+</section>
+
+{/* Working holiday makers */}
+<section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+<h2 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Working holiday makers use different rates</h2>
+<div className="text-sm text-slate-600 dark:text-slate-400 space-y-3">
+<p>
+If you hold a 417 or 462 visa you are taxed as a working holiday maker on that income. The ATO lists 15% on the first $45,000, then $6,750 plus 30c for each $1 over $45,000 up to $135,000, and the same 37% and 45% rates above that. There is no tax-free threshold.
+</p>
+<p>
+The ATO working holiday maker page currently shows the 2025-26 table, last updated on 1 June 2026, and our calculator applies the same structure to 2026-27. Check the ATO page for any change. See the <a href="/working-holiday-maker" className="text-blue-500 hover:underline">working holiday maker calculator</a> and the <a href="/guides/working-holiday-maker-tax" className="text-blue-500 hover:underline">WHM tax guide</a>.
+</p>
+</div>
+</section>
+
+{/* Common mistakes */}
+<section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+<h2 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Common mistakes about tax brackets</h2>
+<ul className="list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2">
+<li>Thinking a raise that crosses a threshold makes the whole salary taxed at the higher rate. Only the dollars above the threshold are.</li>
+<li>Using gross salary instead of taxable income. Deductions, such as the <a href="/guides/instant-1000-work-deduction" className="text-blue-500 hover:underline">$1,000 standard deduction</a> for eligible residents, lower the income the brackets apply to.</li>
+<li>Using resident rates for non-residents or working holiday makers, who have no tax-free threshold.</li>
+<li>Forgetting the Medicare levy, which comes on top of the bracket rates.</li>
+<li>Confusing the marginal rate with the effective rate. See <a href="/guides/marginal-vs-effective-tax-rate" className="text-blue-500 hover:underline">marginal vs effective tax rate</a>.</li>
+</ul>
+</section>
+
+{/* Related */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Related pages</h2>
+<ul className="list-disc pl-5 text-sm space-y-1">
+<li><a href="/salary-table" className="text-blue-500 hover:underline">Take-home pay table for common salaries</a></li>
+<li><a href="/guides/how-australian-income-tax-works" className="text-blue-500 hover:underline">How Australian income tax works</a></li>
+<li><a href="/guides/tax-deductions-for-employees" className="text-blue-500 hover:underline">Tax deductions for employees</a></li>
+<li><a href="/methodology" className="text-blue-500 hover:underline">How the calculator works</a></li>
+</ul>
+</section>
+
+{/* CTA */}
         <div className="text-center pt-2">
           <a
             href="/"
@@ -193,7 +312,7 @@ export default function TaxBracketsPage() {
       <footer className="max-w-4xl mx-auto px-4 py-8 text-center text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 mt-8">
         Rates based on{' '}
         <a href="https://www.ato.gov.au" target="_blank" rel="noopener" className="text-blue-500 hover:underline">ATO</a>
-        {' '}legislated 2026–27 tables. For indicative purposes only — not financial or tax advice.
+        {' '}resident tax rates page, checked on 5 November 2026 (the ATO page was last updated on 13 August 2026). For indicative purposes only — not financial or tax advice.
       </footer>
     </main>
   );
