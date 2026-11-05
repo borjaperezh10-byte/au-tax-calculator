@@ -25,7 +25,7 @@ export default function Page() {
       description={DESC}
       badge="🇦🇺 Guide · 417 vs 462"
       subtitle="Same days, same postcode tables — but different industries count in different places. Here’s what changes between the two visas."
-      updated="October 2026"
+      updated="November 2026"
 quick="Mining counts as specified work only on a 417. Fishing and tree work count anywhere regional on a 417 but only in Northern Australia on a 462, and farm and construction work also count in Northern Australia on a 462. The day counts and postcode tables are the same for both visas."
 keyFacts={[
 'Days: 88 for a second visa and 179 for a third, counted as calendar days on both visas.',
@@ -45,6 +45,10 @@ source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417
         {
           q: 'Is the number of days different for 417 and 462 visas?',
           a: 'No. Both need 88 days for a second visa and 179 days for a third, counted the same way.',
+        },
+        {
+          q: 'Does admin or cleaning work in a specified industry count?',
+          a: 'It can. Home Affairs is temporarily accepting work that supports the ongoing operations of a specified industry, such as administrative and cleaning support services, in an eligible postcode. Because the rule is described as temporary, check the current wording on the Home Affairs page before you rely on it.',
         },
       ]}
       related={[
@@ -73,7 +77,7 @@ source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417
         />
         <p className="text-xs text-slate-400">
           Sources: <Ext href={OFFICIAL.specified417}>specified work (417)</Ext> and{' '}
-          <Ext href={OFFICIAL.specified462}>specified subclass 462 work</Ext>, checked 7 October 2026. The six postcode
+          <Ext href={OFFICIAL.specified462}>specified subclass 462 work</Ext>, checked 5 November 2026. The six postcode
           tables are identical on both pages.
         </p>
       </GuideSection>
@@ -102,6 +106,69 @@ source={{ href: OFFICIAL.specified417, label: 'Home Affairs, specified work (417
           visa and it shows which industries count at that postcode.
         </p>
       </GuideSection>
+      <GuideSection title="Work that supports a specified industry">
+        <p>
+          Home Affairs is temporarily applying flexibility to the specified work requirement and giving
+          greater weight to the industry. On both pages it says that work which supports the ongoing
+          operations of a specified industry, such as administrative and cleaning support services,
+          in an eligible postcode may be accepted. This applies to the 417 and the 462. Because it is
+          described as temporary, read the current wording on the Home Affairs page before relying on
+          it, and keep payslips that show the employer, the industry and the postcode.
+        </p>
+      </GuideSection>
+
+      <GuideSection title="How the days are counted on both visas">
+        <p>
+          For a second visa you need 3 months of specified work, which Home Affairs defines as the
+          3 shortest calendar months of the year: at least 88 calendar days, including weekends or
+          equivalent rest days. For a third visa you need 6 months on or after 1 July 2019, which is
+          at least 179 calendar days. Within that period you must complete the same number of normal
+          work days or shifts as a full-time employee in that role and industry would normally work.
+          The counting rules are the same for both visas.
+        </p>
+      </GuideSection>
+
+      <GuideSection title="Three examples of the difference">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <B>Mining on a 462.</B> Someone on a 462 works 90 days at a regional mine. Those days do
+            not count towards a second visa, because mining is not specified work on a 462. The same
+            work would count on a 417 if the postcode is eligible.
+          </li>
+          <li>
+            <B>Fishing on a 462.</B> A 462 holder crews a fishing boat from a regional port outside
+            Northern Australia. Fishing and pearling only count on a 462 in Northern Australia, so
+            those days do not count. On a 417, fishing in an eligible regional postcode counts.
+          </li>
+          <li>
+            <B>Farm work on either visa.</B> Fruit picking or other plant and animal cultivation in
+            an eligible regional postcode counts on both visas, and on a 462 it also counts in
+            Northern Australia.
+          </li>
+        </ul>
+        <p className="text-xs text-slate-400">
+          These are illustrations of the rules, not advice on your case. The postcode still has to be
+          on the right table.
+        </p>
+      </GuideSection>
+
+      <GuideSection title="Check your own situation in four steps">
+        <ol className="list-decimal pl-5 space-y-2">
+          <li>Check the subclass on your visa grant notice: 417 or 462.</li>
+          <li>Find your industry in the table above and note where it counts for your visa.</li>
+          <li>
+            Test the postcode of each workplace with the{' '}
+            <a href="/guides/specified-work-postcodes" className="text-blue-500 hover:underline">postcode checker</a>.
+          </li>
+          <li>
+            Add up your days with the{' '}
+            <a href="/88-days-calculator" className="text-blue-500 hover:underline">88 days calculator</a>{' '}
+            and keep the evidence listed in our{' '}
+            <a href="/guides/specified-work-evidence" className="text-blue-500 hover:underline">evidence guide</a>.
+          </li>
+        </ol>
+      </GuideSection>
+
     </GuideArticle>
   );
 }
