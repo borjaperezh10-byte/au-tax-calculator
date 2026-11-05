@@ -74,61 +74,61 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contact form placeholder */}
-        <section>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Send a message</h2>
-          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 space-y-4">
-            <div>
-              <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Name</label>
-              <input
-                id="contact-name"
-                type="text"
-                placeholder="Your name"
-                className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              />
-            </div>
-            <div>
-              <label htmlFor="contact-email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Email address</label>
-              <input
-                id="contact-email"
-                type="email"
-                placeholder="you@example.com"
-                className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              />
-            </div>
-            <div>
-              <label htmlFor="contact-type" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Type of enquiry</label>
-              <select
-                id="contact-type"
-                className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              >
-                <option value="">Select one…</option>
-                <option value="error">Calculation error</option>
-                <option value="suggestion">Suggestion or feature request</option>
-                <option value="question">General question</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="contact-message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Message</label>
-              <textarea
-                id="contact-message"
-                rows={5}
-                placeholder="Describe your issue or question. For calculation errors, please include the income amount, residency type, and the ATO source for the correct value."
-                className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-y"
-              />
-            </div>
-            <p className="text-xs text-slate-400">
-              By submitting this form, you agree to our <a href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</a>.
-            </p>
-            <button
-              type="button"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl px-6 py-2.5 text-sm transition-colors"
-            >
-              Send message
-            </button>
-          </div>
-        </section>
+        {/* How to reach us */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Email us</h2>
+<div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 space-y-4 text-sm text-slate-600 dark:text-slate-400">
+<p>
+The fastest way to reach the site is email: <a href="mailto:borja@auincometax.com" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">borja@auincometax.com</a>. Choose the link that matches your message and your email app will open with the subject filled in.
+</p>
+<ul className="space-y-2">
+<li><a href="mailto:borja@auincometax.com?subject=Calculation%20error%20report" className="text-blue-600 dark:text-blue-400 hover:underline">Report a calculation error</a></li>
+<li><a href="mailto:borja@auincometax.com?subject=Suggestion%20for%20auincometax.com" className="text-blue-600 dark:text-blue-400 hover:underline">Send a suggestion</a></li>
+<li><a href="mailto:borja@auincometax.com?subject=Question%20about%20auincometax.com" className="text-blue-600 dark:text-blue-400 hover:underline">Ask a general question</a></li>
+</ul>
+<p className="text-xs text-slate-400">
+The email address you write from is used only to reply to you. See the <a href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</a>.
+</p>
+</div>
+</section>
+
+{/* What to include */}
+<section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+<h2 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">What to include in a calculation error report</h2>
+<ul className="list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2">
+<li>The page you used and the income year, for example the main calculator for 2026-27.</li>
+<li>The inputs you entered: salary, residency type (resident, non-resident or working holiday maker), HELP debt, private health insurance and any deduction toggles.</li>
+<li>The result you got and the result you expected.</li>
+<li>The ATO page or table that supports the expected result. The <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">ATO resident tax rates</a> page is a good starting point.</li>
+</ul>
+<p className="text-sm text-slate-600 dark:text-slate-400 mt-3">
+Before reporting, check our <a href="/methodology" className="text-blue-500 hover:underline">methodology</a> page: it lists the assumptions the calculator makes and a set of reference test cases, such as a resident on $80,000 taking home $63,880 before the optional $1,000 standard deduction.
+</p>
+</section>
+
+{/* How corrections are handled */}
+<section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+<h2 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">How we handle corrections</h2>
+<ol className="list-decimal pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2">
+<li>We compare your report with the official ATO or Home Affairs page.</li>
+<li>If the site is wrong, we fix the calculator or guide and record the change in the <a href="/changelog" className="text-blue-500 hover:underline">changelog</a>.</li>
+<li>If the site is right, we reply with the source so you can check it yourself.</li>
+<li>If the official sources are unclear or have changed recently, we say so on the page instead of guessing.</li>
+</ol>
+</section>
+
+{/* Official help */}
+<section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+<h2 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">Need help with your own tax or visa situation?</h2>
+<div className="text-sm text-slate-600 dark:text-slate-400 space-y-3">
+<p>
+This site gives general information only. For your own return, residency, super or HELP questions, use the <a href="https://www.ato.gov.au" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Australian Taxation Office</a> or a registered tax agent. For working holiday visa conditions and specified work, use <a href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Home Affairs</a>. We cannot give personal tax or migration advice and cannot check an individual visa application.
+</p>
+<p>
+More about who writes the site is on the <a href="/about" className="text-blue-500 hover:underline">about page</a>, and the <a href="/tax-disclaimer" className="text-blue-500 hover:underline">full disclaimer</a> explains the limits of the information.
+</p>
+</div>
+</section>
 
       </div>
     </main>
