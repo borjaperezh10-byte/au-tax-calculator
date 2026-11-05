@@ -86,8 +86,8 @@ export default function MethodologyPage() {
               },
               {
                 label: 'ATO resident tax rates 2026-27 (15% bracket)',
-                url: 'https://treasury.gov.au/tax/personal-income-tax-cuts',
-                text: 'Treasury — Personal income tax cuts',
+                url: 'https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents',
+                text: 'ATO — Tax rates, Australian residents',
               },
       {
         label: 'Average full-time earnings (salary page comparison)',
@@ -122,7 +122,7 @@ export default function MethodologyPage() {
                   <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono text-xs">Taxable income = Gross salary − Work deductions − Salary sacrifice</code>
                 </p>
                 <p>
-                  Salary sacrifice reduces both taxable income and the gross salary base from which super is calculated (salary sacrifice contributions go into super separately).
+                  Salary sacrifice reduces your taxable income. It does not reduce the salary used to calculate the employer Super Guarantee (12% of your salary before sacrifice): the sacrificed amount is paid into super as an extra contribution on top. Work deductions include the $1,000 standard deduction from 1 July 2026, which applies to Australian residents only and is nil if you claim more than $1,000 in actual work-related expenses.
                 </p>
               </div>
             </div>
