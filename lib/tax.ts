@@ -245,6 +245,13 @@ export const SALARY_PAGES = [
   130000, 140000, 150000, 160000, 180000, 200000, 250000, 300000,
 ];
 
+/**
+ * Salary pages that stay indexable. The rest remain reachable (linked from the
+ * salary table) but carry noindex and are left out of the sitemap, because they
+ * differ from their neighbours only by the figures.
+ */
+export const SALARY_PAGES_INDEXED = [50000, 60000, 70000, 80000, 90000, 100000, 120000, 150000]
+
 /** 2026-27 resident bracket summary (for display) */
 export const RESIDENT_BRACKETS_2627 = [
   { range: '$0 – $18,200',        rate: '0%',  note: 'Tax-free threshold' },
