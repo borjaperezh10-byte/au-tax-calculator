@@ -105,7 +105,7 @@ export default function EightyEightDaysPage() {
             specified work you have done — counted the way the Department of Home Affairs describes it.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            Rules last checked against Home Affairs: 7 October 2026. By{' '}
+            Rules last checked against Home Affairs: 9 November 2026. By{' '}
             <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a>.
           </p>
         </div>
@@ -120,6 +120,7 @@ export default function EightyEightDaysPage() {
 <ul className="list-disc pl-5 space-y-1 text-[14px]">
 <li>Your postcode must be on the eligible list for your visa and industry.</li>
 <li>The work must normally be paid under Australian law and awards.</li>
+<li>The tracker leaves out jobs whose industry or postcode does not count for your visa, and shows the earliest end date the 3 or 6 calendar month minimum allows.</li>
 <li>UK passport holders applying for a second or third 417 visa from 1 July 2024 do not need specified work.</li>
 <li>
 Source: <a href={OFFICIAL_417} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Home Affairs, specified work (417)</a>.
@@ -221,8 +222,8 @@ Source: <a href={OFFICIAL_417} target="_blank" rel="noopener noreferrer" classNa
             <a href={OFFICIAL_417} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">specified work (subclass 417)</a>{' '}
             and{' '}
             <a href={OFFICIAL_462} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">specified subclass 462 work</a>.
-            The calculator above checks your postcode against those tables (last updated by Home Affairs on 24
-            September 2026, checked by us on 7 October 2026). They change from time to time, so confirm on the
+            The calculator above checks your postcode against those tables (the 417 page was last updated by Home
+Affairs on 4 November 2026 and the 462 page on 5 November 2026; we checked every table on 9 November 2026). They change from time to time, so confirm on the
             official page before you apply.
           </p>
         </section>
