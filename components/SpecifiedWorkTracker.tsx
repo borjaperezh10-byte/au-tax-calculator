@@ -110,6 +110,31 @@ export default function SpecifiedWorkTracker() {
     URL.revokeObjectURL(a.href);
   }
 
+  function exportCSV() {
+    const esc = (v: string | number) => `"${String(v).replace(/"/g, '""')}"`;
+    const header = ['Job', 'Employer', 'ABN', 'Industry', 'Postcode', 'Start', 'End', 'How you worked', 'Calendar days', 'Days counted (estimate)', 'Note'];
+    const rows = jobs.map((j, i) => {
+      const jr = result.jobs.find(r => r.jobId === j.id);
+      const note = jr?.excluded === 'industry' ? 'Industry does not count on this visa' : jr?.excluded === 'postcode' ? 'Postcode not on the eligible list' : jr?.estimate ? 'Part-time estimate' : '';
+      return [i + 1, j.employer, j.abn, INDUSTRY_LABELS[j.industry], j.postcode, j.start, j.end, j.mode, jr?.calendarDays ?? '', jr ? Math.floor(jr.credited) : '', note];
+    });
+    const summary = [
+      [],
+      ['Visa', `subclass ${settings.subclass}`],
+      ['Target', `${settings.target} days`],
+      ['Total counted (estimate)', result.total],
+      ['Generated', todayISO()],
+      ['Note', 'Estimate from auincometax.com/88-days-calculator. Only the Department of Home Affairs decides whether work counts.'],
+    ];
+    const csv = [header, ...rows, ...summary].map(r => r.map(esc).join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `specified-work-summary-${todayISO()}.csv`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
   function importJSON(file: File) {
     file
       .text()
@@ -194,6 +219,19 @@ export default function SpecifiedWorkTracker() {
                 <strong>{prettyDate(result.projectedCompletion)}</strong>.
               </p>
             )}
+            {result.earliestCompletion && (
+              <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
+                Minimum period: you can&rsquo;t finish in less than {settings.target === 179 ? 6 : 3} calendar months,
+                so the earliest end date from your first counted day is around{' '}
+                <strong>{prettyDate(result.earliestCompletion)}</strong>.
+              </p>
+            )}
+            {result.excludedDays > 0 && (
+              <p className="text-xs text-red-700 dark:text-red-300 mt-1">
+                {result.excludedDays} days are left out of the total because the work does not count for your
+                visa (see the notes on each job).
+              </p>
+            )}
           </>
         )}
       </div>
@@ -230,10 +268,13 @@ export default function SpecifiedWorkTracker() {
             <fieldset key={job.id} className="border border-slate-200 dark:border-slate-700 rounded-xl p-4">
               <legend className="px-1 text-sm font-semibold text-slate-700 dark:text-slate-200">
                 Job {i + 1}
-                {jr && (
+                {jr && !jr.excluded && (
                   <span className="ml-2 font-mono font-normal text-blue-700 dark:text-blue-300">
                     {Math.floor(jr.credited)} days{jr.estimate ? ' (estimate)' : ''}
                   </span>
+                )}
+                {jr?.excluded && (
+                  <span className="ml-2 font-normal text-red-600 dark:text-red-400">not counted</span>
                 )}
               </legend>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -351,6 +392,13 @@ export default function SpecifiedWorkTracker() {
           className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold"
         >
           + Add another job
+        </button>
+        <button
+          type="button"
+          onClick={exportCSV}
+          className="px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+        >
+          Download summary (CSV)
         </button>
         <button
           type="button"
