@@ -66,6 +66,22 @@ const faqLd = {
         text: 'Once it has been 6 months or more since you left Australia and your visa has ceased, your fund can transfer your super to the ATO as unclaimed super. Check the ATO for the current process and tax treatment.',
       },
     },
+{
+'@type': 'Question',
+name: 'Which DASP rate applies if I had a working holiday visa and then another visa?',
+acceptedAnswer: {
+'@type': 'Answer',
+text: 'Each fund decides for its own payment. If the payment from a fund includes contributions made while you held a 417 or 462 visa, the 65% rate applies to the whole taxable component from that fund. If it does not, the ordinary rates of 35% and 45% apply.',
+},
+},
+{
+'@type': 'Question',
+name: 'Does claiming a DASP affect a future Australian visa?',
+acceptedAnswer: {
+'@type': 'Answer',
+text: 'The ATO says claiming a DASP will not affect any future visa applications.',
+},
+},
   ],
 };
 
@@ -96,7 +112,7 @@ export default function DaspGuidePage() {
             how to apply from overseas and what happens if you wait.
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated October 2026 · Rates checked against the ATO in October 2026
+            By <a href="/about" className="text-blue-500 hover:underline">Borja Pérez</a> · Updated November 2026 · Rules and rates checked against the ATO on 9 November 2026
           </p>
         </div>
       </div>
@@ -209,7 +225,89 @@ export default function DaspGuidePage() {
           </div>
         </section>
 
-        {/* How to apply */}
+        {/* Which rate applies */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Which rate applies if you held more than one visa</h2>
+<div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
+<p>
+Each super fund decides the rate for its own payment, based on the contributions it holds for you. The ATO
+sets out three cases:
+</p>
+<ul className="list-disc pl-5 space-y-2">
+<li><strong className="text-slate-900 dark:text-white">Never held a working holiday visa:</strong> the ordinary DASP rates apply (35% on the taxed element, 45% on the untaxed element).</li>
+<li><strong className="text-slate-900 dark:text-white">Only ever held a working holiday visa</strong> (417 or 462, plus associated bridging visas): the 65% rate applies.</li>
+<li><strong className="text-slate-900 dark:text-white">Held a working holiday visa and another visa:</strong> if that fund&rsquo;s payment includes any amount from contributions made while you held the working holiday visa, the 65% rate applies to the entire payment from that fund, including super earned under the other visa. If it does not, the ordinary rates apply.</li>
+</ul>
+<p>
+It does not matter when you held the working holiday visa. The ATO counts a bridging visa as part of your
+working holiday period when it was issued straight after a 417 or 462 visa and before a second one, or straight
+after a 417 or 462 with no other visa after it.
+</p>
+<p className="text-xs text-slate-400">
+Source:{' '}
+<a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">ATO, Departing Australia superannuation payment (DASP)</a>{' '}
+(last updated 21 April 2026), checked 9 November 2026.
+</p>
+</div>
+</section>
+
+{/* Worked examples */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Worked examples</h2>
+<div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
+<p>
+These are illustrations with round numbers, using the ATO rates above. The amounts are our own arithmetic.
+Your fund&rsquo;s statement shows your real components, and fees or insurance can change the balance.
+</p>
+<div className="overflow-x-auto">
+<table className="w-full text-sm border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<thead>
+<tr className="bg-slate-50 dark:bg-slate-800 text-left">
+<th className="px-3 py-2 font-semibold text-slate-600 dark:text-slate-300">Situation</th>
+<th className="px-3 py-2 font-semibold text-slate-600 dark:text-slate-300">Payment</th>
+<th className="px-3 py-2 font-semibold text-slate-600 dark:text-slate-300">Rate</th>
+<th className="px-3 py-2 font-semibold text-slate-600 dark:text-slate-300">Tax withheld</th>
+<th className="px-3 py-2 font-semibold text-slate-600 dark:text-slate-300">You receive</th>
+</tr>
+</thead>
+<tbody className="tabular-nums text-slate-700 dark:text-slate-300 text-[13px]">
+<tr className="border-t border-slate-200 dark:border-slate-700"><td className="px-3 py-2">Mia, 417 visa only, one fund</td><td className="px-3 py-2">$4,800 taxed element</td><td className="px-3 py-2">65%</td><td className="px-3 py-2">$3,120</td><td className="px-3 py-2">$1,680</td></tr>
+<tr className="border-t border-slate-200 dark:border-slate-700"><td className="px-3 py-2">Ravi, student visa only, never a working holiday maker</td><td className="px-3 py-2">$4,800 taxed element</td><td className="px-3 py-2">35%</td><td className="px-3 py-2">$1,680</td><td className="px-3 py-2">$3,120</td></tr>
+<tr className="border-t border-slate-200 dark:border-slate-700"><td className="px-3 py-2">Lucas, 462 visa, then sponsored visa. Fund A only holds contributions from the sponsored job</td><td className="px-3 py-2">Fund A: $10,000 taxed element</td><td className="px-3 py-2">35%</td><td className="px-3 py-2">$3,500</td><td className="px-3 py-2">$6,500</td></tr>
+<tr className="border-t border-slate-200 dark:border-slate-700"><td className="px-3 py-2">Lucas, same person. Fund B holds some contributions from the 462 period</td><td className="px-3 py-2">Fund B: $3,000 taxed element</td><td className="px-3 py-2">65% on all of it</td><td className="px-3 py-2">$1,950</td><td className="px-3 py-2">$1,050</td></tr>
+<tr className="border-t border-slate-200 dark:border-slate-700"><td className="px-3 py-2">Ana, 417 visa, statement shows a $1,000 tax-free component</td><td className="px-3 py-2">$1,000 tax-free + $4,000 taxed element</td><td className="px-3 py-2">Nil + 65%</td><td className="px-3 py-2">$2,600</td><td className="px-3 py-2">$2,400</td></tr>
+</tbody>
+</table>
+</div>
+<p>
+Lucas shows why the rule works fund by fund: the same person can get the ordinary rate from one fund and the
+65% rate from another. Mia and Ravi show the gap between the two rates on the same balance: $1,440 on $4,800.
+</p>
+<p>
+To get a feel for the size of your balance, the super guarantee is 12% of qualifying earnings in 2026-27, so
+$40,000 of ordinary wages means about $4,800 of employer contributions before any fees, earnings or tax in the
+fund. See{' '}
+<a href="/guides/payday-super" className="text-blue-600 dark:text-blue-400 hover:underline">Payday Super</a>{' '}
+for how super is paid from 1 July 2026.
+</p>
+</div>
+</section>
+
+{/* Payment and paperwork */}
+<section>
+<h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">How you get paid and what paperwork to expect</h2>
+<div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
+<ul className="list-disc pl-5 space-y-2">
+<li><strong className="text-slate-900 dark:text-white">Payment options:</strong> transfer to an Australian bank account, an Australian dollar cheque, or an international money transfer (only for claims to super funds, and not every fund offers it). The ATO says a transfer is usually the most effective option and suggests keeping your Australian bank account open.</li>
+<li><strong className="text-slate-900 dark:text-white">Payment summary:</strong> the payer must give you a DASP payment summary within 14 days of paying you, showing the tax withheld. On ATO-issued summaries an &lsquo;H&rsquo; indicator means the working holiday maker rate was applied.</li>
+<li><strong className="text-slate-900 dark:text-white">Paper forms:</strong> for money still in a fund, form NAT 7204 goes to each fund, which may charge a fee. For balances of $5,000 or more a paper claim may need a Certification of Immigration Status from Home Affairs, which also has a fee. The online system checks your immigration status for free.</li>
+<li><strong className="text-slate-900 dark:text-white">Wrong amount withheld:</strong> ask your fund for a refund in the same financial year the DASP was paid. After that year ends, or if the ATO paid you, write to the ATO with evidence.</li>
+<li><strong className="text-slate-900 dark:text-white">Coming back later:</strong> the ATO says claiming a DASP does not affect future visa applications.</li>
+</ul>
+</div>
+</section>
+
+{/* How to apply */}
         <section>
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">How to apply</h2>
           <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
@@ -313,8 +411,7 @@ export default function DaspGuidePage() {
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-1 text-[15px]">Is the 65% rate taken from my whole super balance?</h3>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
-                No. It applies to the taxable component of the payment that relates to working holiday maker work. The
-                tax-free component is not taxed. Your fund&rsquo;s statement shows the split.
+                No. It applies to the taxable component of the payment. The tax-free component is not taxed. If a fund holds any contributions from your working holiday visa period, the ATO says the 65% rate applies to that fund&rsquo;s whole taxable component, including super earned under another visa. Your fund&rsquo;s statement shows the split.
               </p>
             </div>
             <div>
@@ -350,8 +447,7 @@ export default function DaspGuidePage() {
         <section className="text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
           <p>
             General information only. This guide is not tax, legal or financial advice and does not consider your
-            personal circumstances. Rates and rules were checked against the Australian Taxation Office in October
-            2026 and can change. Check the linked ATO pages or speak to a registered tax agent before you act. Full
+            personal circumstances. Rates and rules were checked against the Australian Taxation Office on 9 November 2026 and can change. Check the linked ATO pages or speak to a registered tax agent before you act. Full
             workings for our calculators are on the{' '}
             <a href="/methodology" className="text-blue-500 hover:underline">methodology page</a>.
           </p>
