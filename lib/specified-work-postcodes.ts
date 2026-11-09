@@ -21,6 +21,9 @@
  *   NT 0800-0999 · ACT 0200-0299, 2600-2618, 2900-2920 · SA 5000-5999 ·
  *   TAS 7000-7999 · Norfolk Island 2899.
  *
+ * Re-checked on 9 November 2026 against both live pages (417 last
+ * updated 4 November 2026, 462 last updated 5 November 2026): no changes.
+ *
  * Review monthly (first Monday, with the ATO rates check) and update
  * POSTCODE_DATA_REVIEWED when re-checked.
  * ------------------------------------------------------------------ */
@@ -35,7 +38,7 @@ export type PostcodeArea =
   | 'disaster';
 
 /** Date the tables below were last checked against Home Affairs (YYYY-MM-DD), or null if never. */
-export const POSTCODE_DATA_REVIEWED: string | null = '2026-10-07';
+export const POSTCODE_DATA_REVIEWED: string | null = '2026-11-09';
 
 /** Tables 1–2 (remoteVeryRemote), 3 (northern), 4 (regional), 5 (bushfire), 6 (disaster). */
 export const POSTCODE_AREAS: Record<PostcodeArea, PostcodeRange[]> = {
