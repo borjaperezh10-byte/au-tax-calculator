@@ -3,7 +3,8 @@
  * Holiday (462) visas.
  *
  * Rules checked against the Department of Home Affairs pages on
- * 7 October 2026:
+ * 9 November 2026 (417 page last updated 4 November 2026, 462 page
+ * 5 November 2026; postcode tables unchanged since 7 October 2026):
  *   417: https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work
  *   462: https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462/specified-462-work
  *   Third 417 (evidence): https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/third-working-holiday-417
@@ -20,6 +21,10 @@
  *  - Volunteer recovery work in declared bushfire / disaster areas
  *    counts one day for each day actually worked.
  *  - Third-visa work must be on or after 1 July 2019.
+ *  - The requirement cannot be completed in a total period shorter than
+ *    3 calendar months (88 days) or 6 calendar months (179 days).
+ *  - Jobs in an industry or postcode that does not count for the visa,
+ *    and third-visa days before 1 July 2019, are left out of the total.
  *  - UK passport holders applying for a second or third 417 from
  *    1 July 2024 do not need specified work.
  *  - Separate from the day count: condition 8547 (6 months per employer
@@ -105,6 +110,8 @@ export interface JobResult {
   calendarDays: number;
   credited: number; // after the one-day-per-calendar-day cap
   estimate: boolean;
+  /** Why the job is left out of the total, if it is. */
+  excluded: 'industry' | 'postcode' | null;
 }
 
 export interface TrackerResult {
@@ -114,6 +121,10 @@ export interface TrackerResult {
   jobs: JobResult[];
   notices: Notice[];
   projectedCompletion: string | null;
+  /** Earliest date the minimum period (3 or 6 calendar months) allows, from the first counted day. */
+  earliestCompletion: string | null;
+  /** Days excluded from the total because the job does not count. */
+  excludedDays: number;
 }
 
 /* ---------------------------- date helpers ---------------------------- */
@@ -129,6 +140,24 @@ export function parseDate(s: string): number | null {
 export function formatDate(t: number): string {
   return new Date(t).toISOString().slice(0, 10);
 }
+
+/**
+ * Last day of a period of `months` calendar months that starts on `start`
+ * (e.g. 3 months from 15 January ends on 14 April). If the same day does
+ * not exist in the target month, the period ends on that month's last day.
+ * Home Affairs does not define the arithmetic, so results are approximate.
+ */
+export function calendarMonthsEnd(start: number, months: number): number {
+  const d = new Date(start);
+  const y = d.getUTCFullYear();
+  const mo = d.getUTCMonth() + months;
+  const day = d.getUTCDate();
+  const daysInTarget = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate();
+  if (day > daysInTarget) return Date.UTC(y, mo, daysInTarget);
+  return Date.UTC(y, mo, day) - DAY_MS;
+}
+
+const THIRD_VISA_FROM = Date.parse('2019-07-01T00:00:00Z');
 
 /* ------------------------- eligibility by area ------------------------ */
 
@@ -199,7 +228,7 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
 
   // Calendar-day ledger: each date can hold at most one credited day.
   const ledger = new Map<number, number>();
-  const raw: { job: Job; start: number; days: number; perDay: number }[] = [];
+  const raw: { job: Job; start: number; days: number; perDay: number; excluded: JobResult['excluded'] }[] = [];
 
   for (const job of jobs) {
     const s = parseDate(job.start);
@@ -213,19 +242,20 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
       continue;
     }
     const days = Math.round((e - s) / DAY_MS) + 1;
-    raw.push({ job, start: s, days, perDay: dailyCredit(job, days) });
-
     const verdict = postcodeVerdict(settings.subclass, job.industry, job.postcode);
+    const excluded = verdict === 'industry-not-allowed' ? 'industry' : verdict === 'not-eligible' ? 'postcode' : null;
+    raw.push({ job, start: s, days, perDay: dailyCredit(job, days), excluded });
+
     if (verdict === 'industry-not-allowed') {
       notices.push({
         severity: 'error',
-        text: `${INDUSTRY_LABELS[job.industry]} does not count as specified work on a subclass ${settings.subclass} visa.`,
+        text: `${INDUSTRY_LABELS[job.industry]} does not count as specified work on a subclass ${settings.subclass} visa, so this job is left out of your total.`,
         jobId: job.id,
       });
     } else if (verdict === 'not-eligible') {
       notices.push({
         severity: 'error',
-        text: `Postcode ${job.postcode} is not on the eligible list for ${INDUSTRY_LABELS[job.industry].toLowerCase()} on a subclass ${settings.subclass} visa.`,
+        text: `Postcode ${job.postcode} is not on the eligible list for ${INDUSTRY_LABELS[job.industry].toLowerCase()} on a subclass ${settings.subclass} visa, so this job is left out of your total.`,
         jobId: job.id,
       });
     }
@@ -233,7 +263,7 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
     if (settings.target === 179 && s < Date.parse('2019-07-01T00:00:00Z')) {
       notices.push({
         severity: 'warning',
-        text: 'Work before 1 July 2019 does not count towards a third visa.',
+        text: 'Work before 1 July 2019 does not count towards a third visa, so those days are left out of your total.',
         jobId: job.id,
       });
     }
@@ -251,10 +281,20 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
   const credited = new Map<string, number>();
   let overlapped = false;
 
-  for (const { job, start, days, perDay } of raw) {
+  let excludedDays = 0;
+  for (const { job, start, days, perDay, excluded } of raw) {
     let sum = 0;
+    if (excluded) {
+      excludedDays += Math.floor(perDay * days + 1e-9);
+      credited.set(job.id, 0);
+      continue;
+    }
     for (let i = 0; i < days; i++) {
       const d = start + i * DAY_MS;
+      if (settings.target === 179 && d < THIRD_VISA_FROM) {
+        excludedDays += perDay;
+        continue;
+      }
       const used = ledger.get(d) ?? 0;
       const add = Math.min(perDay, 1 - used);
       if (add < perDay) overlapped = true;
@@ -281,11 +321,29 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
   // job that ends last, starting the day after it ends (or today, if later).
   let projectedCompletion: string | null = null;
   const t = parseDate(today);
-  const last = [...raw].sort((a, b) => a.start + a.days * DAY_MS - (b.start + b.days * DAY_MS)).pop();
+  const counted = raw.filter(r => !r.excluded);
+  const last = [...counted].sort((a, b) => a.start + a.days * DAY_MS - (b.start + b.days * DAY_MS)).pop();
   if (!exempt && remaining > 0 && last && last.perDay > 0 && t !== null) {
     const lastEnd = last.start + (last.days - 1) * DAY_MS;
     const from = Math.max(lastEnd + DAY_MS, t);
     projectedCompletion = formatDate(from + (Math.ceil(remaining / last.perDay) - 1) * DAY_MS);
+  }
+
+  // Minimum period: never less than 3 (or 6) calendar months from the first counted day.
+  const creditedDates = [...ledger.entries()].filter(([, v]) => v > 0).map(([d]) => d);
+  let earliestCompletion: string | null = null;
+  if (!exempt && creditedDates.length) {
+    const first = Math.min(...creditedDates);
+    const minEnd = calendarMonthsEnd(first, settings.target === 179 ? 6 : 3);
+    earliestCompletion = formatDate(minEnd);
+    if (projectedCompletion && (parseDate(projectedCompletion) ?? 0) < minEnd) projectedCompletion = earliestCompletion;
+    const lastCredited = Math.max(...creditedDates);
+    if (remaining === 0 && lastCredited < minEnd) {
+      notices.push({
+        severity: 'warning',
+        text: `Home Affairs says you cannot complete specified work in less than ${settings.target === 179 ? 6 : 3} calendar months. Counting from your first day, that is around ${earliestCompletion}, so keep working (or keep evidence) until then.`,
+      });
+    }
   }
 
   const expiry = parseDate(settings.visaExpiry);
@@ -314,9 +372,12 @@ export function computeTracker(settings: Settings, jobs: Job[], today: string): 
       calendarDays: r.days,
       credited: credited.get(r.job.id) ?? 0,
       estimate: r.job.mode === 'part-time',
+      excluded: r.excluded,
     })),
     notices,
     projectedCompletion,
+    earliestCompletion,
+    excludedDays: Math.floor(excludedDays + 1e-9),
   };
 }
 
@@ -367,7 +428,7 @@ function sixMonthNotices(jobs: Job[]): Notice[] {
   return out;
 }
 
-/** Official Home Affairs pages (checked 7 October 2026). */
+/** Official Home Affairs pages (checked 9 November 2026). */
 export const OFFICIAL = {
   specified417: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work',
   specified462: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462/specified-462-work',
