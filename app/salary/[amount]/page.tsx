@@ -162,6 +162,7 @@ export default async function SalaryPage({ params }: Props) {
       'Income tax, Medicare levy and take-home pay for a $' + k + ',000 salary for an Australian resident in 2026-27, calculated with the 2026-27 resident rates.',
     url: 'https://www.auincometax.com/salary/' + salary,
     isAccessibleForFree: true,
+    license: 'https://www.auincometax.com/terms-of-use',
     inLanguage: 'en-AU',
     temporalCoverage: '2026-07-01/2027-06-30',
     spatialCoverage: 'Australia',
