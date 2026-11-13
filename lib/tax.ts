@@ -189,8 +189,11 @@ export function calculate(
   const incomeTax      = calcIncomeTax(taxableIncome, res);
   const lito           = calcLITO(taxableIncome, res);
   const netIncomeTax   = Math.max(0, incomeTax - lito);
-  const medicareLevy   = calcMedicareLevy(salary, res);
-  const mls            = calcMLS(salary, res, privateHealth);
+  // Medicare levy is charged on TAXABLE income (after deductions and salary sacrifice).
+  const medicareLevy   = calcMedicareLevy(taxableIncome, res);
+  // MLS uses "income for MLS purposes": taxable income plus reportable super
+  // contributions (salary sacrifice), so sacrificing never takes anyone out of the surcharge.
+  const mls            = calcMLS(taxableIncome + salarySacrifice, res, privateHealth);
 
   // HECS is assessed on *repayment income*, not gross salary. Repayment income
   // adds reportable super contributions (salary sacrifice) back onto taxable

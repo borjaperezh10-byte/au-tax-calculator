@@ -377,7 +377,7 @@ export default async function SalaryPage({ params }: Props) {
               ? 'A HELP or HECS debt takes ' + fmtAUD(helpCost) + ' a year at this income. '
               : 'No compulsory HELP or HECS repayment applies at this income. '}
             A $5,000 salary sacrifice lowers your take-home by only {fmtAUD(sacrificeCost)}, because
-            it also cuts your tax by {fmtAUD(5000 - sacrificeCost)}, and the full $5,000 goes into
+            it also cuts your income tax and Medicare levy by {fmtAUD(5000 - sacrificeCost)}, and the full $5,000 goes into
             super. A working holiday maker on the same salary takes home {fmtAUD(Math.abs(whmDiff))}{' '}
             {whmDiff >= 0 ? 'more' : 'less'} than a resident. The difference comes from the working
             holiday rates: no tax-free threshold and no low income offset, but no Medicare levy.

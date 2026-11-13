@@ -31,7 +31,7 @@ export default function Page() {
 quick="From the 2026-27 income year the ATO applies a standard deduction of up to $1,000 for work-related expenses without receipts. You must be an Australian resident for tax purposes with assessable labour income such as wages. The maximum is the lower of $1,000 or your labour income, and your own claims for certain expenses reduce it dollar for dollar."
 keyFacts={[
 'Applies from 1 July 2026, so it is not part of the 2025-26 return due by 31 October 2026.',
-'It reduces taxable income: at a 30% marginal rate, $1,000 saves about $300 in tax.',
+'It reduces taxable income: at a 30% marginal rate, $1,000 saves about $300 in income tax, or $320 with the Medicare levy.',
 'Claim more than the maximum and you need written evidence for all the expenses you claim.',
 'From 1 July 2026 the $300 work expense limit and the $150 laundry limit no longer apply.',
 ]}
@@ -207,17 +207,17 @@ deduction alone. These figures ignore the Medicare levy. Our{' '}
 
 <GuideSection title="What the $1,000 is worth at each marginal rate">
 <SimpleTable
-head={['Marginal rate (2026-27)', 'Income range', 'Tax saved by $1,000']}
+head={['Marginal rate (2026-27)', 'Income range', 'Income tax saved by $1,000', 'Including 2% Medicare levy']}
 rows={[
-['15%', '$18,201 to $45,000', '$150'],
-['30%', '$45,001 to $135,000', '$300'],
-['37%', '$135,001 to $190,000', '$370'],
-['45%', 'Above $190,000', '$450'],
+['15%', '$18,201 to $45,000', '$150', '$170'],
+['30%', '$45,001 to $135,000', '$300', '$320'],
+['37%', '$135,001 to $190,000', '$370', '$390'],
+['45%', 'Above $190,000', '$450', '$470'],
 ]}
 />
 <p>
 Below $18,200 a resident pays no income tax, so the deduction saves nothing in income tax there. Rates shown
-are the resident rates used throughout this site, before the Medicare levy.
+are the resident rates used throughout this site. The last column adds the 2% Medicare levy, which applies once your income is above the low-income thresholds, because the deduction also lowers your taxable income for Medicare.
 </p>
 </GuideSection>
 

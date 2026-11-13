@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const ENTRIES = [
   {
+    date: '13 November 2026',
+    version: '2.4',
+    label: 'Fix',
+    labelColor: 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300',
+    changes: [
+      'Medicare levy is now applied to taxable income after deductions and salary sacrifice, instead of gross salary. The Medicare Levy Surcharge uses income for surcharge purposes (taxable income plus salary sacrifice). Scenario figures on the salary pages (work deduction and salary sacrifice) are updated: for example at $80,000 a $1,000 deduction now adds $320 to take-home pay (was $300) and a $5,000 salary sacrifice lowers it by $3,400 (was $3,500). Base take-home pay with no deduction or sacrifice is unchanged.',
+      'Footer and header wording clarified: HELP thresholds are the ATO published 2026–27 figures; the Medicare low-income thresholds ($28,011 and $35,014) are marked as estimates until confirmed.',
+    ],
+  },
+  {
     date: 'November 2026',
     version: '2.3',
     label: 'Fix',
