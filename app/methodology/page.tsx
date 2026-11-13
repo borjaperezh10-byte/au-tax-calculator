@@ -182,13 +182,13 @@ export default function MethodologyPage() {
                 <h3 className="font-semibold text-slate-800 dark:text-slate-200">Step 4 — Medicare Levy</h3>
               </div>
               <div className="px-5 py-4 text-sm text-slate-600 dark:text-slate-400 space-y-2">
-                <p>Applies to Australian residents only. Working holiday makers and non-residents do not pay the Medicare Levy.</p>
+                <p>Applies to Australian residents only. Working holiday makers and non-residents do not pay the Medicare Levy. Calculated on taxable income (after deductions and salary sacrifice).</p>
                 <div className="font-mono text-xs bg-slate-50 dark:bg-slate-900 rounded-lg p-3 space-y-1">
                   <div>≤ $28,011: <span className="text-emerald-600 dark:text-emerald-400">Nil</span></div>
-                  <div>$28,012 – $35,014: (income − $28,011) × <span className="text-blue-600 dark:text-blue-400">10%</span> (shade-in)</div>
-                  <div>&gt; $35,014: income × <span className="text-blue-600 dark:text-blue-400">2%</span></div>
+                  <div>$28,012 – $35,014: (taxable income − $28,011) × <span className="text-blue-600 dark:text-blue-400">10%</span> (shade-in)</div>
+                  <div>&gt; $35,014: taxable income × <span className="text-blue-600 dark:text-blue-400">2%</span></div>
                 </div>
-                <p className="text-xs text-slate-400">Shade-in thresholds are 2026-27 estimates. The Medicare Levy Surcharge (1–1.5%) applies separately to residents earning above $105,000 without private hospital cover.</p>
+                <p className="text-xs text-slate-400">Shade-in thresholds are 2026-27 estimates. The Medicare Levy Surcharge (1–1.5%) applies separately to residents without private hospital cover whose income for surcharge purposes (taxable income plus reportable super contributions and reportable fringe benefits) is above $105,000.</p>
               </div>
             </div>
 

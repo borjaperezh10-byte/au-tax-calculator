@@ -42,7 +42,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What is the Medicare Levy and who pays it?',
-    a: 'The Medicare Levy is 2% of your taxable income, which helps fund Australia\'s public healthcare system (Medicare). You are exempt if your income is below $28,011. A shade-in applies between $28,011 and $35,014 where you pay a lower effective rate. If you earn over $105,000 and do not have private hospital cover, an additional Medicare Levy Surcharge of 1% to 1.5% applies.',
+    a: 'The Medicare Levy is 2% of your taxable income, which helps fund Australia\'s public healthcare system (Medicare). You are exempt if your income is below $28,011. A shade-in applies between $28,011 and $35,014 where you pay a lower effective rate. If you earn over $105,000 and do not have private hospital cover, an additional Medicare Levy Surcharge of 1% to 1.5% applies. The $28,011 and $35,014 thresholds are our 2026–27 estimates; the confirmed figures are published later in the income year.',
   },
   {
     q: 'How does HECS/HELP repayment work in 2026-27?',
@@ -109,7 +109,7 @@ export default function HomePage() {
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center gap-2 text-xs text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded-lg px-3 py-2 whitespace-nowrap">
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                ATO 2026-27 official rates
+                ATO 2026–27 tax rates
               </div>
               <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg px-3 py-2 whitespace-nowrap">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/><path d="M8 7v4M8 5h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
@@ -144,15 +144,6 @@ export default function HomePage() {
           </span>
           <span className="whitespace-nowrap text-sm font-semibold text-blue-700 dark:text-blue-300">Read the guide →</span>
         </a>
-        <a
-          href="/leaving-australia-money-kit"
-          className="mb-4 flex flex-col gap-1 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 transition-colors hover:bg-blue-100 dark:border-blue-800 dark:bg-blue-950 dark:hover:bg-blue-900 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
-        >
-          <span className="text-sm text-slate-700 dark:text-slate-200">
-            <strong className="text-slate-900 dark:text-white">Leaving Australia?</strong> The Money Kit: a 108-page guide and Excel planner for your final tax return and super (DASP).
-          </span>
-          <span className="whitespace-nowrap text-sm font-semibold text-blue-700 dark:text-blue-300">See the kit · A$29 →</span>
-        </a>
         <TaxCalculator initialSalary={80000} />
 
         {/* Info cards — quick reference */}
@@ -186,8 +177,8 @@ export default function HomePage() {
             title="Medicare Levy"
             items={[
               { label: 'Standard rate', value: '2%' },
-              { label: 'No levy below', value: '$28,011' },
-              { label: 'Shade-in up to', value: '$35,014' },
+              { label: 'No levy below', value: '$28,011 (est.)' },
+              { label: 'Shade-in up to', value: '$35,014 (est.)' },
               { label: 'MLS (no private, >$105K)', value: '1–1.5%' },
             ]}
           />
@@ -285,7 +276,7 @@ export default function HomePage() {
       <footer className="max-w-4xl mx-auto px-4 py-8 text-center text-xs text-slate-400 border-t border-slate-200 dark:border-slate-700 mt-8">
         Rates based on{' '}
         <a href="https://www.ato.gov.au" target="_blank" rel="noopener" className="text-blue-500 hover:underline">ATO</a>
-        {' '}legislated 2026–27 tables. HECS thresholds are estimated pending ATO confirmation.
+        {' '}2026–27 tables. HELP repayment thresholds are the ATO&apos;s published 2026–27 figures. Medicare levy low-income thresholds are estimates until confirmed.
         For indicative purposes only — not financial or tax advice. Always verify with a registered tax agent.
       </footer>
     </main>

@@ -246,7 +246,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-2" role="list">
                   <li><a href="/tax-brackets" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Brackets 2026-27</a></li>
                   <li><a href="/salary-table" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Salary &amp; Tax Table</a></li>
-                  <li><a href="/take-home-pay-reference" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Take-Home Pay Reference</a></li>
                   <li><a href="/guides" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">All Guides</a></li>
                   <li><a href="/methodology" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Methodology</a></li>
                   <li><a href="/glossary" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Glossary</a></li>
