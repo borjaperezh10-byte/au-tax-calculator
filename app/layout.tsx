@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import MobileNav from '@/components/MobileNav';
+import SiteNav from '@/components/SiteNav';
+import { NAV_GROUPS, NAV_TOP_LINKS } from '@/lib/nav';
 import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
 import { LAST_REVIEWED } from '@/lib/site';
@@ -107,16 +109,6 @@ export const metadata: Metadata = {
   // index. Each page must now declare its own: alternates: { canonical: '/…' }.
 };
 
-const NAV_LINKS = [
-  { href: '/',                   label: 'Calculator' },
-  { href: '/tax-brackets',       label: 'Tax Brackets' },
-  { href: '/working-holiday-maker', label: 'Working Holiday' },
-  { href: '/88-days-calculator', label: '88 Days' },
-  { href: '/hecs-help-repayment', label: 'HECS-HELP' },
-  { href: '/guides',           label: 'Guides' },
-  { href: '/leaving-australia-money-kit', label: 'Money Kit' },
-  { href: '/about',              label: 'About' },
-];
 
 const TRUST_SIGNALS = [
   'Updated for FY 2026–27',
@@ -180,22 +172,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Image src="/logo-header.png" alt="AU Income Tax — Calculate with confidence" width={211} height={56} loading="eager" className="h-[56px] w-auto flex-shrink-0 dark:hidden" />
               <Image src="/logo-header-dark.png" alt="AU Income Tax — Calculate with confidence" width={211} height={56} className="h-[56px] w-auto flex-shrink-0 hidden dark:block" />
             </a>
-            <nav aria-label="Main navigation" className="hidden md:block min-w-0 overflow-x-auto overflow-y-hidden">
-              <ul className="flex items-center gap-1 flex-nowrap" role="list">
-                {NAV_LINKS.map(({ href, label }) => (
-                  <li key={href} className="flex-shrink-0">
-                    <a
-                      href={href}
-                      className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-2.5 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors whitespace-nowrap"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <nav aria-label="Main navigation" className="hidden md:block">
+              <SiteNav groups={NAV_GROUPS} links={NAV_TOP_LINKS} />
             </nav>
             <div className="flex items-center gap-1">
-              <MobileNav links={NAV_LINKS} />
+              <MobileNav groups={NAV_GROUPS} links={NAV_TOP_LINKS} />
               <ThemeToggle />
             </div>
           </div>

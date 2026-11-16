@@ -2,13 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
-interface NavLink {
-  href: string;
-  label: string;
-}
+import type { NavGroup, NavLink } from '@/lib/nav';
 
 /* Burger menu for small screens. The desktop nav stays a horizontal list. */
-export default function MobileNav({ links }: { links: NavLink[] }) {
+export default function MobileNav({ groups, links }: { groups: NavGroup[]; links: NavLink[] }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -44,19 +41,39 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
           aria-label="Mobile navigation"
           className="absolute left-0 right-0 top-16 border-b border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800"
         >
-          <ul className="mx-auto max-w-5xl px-4 py-2" role="list">
-            {links.map(({ href, label }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700"
-                >
-                  {label}
-                </a>
-              </li>
+          <div className="mx-auto max-w-5xl max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-2">
+            {groups.map((g) => (
+              <div key={g.label} className="py-1">
+                <p className="px-3 pt-2 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">{g.label}</p>
+                <ul role="list">
+                  {[...g.links, ...(g.all ? [g.all] : [])].map(({ href, label }) => (
+                    <li key={href}>
+                      <a
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+            <ul role="list" className="border-t border-slate-100 py-1 dark:border-slate-700">
+              {links.map(({ href, label }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       )}
     </div>
