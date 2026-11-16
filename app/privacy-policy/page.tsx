@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="space-y-2 pl-4">
               <li><strong className="text-slate-700 dark:text-slate-300">Log data:</strong> Your browser type, operating system, referring URLs, pages visited, and timestamps. This information is used to understand how visitors use the site and to diagnose technical issues.</li>
-              <li><strong className="text-slate-700 dark:text-slate-300">Cookies:</strong> We may use cookies to enable site functionality and to support third-party services described below. You can disable cookies in your browser settings, though this may affect site functionality.</li>
+              <li><strong className="text-slate-700 dark:text-slate-300">Cookies:</strong> Cookies are used only by Google AdSense advertising, after you agree through the consent notice where the law requires it. Cloudflare Web Analytics and Vercel Web Analytics do not use cookies. You can disable cookies in your browser settings.</li>
               <li><strong className="text-slate-700 dark:text-slate-300">IP addresses:</strong> Collected as part of standard server logs and used for security and analytics purposes.</li>
             </ul>
           </div>
@@ -55,12 +55,9 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Third-Party Services</h2>
           <div className="text-sm text-slate-600 dark:text-slate-400 space-y-4">
             <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4">
-              <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Google Analytics</h3>
+              <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Cloudflare Web Analytics</h3>
               <p>
-                We use Google Analytics to understand how visitors use our site. Google Analytics collects data such as pages visited, time on site, and general geographic location. This data is aggregated and anonymised. You can opt out of Google Analytics by installing the{' '}
-                <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
-                  Google Analytics opt-out browser add-on
-                </a>.
+                We use Cloudflare Web Analytics to count page views and understand which pages are useful. It does not use cookies, does not track you across websites, and does not collect personal information or anything you enter into the calculator. The data it records, such as pages visited, referring site, country and device type, is aggregated.
               </p>
             </div>
       <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4">

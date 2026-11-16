@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ENTRIES = [
   {
+    date: '16 November 2026',
+    version: '2.5',
+    label: 'Update',
+    labelColor: 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300',
+    changes: [
+      'Privacy policy updated to match the services the site actually uses: Cloudflare Web Analytics is now listed, Google Analytics is removed, cookies are described as used only by Google AdSense advertising (after consent where the law requires it), and contact is by email.',
+    ],
+  },
+  {
     date: '13 November 2026',
     version: '2.4',
     label: 'Fix',
