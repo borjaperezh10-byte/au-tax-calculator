@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { socialMeta } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Contact — AU Income Tax Calculator',
   description:
     'Contact auincometax.com — report a calculation error, suggest an improvement, or ask a question about the Australian income tax calculator.',
+  ...socialMeta('Contact — AU Income Tax Calculator', 'Contact auincometax.com — report a calculation error, suggest an improvement, or ask a question about the Australian income tax calculator.', '/contact'),
   alternates: { canonical: 'https://www.auincometax.com/contact' },
 };
 

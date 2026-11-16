@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { LAST_REVIEWED } from '@/lib/site';
+import { LAST_REVIEWED, socialMeta } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Tax Disclaimer — AU Income Tax Calculator',
   description:
     'Important disclaimer for auincometax.com — what the calculator covers, its limitations, and when to seek professional advice.',
+  ...socialMeta('Tax Disclaimer — AU Income Tax Calculator', 'Important disclaimer for auincometax.com — what the calculator covers, its limitations, and when to seek professional advice.', '/tax-disclaimer'),
   alternates: { canonical: 'https://www.auincometax.com/tax-disclaimer' },
   robots: { index: true, follow: true },
 };

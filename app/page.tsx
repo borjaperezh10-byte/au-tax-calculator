@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import TaxCalculator from '@/components/TaxCalculator';
 import { calculate, fmtAUD, RESIDENT_BRACKETS_2627 } from '@/lib/tax';
-import { LAST_REVIEWED } from '@/lib/site';
+import { LAST_REVIEWED, socialMeta } from '@/lib/site';
 import { FEATURED_GUIDE } from '@/lib/featured-guide';
 
 export const metadata: Metadata = {
   title: 'Australia Income Tax Calculator 2026-27 | Take-Home Pay',
   description:
     'Free Australian income tax calculator for 2026-27. Work out take-home pay, income tax, Medicare levy, HECS repayment and super in seconds.',
+  ...socialMeta('Australia Income Tax Calculator 2026-27 | Take-Home Pay', 'Free Australian income tax calculator for 2026-27. Work out take-home pay, income tax, Medicare levy, HECS repayment and super in seconds.', '/'),
   alternates: { canonical: 'https://www.auincometax.com' },
 };
 

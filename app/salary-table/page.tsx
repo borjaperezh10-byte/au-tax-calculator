@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { socialMeta } from '@/lib/site';
 import { calculate, fmtAUD, SALARY_PAGES, SALARY_PAGES_INDEXED } from '@/lib/tax';
 import CopyTableButton from '@/components/CopyTableButton';
 
@@ -6,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Australian Salary & Tax Table 2026-27',
   description:
     'Income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000 in 2026-27. See how much of each extra $10,000 you keep. Copy into Excel or Sheets.',
+  ...socialMeta('Australian Salary & Tax Table 2026-27', 'Income tax, Medicare levy and take-home pay for Australian salaries from $30,000 to $300,000 in 2026-27. See how much of each extra $10,000 you keep. Copy into Excel or Sheets.', '/salary-table'),
   alternates: { canonical: 'https://www.auincometax.com/salary-table' },
 };
 

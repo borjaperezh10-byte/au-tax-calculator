@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import { socialMeta } from '@/lib/site';
 import { calculate, fmtAUD } from '@/lib/tax';
 
 export const metadata: Metadata = {
   title: 'Australia Tax Brackets 2026-27',
   description:
     'Australian income tax brackets and rates for 2026-27, resident and non-resident, with the new 15% bracket explained and worked examples.',
+  ...socialMeta('Australia Tax Brackets 2026-27', 'Australian income tax brackets and rates for 2026-27, resident and non-resident, with the new 15% bracket explained and worked examples.', '/tax-brackets'),
   alternates: { canonical: 'https://www.auincometax.com/tax-brackets' },
 };
 

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { LAST_REVIEWED } from '@/lib/site';
+import { LAST_REVIEWED, socialMeta } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Terms of Use — AU Income Tax Calculator',
   description:
     'Terms of use for auincometax.com — conditions governing use of our free Australian income tax calculator.',
+  ...socialMeta('Terms of Use — AU Income Tax Calculator', 'Terms of use for auincometax.com — conditions governing use of our free Australian income tax calculator.', '/terms-of-use'),
   alternates: { canonical: 'https://www.auincometax.com/terms-of-use' },
   robots: { index: true, follow: true },
 };

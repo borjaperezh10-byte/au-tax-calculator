@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { LAST_REVIEWED } from '@/lib/site';
+import { LAST_REVIEWED, socialMeta } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — AU Income Tax Calculator',
   description:
     'Privacy policy for auincometax.com — how we collect, use, and protect your information.',
+  ...socialMeta('Privacy Policy — AU Income Tax Calculator', 'Privacy policy for auincometax.com — how we collect, use, and protect your information.', '/privacy-policy'),
   alternates: { canonical: 'https://www.auincometax.com/privacy-policy' },
   robots: { index: true, follow: true },
 };
@@ -45,7 +46,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="space-y-2 pl-4">
               <li><strong className="text-slate-700 dark:text-slate-300">Log data:</strong> Your browser type, operating system, referring URLs, pages visited, and timestamps. This information is used to understand how visitors use the site and to diagnose technical issues.</li>
-              <li><strong className="text-slate-700 dark:text-slate-300">Cookies:</strong> Cookies are used only by Google AdSense advertising, after you agree through the consent notice where the law requires it. Cloudflare Web Analytics and Vercel Web Analytics do not use cookies. You can disable cookies in your browser settings.</li>
+              <li><strong className="text-slate-700 dark:text-slate-300">Cookies:</strong> Cookies are used only by Google AdSense advertising, and only after you consent where the law requires it. Cloudflare Web Analytics and Vercel Web Analytics do not use cookies. You can disable cookies in your browser settings.</li>
               <li><strong className="text-slate-700 dark:text-slate-300">IP addresses:</strong> Collected as part of standard server logs and used for security and analytics purposes.</li>
             </ul>
           </div>

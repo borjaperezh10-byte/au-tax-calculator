@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { socialMeta } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Changelog — AU Income Tax Calculator',
   description:
     'History of updates, corrections, and improvements to auincometax.com — the free Australian income tax calculator for 2026-27.',
+  ...socialMeta('Changelog — AU Income Tax Calculator', 'History of updates, corrections, and improvements to auincometax.com — the free Australian income tax calculator for 2026-27.', '/changelog'),
   alternates: { canonical: 'https://www.auincometax.com/changelog' },
 };
 
