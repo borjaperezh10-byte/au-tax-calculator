@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
             <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4">
               <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Google AdSense</h3>
               <p>
-                This site may display advertisements provided by Google AdSense. Google uses cookies to serve ads based on your prior visits to this and other websites. You can opt out of personalised advertising at{' '}
+                This site may display advertisements provided by Google AdSense. Google uses cookies to serve ads based on your prior visits to this and other websites. Where the law requires consent (for example for visitors in the European Economic Area, the United Kingdom or Switzerland), advertising cookies should only be used after you agree through the consent notice. You can opt out of personalised advertising at{' '}
                 <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
                   Google Ads Settings
                 </a>.
@@ -94,7 +94,7 @@ export default function PrivacyPolicyPage() {
               <li>Understand how visitors use the site</li>
               <li>Diagnose technical problems</li>
               <li>Display relevant advertising</li>
-              <li>Respond to contact form inquiries</li>
+              <li>Respond to emails you send us</li>
             </ul>
             <p className="mt-3">
               We do not sell, rent, or share your personal information with third parties except as described in this policy or as required by law.
@@ -103,9 +103,9 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Contact Forms</h2>
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Emails You Send Us</h2>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            If you contact us via our <a href="/contact" className="text-blue-600 dark:text-blue-400 hover:underline">contact page</a>, we will collect your name, email address, and the content of your message solely to respond to your inquiry. We do not add you to any mailing lists without your explicit consent.
+            If you email <a href="mailto:borja@auincometax.com" className="text-blue-600 dark:text-blue-400 hover:underline">borja@auincometax.com</a>, we keep your email address and message only to answer you and to record corrections. We delete these emails when they are no longer needed, and normally within 24 months of the last message. We do not add you to any mailing list without your explicit consent.
           </p>
         </section>
 
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Contact</h2>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            Questions about this policy? Please use our <a href="/contact" className="text-blue-600 dark:text-blue-400 hover:underline">contact page</a>.
+            Questions about this policy? Email <a href="mailto:borja@auincometax.com" className="text-blue-600 dark:text-blue-400 hover:underline">borja@auincometax.com</a> or use our <a href="/contact" className="text-blue-600 dark:text-blue-400 hover:underline">contact page</a>. The site is operated by Borja Pérez, based in Spain.
           </p>
         </section>
 
