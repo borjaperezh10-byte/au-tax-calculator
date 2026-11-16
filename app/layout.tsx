@@ -177,8 +177,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Two color variants swapped by theme for contrast — the artwork's
                   navy text is unreadable on a dark header, so a light-text version
                   renders in dark mode instead of recoloring via CSS filters. */}
-              <Image src="/logo-header.png" alt="AU Income Tax — Calculate with confidence" width={157} height={38} loading="eager" className="h-[38px] w-auto flex-shrink-0 dark:hidden" />
-              <Image src="/logo-header-dark.png" alt="AU Income Tax — Calculate with confidence" width={157} height={38} className="h-[38px] w-auto flex-shrink-0 hidden dark:block" />
+              <Image src="/logo-header.png" alt="AU Income Tax — Calculate with confidence" width={211} height={56} loading="eager" className="h-[56px] w-auto flex-shrink-0 dark:hidden" />
+              <Image src="/logo-header-dark.png" alt="AU Income Tax — Calculate with confidence" width={211} height={56} className="h-[56px] w-auto flex-shrink-0 hidden dark:block" />
             </a>
             <nav aria-label="Main navigation" className="hidden md:block min-w-0 overflow-x-auto overflow-y-hidden">
               <ul className="flex items-center gap-1 flex-nowrap" role="list">
