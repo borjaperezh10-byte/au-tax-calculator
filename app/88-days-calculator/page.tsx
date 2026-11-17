@@ -122,6 +122,7 @@ export default function EightyEightDaysPage() {
 <li>The work must normally be paid under Australian law and awards.</li>
 <li>The tracker leaves out jobs whose industry or postcode does not count for your visa, and shows the earliest end date the 3 or 6 calendar month minimum allows.</li>
 <li>UK passport holders applying for a second or third 417 visa from 1 July 2024 do not need specified work.</li>
+<li>Announced 17 November 2026: from 1 March 2027 the second visa needs four months of specified work and second and third visa applicants (except UK citizens) need an invitation. This tracker still applies the current 88 and 179 day rules; the new day count has not been published. See <a href="/guides/next-year-regional-work-guarantee" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">the Next Year Regional Work Guarantee</a>.</li>
 <li>
 Source: <a href={OFFICIAL_417} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Home Affairs, specified work (417)</a>.
 </li>

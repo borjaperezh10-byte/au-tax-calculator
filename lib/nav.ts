@@ -30,6 +30,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: '/guides/payday-super', label: 'Payday Super for employees' },
       { href: '/guides/working-holiday-maker-tax', label: 'Working holiday maker tax' },
       { href: '/guides/how-88-days-are-counted', label: 'How the 88 days are counted' },
+      { href: '/guides/next-year-regional-work-guarantee', label: '2nd & 3rd visa changes (2027)' },
       { href: '/guides/departing-australia-super-dasp', label: 'Claiming super when you leave (DASP)' },
     ],
   },

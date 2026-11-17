@@ -55,7 +55,7 @@ const faqLd = {
       name: 'What happens if I lodge my tax return late?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The ATO can charge a failure to lodge on time penalty of one penalty unit for each 28 days the return is overdue, up to five penalty units. In practice the ATO generally warns you first, and it does not usually penalise a late return that results in a refund or a nil balance. Lodge as soon as you can.',
+        text: 'The ATO can charge a failure to lodge on time penalty of one penalty unit ($364 from 1 July 2026) for each 28 days the return is overdue, up to five penalty units ($1,820). In practice the ATO generally warns you first, and it does not usually penalise a late return that results in a refund or a nil balance. Lodge as soon as you can.',
       },
     },
   ],
@@ -96,7 +96,7 @@ export default function TaxReturnGuidePage() {
 <ul className="list-disc pl-5 space-y-1 text-[14px]">
 <li>Wait until your income statement shows as tax ready in myGov before you lodge.</li>
 <li>Paper returns are slower: most refunds are issued within around 50 business days.</li>
-<li>The late lodgement penalty is one penalty unit per 28 days overdue, up to five penalty units.</li>
+<li>The late lodgement penalty is one penalty unit ($364 from 1 July 2026) per 28 days overdue, up to five penalty units ($1,820).</li>
 <li>The ATO generally does not penalise a late return that results in a refund or a nil balance.</li>
 <li>
 Source: <a href="https://www.ato.gov.au/individuals-and-families/your-tax-return" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">ATO, your tax return</a>.
@@ -226,7 +226,8 @@ With 31 October close, a few minutes of preparation usually saves a second attem
           <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">
             <p>
               The failure to lodge on time penalty is one penalty unit for each 28 days (or part of 28
-              days) that the return is overdue, up to a maximum of five penalty units. The ATO says it
+              days) that the return is overdue, up to a maximum of five penalty units. A penalty unit is
+              $364 from 1 July 2026, so the base penalty runs from $364 to a maximum of $1,820. The ATO says it
               generally doesn&rsquo;t apply penalties in isolated cases, warning you first in writing or
               by phone, and it generally won&rsquo;t issue a penalty notice for a late return that
               results in a refund or a nil result. If you use a registered agent, give them everything

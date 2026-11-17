@@ -85,6 +85,12 @@ a: 'Home Affairs says you should agree the number of working hours with your emp
           Want the number for your own jobs? Log them in the <In href="/88-days-calculator">88 days calculator</In>{' '}
           — it applies the rules below and checks your postcode.
         </Callout>
+        <Callout>
+          <B>Change announced on 17 November 2026:</B> from 1 March 2027 the second visa requirement rises from three
+          to four months, and second and third visa applicants (except UK citizens) will need an invitation. If you
+          finish your specified work and lodge a valid application by 28 February 2027 the current rules apply. See{' '}
+          <In href="/guides/next-year-regional-work-guarantee">the Next Year Regional Work Guarantee explained</In>.
+        </Callout>
       </section>
 
       <GuideSection title="The basic rule: calendar days, not shifts">

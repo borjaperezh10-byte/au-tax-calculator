@@ -65,6 +65,11 @@ const GROUPS: Group[] = [
         blurb: 'Since 1 July 2026 super is paid with each payday, within 7 business days. What counts as qualifying earnings and what to check.',
       },
       {
+        href: '/guides/minimum-wage-after-tax',
+        title: 'Minimum Wage After Tax 2026-27',
+        blurb: 'The $1,004.90 a week national minimum wage leaves about $869.80 after tax and Medicare, with part-time, casual and working holiday examples.',
+      },
+      {
         href: '/guides/help-loan-repayments-explained',
         title: 'HELP Loan Repayments 2026-27',
         blurb: 'The marginal repayment rates, what counts as repayment income and worked examples against the old system.',
@@ -96,6 +101,11 @@ const GROUPS: Group[] = [
     heading: 'Working holiday makers',
     intro: 'A separate set of rules for visa holders.',
     guides: [
+      {
+        href: '/guides/next-year-regional-work-guarantee',
+        title: 'Next Year Regional Work Guarantee (2nd & 3rd Visas)',
+        blurb: 'From 1 March 2027 second and third visas need an invitation. Key dates, the 28 February 2027 deadline and what is still unknown.',
+      },
       {
         href: '/guides/working-holiday-maker-tax',
         title: 'Working Holiday Maker Tax',

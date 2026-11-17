@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import GuideArticle, { B, Ext, GuideSection, In } from '@/components/GuideArticle';
+import GuideArticle, { B, Callout, Ext, GuideSection, In } from '@/components/GuideArticle';
 import { OFFICIAL } from '@/lib/specified-work';
 
 const PATH = '/guides/third-working-holiday-visa-179-days';
@@ -70,6 +70,11 @@ a: 'No. You can spread the work over the stay of your second visa and over sever
       ]}
     >
       <GuideSection title="The requirement">
+        <Callout>
+          <B>Change announced on 17 November 2026:</B> the third visa still needs six months of specified work, but from
+          1 March 2027 applicants (except UK citizens) will also need an invitation, the Next Year Regional Work
+          Guarantee. See <In href="/guides/next-year-regional-work-guarantee">what is confirmed so far</In>.
+        </Callout>
         <p>
           For a third visa you need <B>179 days</B> of specified work — six calendar months — done during your
           second visa. The days are counted exactly like the 88 days: calendar days for full-time work, a proportion

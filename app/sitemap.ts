@@ -94,6 +94,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/guides/next-year-regional-work-guarantee`,
+      lastModified: new Date('2026-11-18T00:00:00Z'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/guides/minimum-wage-after-tax`,
+      lastModified: new Date('2026-11-18T00:00:00Z'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/guides/payday-super`,
       lastModified: LAST_MOD,
       changeFrequency: 'monthly' as const,

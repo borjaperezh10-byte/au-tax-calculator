@@ -11,6 +11,18 @@ export const metadata: Metadata = {
 
 const ENTRIES = [
   {
+    date: '18 November 2026',
+    version: '2.6',
+    label: 'Update',
+    labelColor: 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300',
+    changes: [
+      'New guide: the Next Year Regional Work Guarantee for second and third working holiday visas (announced 17 November 2026), with the key dates and what has not been published yet. The 88 days tracker, the 88 days guide and the third visa guide now flag the change.',
+      'New guide: what the 2026-27 national minimum wage leaves after tax ($869.80 a week full-time), with part-time, casual and working holiday examples.',
+      'Tax return deadline guide: the late lodgement penalty now shows dollar amounts ($364 per penalty unit from 1 July 2026, up to $1,820).',
+      'A cookie banner now asks for consent before any Google AdSense script loads.',
+    ],
+  },
+  {
     date: '16 November 2026',
     version: '2.5',
     label: 'Update',
