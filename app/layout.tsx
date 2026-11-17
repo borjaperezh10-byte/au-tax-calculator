@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import ConsentBanner from '@/components/ConsentBanner';
+import CookieSettingsButton from '@/components/CookieSettingsButton';
 import Image from 'next/image';
 import MobileNav from '@/components/MobileNav';
 import SiteNav from '@/components/SiteNav';
@@ -128,12 +130,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
         />
-        {/* Google AdSense site verification/loader script */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8059094828506918"
-          crossOrigin="anonymous"
-        />
+        {/* AdSense site verification only (loads nothing). The AdSense script itself is
+            injected by <ConsentBanner /> after the visitor accepts. */}
+        <meta name="google-adsense-account" content="ca-pub-8059094828506918" />
         {/* Cloudflare Web Analytics — manual install (DNS-only domain, not proxied) */}
         <script
           type="module"
@@ -251,6 +250,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><a href="/about" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
                   <li><a href="/contact" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
                   <li><a href="/privacy-policy" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Privacy Policy</a></li>
+                  <li><CookieSettingsButton className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400" /></li>
                   <li><a href="/terms-of-use" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Terms of Use</a></li>
                   <li><a href="/tax-disclaimer" className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">Tax Disclaimer</a></li>
                 </ul>
@@ -290,6 +290,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </footer>
+        <ConsentBanner />
       </body>
     </html>
   );
